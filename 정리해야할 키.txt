@@ -1,0 +1,11 @@
+Oemtilde : `
+Oemcomma :,
+OemPeriod :.
+OemQuestion: /
+OemMinus : -
+Oemplus : +
+Oem5 :\
+OemOpenBrakets : [
+Oem6 : ]
+Oem7 : '
+Oem1 : ;
