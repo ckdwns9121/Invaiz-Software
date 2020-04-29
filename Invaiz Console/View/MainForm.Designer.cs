@@ -1299,7 +1299,7 @@
         public Component.AppBox appBox;
         public Component.PresetBox presetBox;
         public Component.PresetList presetList;
-        private System.Windows.Forms.FlowLayoutPanel deviceList;
+        public System.Windows.Forms.FlowLayoutPanel deviceList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label usbstate;
         private System.Windows.Forms.NotifyIcon notifyIcon;
@@ -1355,7 +1355,7 @@
         public Component.DeviceEncoder deviceEncoder14;
         public Component.DeviceEncoder deviceEncoder13;
         public System.Windows.Forms.Timer presetTimer;
-        private CustomControls.CustomScrollbar customScrollbar1;
+        public CustomControls.CustomScrollbar customScrollbar1;
         private System.Windows.Forms.Button button1;
     }
 }

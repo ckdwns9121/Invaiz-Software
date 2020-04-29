@@ -234,6 +234,7 @@ namespace Invaiz_Console.View
             
             try
             {
+                
                 if (this.ExcuteType.Equals("sendKey"))
                 {
                     this.formName_input.Text = this.formName;
@@ -521,6 +522,7 @@ namespace Invaiz_Console.View
             this.functionCheck = false;
             this.ActiveControl = formName_input;
 
+
             if (deviceCheck)
             {
                 this.subName2_panel.Visible = true;
@@ -669,7 +671,6 @@ namespace Invaiz_Console.View
                 }
                 else
                 {
-                    
                     this.bindingKeycode();
                 }
             }

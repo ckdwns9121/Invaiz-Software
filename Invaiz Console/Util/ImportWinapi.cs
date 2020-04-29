@@ -35,7 +35,6 @@ namespace Invaiz_Console.Util
         private const int SW_SHOWMINIMIZED = 2;
         private const int SW_SHOWMAXIMIZED = 3;
 
-
         public bool CurrentProcess(string processName)
         {
 

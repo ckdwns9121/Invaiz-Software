@@ -90,10 +90,10 @@ namespace Invaiz_Console.Component
             
             mn.appBox.AppIconImage = this.AppIcon;
             mn.AppName = this.AppName;
-
             Util.Render render = new Util.Render();
             render.initUI();
             render.closeList();
+            render.listValueInit();
         }
         private void getPresets()
         {
@@ -107,6 +107,5 @@ namespace Invaiz_Console.Component
             Util.Render render = new Util.Render();
             render.updateUI();
         }
-
     }
 }

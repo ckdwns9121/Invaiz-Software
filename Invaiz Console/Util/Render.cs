@@ -72,7 +72,12 @@ namespace Invaiz_Console.Util
                 groups[group].GroupName = mn.Payloads[group].groupName;
                 for(int index=0; index < 4; index++)
                 {
+                    float currentSize = (getFormNameLength(mn.Payloads[group].E_formName[index])) ? 8.0F : 12.5F;
+
+                    encoders[group, index].form_name.Font = new System.Drawing.Font(encoders[group, index].form_name.Font.Name, currentSize,
+                    encoders[group, index].form_name.Font.Style, encoders[group, index].form_name.Font.Unit);
                     encoders[group, index].FormName = newLineText(mn.Payloads[group].E_formName[index]);
+
                     buttons[group, index].FormName = newLineText(mn.Payloads[group].B_formName[index]);
                     buttons[group, index].SubName = mn.Payloads[group].B_subName[index];
                     encoders[group, index].LeftSubName = mn.Payloads[group].E_leftSubName[index];
@@ -80,6 +85,11 @@ namespace Invaiz_Console.Util
                 }
             }
         }
+        public bool getFormNameLength(string str)
+        {
+            return (str.Length > 10) ? true : false;
+        }
+
         public void settingUI(int group, int index, bool deviceCheck)
         {
             mn = MainForm.getInstance;
@@ -101,7 +111,12 @@ namespace Invaiz_Console.Util
             if (deviceCheck)
             {
 
+
+                float currentSize = (getFormNameLength(mn.Payloads[group].E_formName[index])) ? 8.0F : 12.5F;
+                encoders[group, index].form_name.Font = new System.Drawing.Font(encoders[group, index].form_name.Font.Name, currentSize,
+                encoders[group, index].form_name.Font.Style, encoders[group, index].form_name.Font.Unit);
                 encoders[group, index].FormName = newLineText(mn.Payloads[group].E_formName[index]);
+
                 encoders[group, index].LeftSubName = mn.Payloads[group].E_leftSubName[index];
                 encoders[group, index].RightSubName = mn.Payloads[group].E_rightSubName[index];
 
@@ -112,6 +127,13 @@ namespace Invaiz_Console.Util
                 buttons[group, index].SubName = mn.Payloads[group].B_subName[index];
 
             }
+        }
+        public void listValueInit()
+        {
+            mn = MainForm.getInstance;
+            mn.customScrollbar1.Value = 0;
+            mn.deviceList.AutoScrollPosition = new System.Drawing.Point(0, 0);
+
         }
 
         public void closeList()
@@ -129,17 +151,9 @@ namespace Invaiz_Console.Util
             string str= temp;
             int t = temp.IndexOf(" ");
             int l =temp.Length;
-            if (t != -1 && l >6)
-            {
-                str = str.Replace(" ", "");
-                str = str.Insert(t, Environment.NewLine);
-         
-            }
-            else
-            {
-                str = temp;
-            }
-            return str;
+
+            str = (t != -1 && l > 6) ? str.Replace(" ", "") : temp;
+            return str = (t != -1 && l > 6) ? str.Insert(t, Environment.NewLine) : temp;
         }
     }
 }

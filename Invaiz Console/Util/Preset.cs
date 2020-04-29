@@ -37,7 +37,6 @@ namespace Invaiz_Console.Util
                 }
             }
 
-
             if (!fileExists)
             {
                 mn.PresetName = "기본값";
@@ -69,7 +68,7 @@ namespace Invaiz_Console.Util
                 {
                     // Only detect start elements.
                     if (reader.IsStartElement())
-                    {
+                    { 
                         // Get element name and switch on it.
                         switch (reader.Name)
                         {
@@ -88,7 +87,7 @@ namespace Invaiz_Console.Util
 
                             case "encoder":
                                 string encoder_number = reader["enum"];
-;                               string encoder_excuteType = reader["excuteType"];
+                                string encoder_excuteType = reader["excuteType"];
                                 string encoder_messageType = reader["messageType"];
                                 string encoder_actionType = reader["actionType"];
                                 string encoder_typeKey = reader["typeKey"];

@@ -80,14 +80,8 @@ namespace Invaiz_Console.Util
                     break;
             }
 
-            if (device)
-            {
-                oc.PayloadOverlay(true, group, number);
-            }
-            else
-            {
-                oc.PayloadOverlay(false, group, number);
-            }
+            (device ? new Action(() => oc.PayloadOverlay(true, group, number)) : () => oc.PayloadOverlay(false, group, number))();
+
         }
 
         Util.ImportWinapi s = new Util.ImportWinapi();
@@ -258,28 +252,16 @@ namespace Invaiz_Console.Util
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
-                        Console.WriteLine("CEP Response " + result);
-                        if (device)
-                        {
-                            oc.PayloadOverlay(true, group, number, result);
-                        }
-                        else
-                        {
-                            oc.PayloadOverlay(false, group, number, result);
-                        }
+                        (device ? new Action(() => oc.PayloadOverlay(true, group, number,result)) : () => oc.PayloadOverlay(false, group, number,result))();
                     }
 
                 }
                 catch (Exception e)
                 {
-                    if (device)
-                    {
-                        oc.PayloadOverlay(true, group, number);
-                    }
-                    else
-                    {
-                        oc.PayloadOverlay(false, group, number);
-                    }
+
+
+
+                    (device ? new Action(() => oc.PayloadOverlay(true, group, number)) : () => oc.PayloadOverlay(false, group, number))();
                     Console.WriteLine(e.Message);
                 }
 
