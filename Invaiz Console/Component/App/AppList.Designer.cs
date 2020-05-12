@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.app_list = new System.Windows.Forms.FlowLayoutPanel();
-            this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.appItem1 = new Invaiz_Console.Component.AppItem();
             this.appItem2 = new Invaiz_Console.Component.AppItem();
             this.appItem3 = new Invaiz_Console.Component.AppItem();
@@ -38,6 +37,7 @@
             this.appItem5 = new Invaiz_Console.Component.AppItem();
             this.appItem6 = new Invaiz_Console.Component.AppItem();
             this.appItem7 = new Invaiz_Console.Component.AppItem();
+            this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.panel1.SuspendLayout();
             this.app_list.SuspendLayout();
             this.SuspendLayout();
@@ -68,29 +68,6 @@
             this.app_list.Name = "app_list";
             this.app_list.Size = new System.Drawing.Size(188, 218);
             this.app_list.TabIndex = 0;
-            // 
-            // customScrollbar1
-            // 
-            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.customScrollbar1.DownArrowImage = null;
-            this.customScrollbar1.LargeChange = 10;
-            this.customScrollbar1.Location = new System.Drawing.Point(173, 0);
-            this.customScrollbar1.Maximum = 100;
-            this.customScrollbar1.Minimum = 0;
-            this.customScrollbar1.MinimumSize = new System.Drawing.Size(0, 218);
-            this.customScrollbar1.Name = "customScrollbar1";
-            this.customScrollbar1.Size = new System.Drawing.Size(5, 218);
-            this.customScrollbar1.SmallChange = 1;
-            this.customScrollbar1.TabIndex = 3;
-            this.customScrollbar1.ThumbBottomImage = global::Invaiz_Console.Properties.Resources.thunbspan;
-            this.customScrollbar1.ThumbBottomSpanImage = global::Invaiz_Console.Properties.Resources.thunbspan;
-            this.customScrollbar1.ThumbHoverImage = null;
-            this.customScrollbar1.ThumbMiddleImage = global::Invaiz_Console.Properties.Resources.thumbmidle;
-            this.customScrollbar1.ThumbNomalImage = null;
-            this.customScrollbar1.ThumbTopImage = global::Invaiz_Console.Properties.Resources.thunbspan;
-            this.customScrollbar1.ThumbTopSpanImage = global::Invaiz_Console.Properties.Resources.thunbspan;
-            this.customScrollbar1.UpArrowImage = null;
-            this.customScrollbar1.Value = 0;
             // 
             // appItem1
             // 
@@ -135,7 +112,7 @@
             // appItem5
             // 
             this.appItem5.AppIcon = global::Invaiz_Console.Properties.Resources.iconpr;
-            this.appItem5.AppName = "PremierPro";
+            this.appItem5.AppName = "PremierePro";
             this.appItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.appItem5.Location = new System.Drawing.Point(3, 167);
             this.appItem5.Name = "appItem5";
@@ -161,6 +138,29 @@
             this.appItem7.Name = "appItem7";
             this.appItem7.Size = new System.Drawing.Size(160, 35);
             this.appItem7.TabIndex = 6;
+            // 
+            // customScrollbar1
+            // 
+            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.customScrollbar1.DownArrowImage = null;
+            this.customScrollbar1.LargeChange = 10;
+            this.customScrollbar1.Location = new System.Drawing.Point(173, 0);
+            this.customScrollbar1.Maximum = 100;
+            this.customScrollbar1.Minimum = 0;
+            this.customScrollbar1.MinimumSize = new System.Drawing.Size(0, 218);
+            this.customScrollbar1.Name = "customScrollbar1";
+            this.customScrollbar1.Size = new System.Drawing.Size(5, 218);
+            this.customScrollbar1.SmallChange = 1;
+            this.customScrollbar1.TabIndex = 3;
+            this.customScrollbar1.ThumbBottomImage = global::Invaiz_Console.Properties.Resources.thunbspan;
+            this.customScrollbar1.ThumbBottomSpanImage = global::Invaiz_Console.Properties.Resources.thunbspan;
+            this.customScrollbar1.ThumbHoverImage = null;
+            this.customScrollbar1.ThumbMiddleImage = global::Invaiz_Console.Properties.Resources.thumbmidle;
+            this.customScrollbar1.ThumbNomalImage = null;
+            this.customScrollbar1.ThumbTopImage = global::Invaiz_Console.Properties.Resources.thunbspan;
+            this.customScrollbar1.ThumbTopSpanImage = global::Invaiz_Console.Properties.Resources.thunbspan;
+            this.customScrollbar1.UpArrowImage = null;
+            this.customScrollbar1.Value = 0;
             // 
             // AppList
             // 

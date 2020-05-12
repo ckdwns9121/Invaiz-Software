@@ -52,8 +52,10 @@ namespace Invaiz_Console.View
             for(int i = 0; i < labels.Length; i++)
             {
                 labels[i].BackColor = Color.FromArgb(245, 245, 245);
+                labels[i].ForeColor = Color.FromArgb(0, 0, 0);
             }
             labels[index].BackColor = Color.FromArgb(54, 63, 77);
+            labels[index].ForeColor = Color.FromArgb(245, 245, 245);
 
         }
     }

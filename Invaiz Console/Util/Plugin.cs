@@ -28,9 +28,9 @@ namespace Invaiz_Console.Util
         public Plugin()
         {
             // Console.WriteLine("플러그인 생성");
-            //Extract("InvaizApp", cepFolderPath(), "Resources", "com.invaiz.extension.zip");
-            //   ExtractZipByIO(cepFolderPath() + "\\com.invaiz.extension.zip", cepFolderPath());
-            //    Console.WriteLine("플러그인 파일 생성완료");
+          //  Extract("InvaizApp", cepFolderPath(), "Resources", "com.invaiz.extension.zip");
+            //ExtractZipByIO(cepFolderPath() + "\\com.invaiz.extension.zip", cepFolderPath());
+              //  Console.WriteLine("플러그인 파일 생성완료");             
             oc = new OverlayControl();
 
         }
@@ -53,28 +53,28 @@ namespace Invaiz_Console.Util
             switch (multi)
             {
                 case 1: //단일키
-                    singleKey(keycode);
+                    PressKey(keycode);
                     break;
                 case 2: //컨트롤
-                    ctrlKey(keycode);
+                    PressCtrlKey(keycode);
                     break;
                 case 3: //컨트롤 쉬프트
-                    ctrlShiftKey(keycode);
+                    PressCtrlShiftKey(keycode);
                     break;
                 case 4: //알트
-                    altKey(keycode);
+                    PressAltKey(keycode);
                     break;
                 case 5: // 쉬프트
-                    shiftKey(keycode);
+                    PressShiftKey(keycode);
                     break;
                 case 6://컨트롤 알트
-                    ctrlAltKey(keycode);
+                    PressCtrlAltKey(keycode);
                     break;
                 case 7://컨트롤 쉬프트 알트
-                    ctrlShiftAltKey(keycode);
+                    PressCtrlShiftKAltKey(keycode);
                     break;
                 case 8://쉬프트 알트
-                    ShiftAltKey(keycode);
+                    PressShiftAltKey(keycode);
                     break;
                 default:
                     break;
@@ -88,70 +88,70 @@ namespace Invaiz_Console.Util
 
 
         #region 키보드 데이터 전송
-        private void ctrlKey(int keycode)
+        private void PressCtrlKey(int keycode)
         {
-            s.SendKeyDown(CONTROLKEY, true);
+            s.SendKeyDown(CONTROLKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(CONTROLKEY, true);
+            s.SendKeyUp(CONTROLKEY, false);
 
         }
 
-        private void ShiftAltKey(int keycode)
+        private void PressShiftAltKey(int keycode)
         {
-            s.SendKeyDown(SHIFTKEY, true);
-            s.SendKeyDown(ALTKEY, true);
+            s.SendKeyDown(SHIFTKEY, false);
+            s.SendKeyDown(ALTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(ALTKEY, true);
-            s.SendKeyUp(SHIFTKEY, true);
+            s.SendKeyUp(ALTKEY, false);
+            s.SendKeyUp(SHIFTKEY, false);
         }
 
-        private void ctrlShiftKey(int keycode)
+        private void PressCtrlShiftKey(int keycode)
         {
 
-            s.SendKeyDown(CONTROLKEY, true);
-            s.SendKeyDown(SHIFTKEY, true);
+            s.SendKeyDown(CONTROLKEY, false);
+            s.SendKeyDown(SHIFTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(SHIFTKEY, true);
-            s.SendKeyUp(CONTROLKEY, true);
+            s.SendKeyUp(SHIFTKEY, false);
+            s.SendKeyUp(CONTROLKEY, false);
 
         }
 
-        private void ctrlAltKey(int keycode)
+        private void PressCtrlAltKey(int keycode)
         {
 
-            s.SendKeyDown(CONTROLKEY, true);
-            s.SendKeyDown(ALTKEY, true);
+            s.SendKeyDown(CONTROLKEY, false);
+            s.SendKeyDown(ALTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(ALTKEY, true);
-            s.SendKeyUp(CONTROLKEY, true);
+            s.SendKeyUp(ALTKEY, false);
+            s.SendKeyUp(CONTROLKEY, false);
         }
 
-        private void ctrlShiftAltKey(int keycode)
+        private void PressCtrlShiftKAltKey(int keycode)
         {
-            s.SendKeyDown(CONTROLKEY, true);
-            s.SendKeyDown(SHIFTKEY, true);
-            s.SendKeyDown(ALTKEY, true);
+            s.SendKeyDown(CONTROLKEY, false);
+            s.SendKeyDown(SHIFTKEY, false);
+            s.SendKeyDown(ALTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(ALTKEY, true);
-            s.SendKeyUp(SHIFTKEY, true);
-            s.SendKeyUp(CONTROLKEY, true);
+            s.SendKeyUp(ALTKEY, false);
+            s.SendKeyUp(SHIFTKEY, false);
+            s.SendKeyUp(CONTROLKEY, false);
         }
-        private void altKey(int keycode)
+        private void PressAltKey(int keycode)
         {
-            s.SendKeyDown(ALTKEY, true);
+            s.SendKeyDown(ALTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(ALTKEY, true);
+            s.SendKeyUp(ALTKEY, false);
         }
-        private void shiftKey(int keycode)
+        private void PressShiftKey(int keycode)
         { 
-            s.SendKeyDown(SHIFTKEY, true);
+            s.SendKeyDown(SHIFTKEY, false);
             s.Send(keycode, true);
-            s.SendKeyUp(SHIFTKEY, true);
+            s.SendKeyUp(SHIFTKEY, false);
         }
 
-        private void singleKey(int keycode)
+        private void PressKey(int keycode)
         {
-            s.Send(keycode, false);
+            s.Send(keycode, true);
         }
         #endregion
         #region CEP 파일 생성
@@ -252,15 +252,13 @@ namespace Invaiz_Console.Util
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
+                        Console.WriteLine("리턴값 나옴?" + result);
                         (device ? new Action(() => oc.PayloadOverlay(true, group, number,result)) : () => oc.PayloadOverlay(false, group, number,result))();
                     }
 
                 }
                 catch (Exception e)
                 {
-
-
-
                     (device ? new Action(() => oc.PayloadOverlay(true, group, number)) : () => oc.PayloadOverlay(false, group, number))();
                     Console.WriteLine(e.Message);
                 }

@@ -84,7 +84,7 @@ namespace Invaiz_Console.Util
         {
             mn = MainForm.getInstance;
 
-            if (str.Equals("succeeded") || str.Equals("failed") || str.Equals("CEP Responce") || str.Contains("Error") || str.Contains("NaN") || str.Contains("error")) 
+            if (str.Equals("succeeded") || str.Equals("failed") || str.Equals("CEP Responce") || str.Contains("Error") || str.Contains("NaN") || str.Contains("error") || str.Contains("undefined")) 
             {
                 
                 str = (deviceCheck) ? mn.Payloads[group].E_formName[number] : mn.Payloads[group].B_formName[number];

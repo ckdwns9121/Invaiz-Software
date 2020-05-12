@@ -34,19 +34,17 @@ namespace Invaiz_Console.View
 
         private void PayloadOverlayForm_Load(object sender, EventArgs e)
         {
-            //this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2
-            //, Screen.PrimaryScreen.Bounds.Height - this.Size.Height - 70);
-            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width /6 - this.Size.Width / 2
-            , Screen.PrimaryScreen.Bounds.Height - this.Size.Height - 400);
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2
+            , Screen.PrimaryScreen.Bounds.Height - this.Size.Height - 70);
+            //this.Location = new Point(Screen.PrimaryScreen.Bounds.Width /6 - this.Size.Width / 2
+            //, Screen.PrimaryScreen.Bounds.Height - this.Size.Height - 400);
 
         }
-
         //그룹 변경됬을 시 전체 키맵핑 보여주기 위한 오버레이
         public void init(int group)
         {
             firstInit(group);
         }
-
 
         // 이벤트 발생 시 CEP 리턴값이 없는 경우 설정한 이름 보여주는 오버레이
         public void init(bool deviceCheck, int index,int group)
@@ -185,6 +183,11 @@ namespace Invaiz_Console.View
                 deviceButtons[index].form_name.ForeColor = deviceButtons[index].HoverColor;
             }
 
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+            Console.WriteLine("마우스다운");
         }
     }
 }

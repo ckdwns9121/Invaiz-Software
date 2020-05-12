@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -222,6 +224,7 @@ namespace Invaiz_Console.View
         #region 폼 로드
         private void SettingForm_Load(object sender, EventArgs e)
         {
+            KeyPreview = true;
             mn = MainForm.getInstance;
             this.Location = mn.Location;
             // 기본 스크롤바 때문에 넓이 줄여줌
@@ -601,6 +604,7 @@ namespace Invaiz_Console.View
         {
             serchText.Text = "";
         }
+
         private void settingList()
         {
             foreach (Control control in this.item_list.Controls)
@@ -682,17 +686,33 @@ namespace Invaiz_Console.View
             this.Close();
         }
         #endregion
+
+
+
+
+
+
         Util.SetKeycode k = new Util.SetKeycode();
 
         #region 키입력
         private void subName1_input_KeyDown(object sender, KeyEventArgs e)
         {
             string ctrl, subText;
-        
-            
+            if((int)e.KeyCode == 162)
+            {
+                Console.WriteLine("컨트롤누름");
+            }
+
             if (e.Control) //컨트롤
             {
-           
+                if(e.KeyCode == Keys.E)
+                {
+                    Console.WriteLine("머고");
+                }
+                if(e.KeyCode == Keys.A)
+                {
+                    Console.WriteLine("컨트롤 A입력");
+                }
                 if (e.Shift)
                 {
                     if (e.Alt) //컨트롤 + 쉬프트 + 알트  + A
@@ -725,6 +745,7 @@ namespace Invaiz_Console.View
                     this.changeMulti1 = 2;
                 }
             }
+
             else if (e.Shift) //shift O
             {
                 if (e.Alt)
@@ -741,11 +762,14 @@ namespace Invaiz_Console.View
                     this.changeKeycode1 = k.setKeycode(ctrl, subText, subName1_input, e);
                     this.changeMulti1 = 5;
                 }
-
-
             }
             else if (e.Alt) //alt O
             {
+                if (e.KeyCode == Keys.F4)
+                {
+                    Console.WriteLine("여기");
+                    e.Handled = true;
+                }
                 ctrl = "";
                 subText = "Alt + ";
                 this.changeKeycode1 = k.setKeycode(ctrl, subText, subName1_input, e);
@@ -822,6 +846,11 @@ namespace Invaiz_Console.View
             }
             else if (e.Alt) //alt O
             {
+                if (e.KeyCode == Keys.F4 || e.KeyCode == Keys.Tab)
+                {
+                    Console.WriteLine("여기");
+                    e.Handled = true;
+                }
                 ctrl = "";
                 subText = "Alt + ";
                 this.changeKeycode2 = k.setKeycode(ctrl, subText, subName2_input, e);
@@ -831,6 +860,11 @@ namespace Invaiz_Console.View
 
             else // none
             {
+                if ( e.KeyCode == Keys.Tab)
+                {
+                    Console.WriteLine("여기");
+                    e.Handled = true;
+                }
                 ctrl = "";
                 subText = "";
                 this.changeKeycode2 = k.setKeycode(ctrl, subText, subName2_input, e);

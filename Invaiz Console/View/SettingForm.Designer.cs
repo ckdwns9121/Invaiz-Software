@@ -103,7 +103,7 @@
             this.sub_name2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.sub_name2.Size = new System.Drawing.Size(140, 38);
             this.sub_name2.TabIndex = 7;
-            this.sub_name2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sub_name2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sub_name1
             // 
@@ -115,7 +115,7 @@
             this.sub_name1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.sub_name1.Size = new System.Drawing.Size(140, 40);
             this.sub_name1.TabIndex = 6;
-            this.sub_name1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sub_name1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_name
             // 
@@ -127,7 +127,7 @@
             this.form_name.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.form_name.Size = new System.Drawing.Size(178, 40);
             this.form_name.TabIndex = 5;
-            this.form_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.form_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // device_number
             // 
@@ -150,8 +150,8 @@
             this.set_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(218)))), ((int)(((byte)(197)))));
             this.set_title.Location = new System.Drawing.Point(0, 0);
             this.set_title.Name = "set_title";
-            this.set_title.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.set_title.Size = new System.Drawing.Size(680, 50);
+            this.set_title.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.set_title.Size = new System.Drawing.Size(680, 60);
             this.set_title.TabIndex = 1;
             this.set_title.Text = "Setting - Dial 1";
             this.set_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -519,8 +519,8 @@
             this.setform.Controls.Add(this.cancle);
             this.setform.Controls.Add(this.save);
             this.setform.Controls.Add(this.function_on);
-            this.setform.Controls.Add(this.function_panel);
             this.setform.Controls.Add(this.keypress_panel);
+            this.setform.Controls.Add(this.function_panel);
             this.setform.Location = new System.Drawing.Point(0, 0);
             this.setform.Name = "setform";
             this.setform.Size = new System.Drawing.Size(680, 727);

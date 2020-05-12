@@ -28,7 +28,7 @@ namespace Invaiz_Console.Util
         private int multi1;
 
         private int group, number;
-
+        Util.ImportWinapi importWinapi = new ImportWinapi();
 
         /**
         * rotateExcuteType => 1.sendKey 2. sendScript
@@ -37,10 +37,9 @@ namespace Invaiz_Console.Util
         * @ param string direction 방향 타입
         * @ exception 예외사항
         */
-
         public void EncoderData(DeviceData.Payload payload, int group, int number, string direction, int s, string appName)
-        {
-
+        {   
+            
             this.excuteType = payload.E_excuteType[number];
 
             if (this.excuteType.Equals("") || String.IsNullOrEmpty(this.excuteType))
@@ -55,25 +54,9 @@ namespace Invaiz_Console.Util
             int dir = Int32.Parse(direction);
             int speed = s / 10;
 
-
-
             this.keycode1 = (dir == 2) ? payload.E_leftKeyCode[number] : payload.E_rightKeyCode[number];
             this.multi1 = (dir == 2) ? payload.E_leftisMulti[number] : payload.E_rightisMulti[number];
             speed = (dir == 2) ? (speed * -1) : (speed * 1);
-
-            //if (dir == 2)  //1
-            //{
-            //    this.keycode1 = payload.E_leftKeyCode[number];
-            //    this.multi1 = payload.E_leftisMulti[number];
-            //    speed = speed * -1;
-            //}
-            //else if (dir == 1) //0
-            //{
-            //    this.keycode1 = payload.E_rightKeyCode[number];
-            //    this.multi1 = payload.E_rightisMulti[number];
-            //    speed = speed * 1;
-
-            //}
 
             Type t = this.GetType();
             MethodInfo method = t.GetMethod(this.excuteType, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
@@ -217,14 +200,12 @@ namespace Invaiz_Console.Util
         {
             sendCepScript(messageType, actionType, typeKey, payload, appName, group, number, device);
         }
-        Util.ImportWinapi importWinapi = new ImportWinapi();
         protected void sendKey(string messageType, string actionType, string typeKey, string payload, int KeyCode, int Multi, string appName, int group, int number, bool device)
         {
             if (appName.Equals("Window"))
             {
-                Console.WriteLine("윈도우는 무시");
+                int a = 0;   
             }
-
             else if (!importWinapi.CurrentProcess(appName))
             {
                 Console.WriteLine("프로세스가 안잡혀있다");

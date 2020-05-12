@@ -21,14 +21,11 @@ namespace Invaiz_Console
             {
                 payloads[i] = new DeviceData.Payload();
             }
-
             this.customScrollbar1.Minimum = 0;
             this.customScrollbar1.Maximum = this.deviceList.DisplayRectangle.Height * 2;
             this.customScrollbar1.LargeChange = customScrollbar1.Maximum / customScrollbar1.Height + this.deviceList.Height;
             this.customScrollbar1.SmallChange = 15;
-           
             this.customScrollbar1.Value = Math.Abs(this.deviceList.AutoScrollPosition.Y);
-
         }
 
 
@@ -328,87 +325,6 @@ namespace Invaiz_Console
 
         private int prevDir1 = -1;
         Util.PluginConnect pluginConnect = new Util.PluginConnect();
-        private void sp_DataReceived1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (sp.IsOpen)
-                {
-                    string s = sp.ReadLine();
-                    string[] data = s.Split(',');
-                 //   Console.WriteLine(s);
-                    if (data[0] == "$0")
-                    {
-                        for (int i = 0; i < 4; i++)
-                        {
-                            position[i] = Convert.ToInt32(data[i * 4 + 1]);
-                            speed[i] = Convert.ToInt32(data[i * 4 + 2]) * 10;
-                            direction[i] = Convert.ToInt32(data[i * 4 + 3]); //0 왼쪽 1 오른쪽
-                            push[i] = Convert.ToInt32(data[i * 4 + 4]); //이거 안씀
-                        }
-                        for (int i = 0; i < 4; i++)
-                        {
-                            if (speed[i] > 0)
-                            {
-
-                                if (prevDir1 == direction[0])
-                                {
-                                    if (!groupChage)
-                                        pluginConnect.EncoderData(payloads[groupControl], groupControl, i, direction[i].ToString(), speed[i], this.AppName);
-                                    else
-                                        Console.WriteLine("그룹 변경중");
-                                }
-                                else
-                                {
-                                    prevDir1 = direction[0];
-                                    Console.WriteLine("씹음");
-                                }
-                            }
-                        }
-                    }
-
-           
-                    //버튼 제어부
-                    else if (data[0] == "$1")
-                    {
-                        int ch = Convert.ToInt32(data[1]);
-                        Console.WriteLine("버튼 눌려짐");
-
-                        for (int i = 0; i < 5; i++)
-                        {
-                            if (ch == 4)
-                            {
-                                Console.WriteLine("그룹 변경");
-                                groupChage = true;
-                                pluginConnect.overlay.GroupOverlay(4);
-                            }
-                            else if (ch == i)
-                            {
-                                if (groupChage)
-                                {
-                                    this.groupControl = i;
-                                    pluginConnect.overlay.PayloadOverlay(true,this.groupControl,-1);
-                                    Console.WriteLine(i + "번으로 그룹 체인지");
-                                    groupChage = false;
-                                }
-                                else
-                                {
-                                    Console.WriteLine(i + "번 버튼 누름");
-                                    pluginConnect.ButtonData(payloads[groupControl], this.groupControl, i, this.AppName);
-                                   
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-            catch
-            {
-
-            }
-        }
-
 
         private void sp_DataReceived(object sender, EventArgs e)
         {
@@ -441,9 +357,10 @@ namespace Invaiz_Console
                                 if (prevDir1 == direction[0])
                                 {
                                     if (!groupChage)
+                                    {
                                         pluginConnect.EncoderData(payloads[groupControl], groupControl, i, direction[i].ToString(), speed[i], this.AppName);
-                                    else
-                                        Console.WriteLine("그룹 변경중");
+                                    }
+
                                 }
                                 else
                                 {
@@ -452,12 +369,12 @@ namespace Invaiz_Console
                                 }
                             }
                         }
+//                       Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
 
                         for (int i = 0; i < 5; i++)
                         {   
                             if(buttonPress[4] == 1)
                             {
-                                Console.WriteLine("그룹 변경");
                                 groupChage = true;
                                 pluginConnect.overlay.GroupOverlay(4);
                             }
@@ -466,13 +383,13 @@ namespace Invaiz_Console
                                 if (groupChage)
                                 {
                                     this.groupControl = i;
+                                    pluginConnect.overlay.GroupOverlay(i);
+                                    System.Threading.Thread.Sleep(200);
                                     pluginConnect.overlay.PayloadOverlay(true, this.groupControl, -1);
-                                    Console.WriteLine(i + "번으로 그룹 체인지");
                                     groupChage = false;
                                 }
                                 else
                                 {
-                                    Console.WriteLine(i + "번 버튼 누름");
                                     pluginConnect.ButtonData(payloads[groupControl], this.groupControl, i, this.AppName);
 
                                 }

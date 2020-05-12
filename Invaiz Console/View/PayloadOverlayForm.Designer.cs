@@ -59,6 +59,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(523, 210);
             this.panel2.TabIndex = 1;
+            this.panel2.MouseEnter += new System.EventHandler(this.panel2_MouseEnter);
             // 
             // deviceGroupButton1
             // 

@@ -11,6 +11,7 @@ namespace Invaiz_Console.Util
     {
 
 
+
         public int setKeycode(string ctrl, string shift, TextBox textbox, KeyEventArgs e)
         {
             int code = (int)e.KeyCode;

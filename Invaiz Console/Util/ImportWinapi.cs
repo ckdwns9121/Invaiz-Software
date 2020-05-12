@@ -41,12 +41,10 @@ namespace Invaiz_Console.Util
             IntPtr handle = IntPtr.Zero;
             uint pid = 0;
             Process ps = null;
-
             handle = GetForegroundWindow();        // 활성화 윈도우
             GetWindowThreadProcessId(handle, out pid); // 핸들로 프로세스아이디 얻어옴
             ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
             Console.WriteLine("현재 실행중인 프로세스" + ps.ProcessName);
-
             return processName.Equals(ps.ProcessName) ? true : false;
 
         }
@@ -121,24 +119,6 @@ namespace Invaiz_Console.Util
         private const int KEYEVENTF_KEYDOWN = 0x0;
         private const int KEYEVENTF_KEYUP = 0x2;
         private const int KEYEVENTF_EXTENDEDKEY = 0x1;
-        public void Send(Keys key, bool isEXTEND)
-        {
-
-
-            INPUT inp = new INPUT();
-
-            inp.type = INPUT_KEYBOARD;
-            inp.ki.wVk = (short)key;
-            inp.ki.wScan = (short)MapVirtualKey(inp.ki.wVk, 0);
-            inp.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
-            inp.ki.time = 0;
-            inp.ki.dwExtraInfo = 0;
-            SendInput(1, ref inp, Marshal.SizeOf(inp));
-
-            System.Threading.Thread.Sleep(100);
-            inp.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYUP;
-            SendInput(1, ref inp, Marshal.SizeOf(inp));
-        }
 
         public void Send(int key, bool isEXTEND)
         {
@@ -156,6 +136,7 @@ namespace Invaiz_Console.Util
             System.Threading.Thread.Sleep(100);
             inp.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYUP;
             SendInput(1, ref inp, Marshal.SizeOf(inp));
+
         }
 
         public void SendKeyDown(int keycode, bool isEXTEND)

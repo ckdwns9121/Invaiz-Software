@@ -145,7 +145,6 @@ namespace Invaiz_Console.Util
             mn.appListShow = false;
 
         }
-
         public string newLineText(string temp)
         {
             string str= temp;
@@ -155,5 +154,7 @@ namespace Invaiz_Console.Util
             str = (t != -1 && l > 6) ? str.Replace(" ", "") : temp;
             return str = (t != -1 && l > 6) ? str.Insert(t, Environment.NewLine) : temp;
         }
+
+
     }
 }

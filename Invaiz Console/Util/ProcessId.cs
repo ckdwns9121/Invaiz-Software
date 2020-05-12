@@ -14,7 +14,7 @@ namespace Invaiz_Console.Util
         private const string INDESIGN = "InDesign";
         private const string AFTEREFFECT = "AfterFX";
         private const string LIGHTROOM = "Lightroom";
-        private const string PREMIREPRO = "PremierPro";
+        private const string PREMIREPRO = "Adobe Premiere Pro";
 
         public string ProcessID(string processName)
         {
@@ -39,7 +39,7 @@ namespace Invaiz_Console.Util
                 case "Lightroom":
                     str = LIGHTROOM;
                     break;
-                case "PremierPro":
+                case "PremierePro":
                     str = PREMIREPRO;
                     break;
                 default:
