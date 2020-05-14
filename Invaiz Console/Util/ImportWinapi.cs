@@ -58,6 +58,8 @@ namespace Invaiz_Console.Util
             foreach (Process process in Process.GetProcesses())
             {
                 //Console.WriteLine("프로세스 이름" + process.ProcessName);
+                // 소프트웨어에 등록된 프로그램이랑 활성 프로세스가 같으면 
+                // 그 프로세스 활성화.
                 if (process.ProcessName == processName)
                 {
                     Console.WriteLine("찾은 프로세스" + process.ProcessName);

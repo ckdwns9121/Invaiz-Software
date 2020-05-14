@@ -698,21 +698,10 @@ namespace Invaiz_Console.View
         private void subName1_input_KeyDown(object sender, KeyEventArgs e)
         {
             string ctrl, subText;
-            if((int)e.KeyCode == 162)
-            {
-                Console.WriteLine("컨트롤누름");
-            }
+
 
             if (e.Control) //컨트롤
             {
-                if(e.KeyCode == Keys.E)
-                {
-                    Console.WriteLine("머고");
-                }
-                if(e.KeyCode == Keys.A)
-                {
-                    Console.WriteLine("컨트롤 A입력");
-                }
                 if (e.Shift)
                 {
                     if (e.Alt) //컨트롤 + 쉬프트 + 알트  + A
@@ -783,7 +772,6 @@ namespace Invaiz_Console.View
                 this.changeKeycode1 = k.setKeycode(ctrl, subText, subName1_input, e);
                 this.changeMulti1 = 1;
             }
-            Console.WriteLine(e.KeyValue);
         }
 
         private void subName2_input_KeyDown(object sender, KeyEventArgs e)

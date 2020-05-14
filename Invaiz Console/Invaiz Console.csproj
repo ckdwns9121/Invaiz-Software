@@ -170,6 +170,12 @@
     <Compile Include="Component\Test\Keypress.Designer.cs">
       <DependentUpon>Keypress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\Test\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\Test\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeviceData\Payload.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

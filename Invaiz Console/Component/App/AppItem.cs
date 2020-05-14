@@ -39,13 +39,17 @@ namespace Invaiz_Console.Component
         private void app_icon_MouseMove(object sender, MouseEventArgs e)
         {
             this.app_name.ForeColor = Color.FromArgb(245, 245, 245);
-            this.BackColor = Color.FromArgb(153, 111, 204);
+         //   this.BackColor = Color.FromArgb(153, 111, 204);
+            this.BackColor = Color.FromArgb(51, 153, 255);
+
         }
 
         private void app_icon_MouseHover(object sender, EventArgs e)
         {
             this.app_name.ForeColor = Color.FromArgb(245, 245, 245);
-            this.BackColor = Color.FromArgb(153, 111, 204);
+            //this.BackColor = Color.FromArgb(153, 111, 204);
+            this.BackColor = Color.FromArgb(51, 153, 255);
+
         }
 
         private void app_icon_MouseLeave(object sender, EventArgs e)

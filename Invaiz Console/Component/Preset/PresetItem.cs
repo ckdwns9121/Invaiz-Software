@@ -27,7 +27,8 @@ namespace Invaiz_Console.Component
         private void preset_name_MouseHover(object sender, EventArgs e)
         {
             this.preset_name.ForeColor = Color.FromArgb(245, 245, 245);
-            this.BackColor = Color.FromArgb(153, 111, 204);
+            this.BackColor = Color.FromArgb(51, 153, 255);
+
         }
 
         private void preset_name_MouseLeave(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace Invaiz_Console.Component
         private void preset_name_MouseMove(object sender, MouseEventArgs e)
         {
             this.preset_name.ForeColor = Color.FromArgb(245, 245, 245);
-            this.BackColor = Color.FromArgb(153, 111, 204);
+            this.BackColor = Color.FromArgb(51, 153, 255);
+
         }
 
         private void preset_name_MouseClick(object sender, MouseEventArgs e)

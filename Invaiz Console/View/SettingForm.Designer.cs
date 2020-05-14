@@ -52,11 +52,11 @@
             this.subName2_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.subName2_input = new System.Windows.Forms.TextBox();
+            this.subName2_input = new Component.Test.CustomTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.subName1_label = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.subName1_input = new System.Windows.Forms.TextBox();
+            this.subName1_input = new Component.Test.CustomTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -511,7 +511,6 @@
             // 
             this.setform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.setform.Controls.Add(this.panel1);
-            this.setform.Controls.Add(this.customScrollbar1);
             this.setform.Controls.Add(this.set_title);
             this.setform.Controls.Add(this.label3);
             this.setform.Controls.Add(this.label2);
@@ -521,6 +520,7 @@
             this.setform.Controls.Add(this.function_on);
             this.setform.Controls.Add(this.keypress_panel);
             this.setform.Controls.Add(this.function_panel);
+            this.setform.Controls.Add(this.customScrollbar1);
             this.setform.Location = new System.Drawing.Point(0, 0);
             this.setform.Name = "setform";
             this.setform.Size = new System.Drawing.Size(680, 727);
@@ -588,7 +588,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label subName2_label;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox subName2_input;
+        private Component.Test.CustomTextBox subName2_input;
+
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label subName1_label;
         private System.Windows.Forms.Panel panel6;
@@ -597,7 +598,8 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox formName_input;
         private System.Windows.Forms.Panel subName2_panel;
-        private System.Windows.Forms.TextBox subName1_input;
+        //   private System.Windows.Forms.TextBox subName1_input;
+        private Component.Test.CustomTextBox subName1_input;
         public System.Windows.Forms.Panel outpanel;
         public CustomControls.CustomScrollbar customScrollbar1;
         public System.Windows.Forms.Panel scrollPanel;
