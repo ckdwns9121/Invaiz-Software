@@ -7,6 +7,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,9 @@ namespace Invaiz_Console
 {
     public partial class MainForm : Form
     {
+        delegate void EventHandlerAddCtrl();
+        event EventHandlerAddCtrl OnAddCtrl;
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,6 +30,47 @@ namespace Invaiz_Console
             this.customScrollbar1.LargeChange = customScrollbar1.Maximum / customScrollbar1.Height + this.deviceList.Height;
             this.customScrollbar1.SmallChange = 15;
             this.customScrollbar1.Value = Math.Abs(this.deviceList.AutoScrollPosition.Y);
+            this.OnAddCtrl += new EventHandlerAddCtrl(rePresetFile);
+        }
+
+        public void rePresetFile()
+        {
+
+            if (AppName.Equals("Window") && !windowCheck)
+            {
+                Console.WriteLine("윈도우고 체크 활성아니니 실행");
+                windowCheck = true;
+
+            }
+            else if (!AppName.Equals("window"))
+            {
+                Console.WriteLine("윈도우아니니 체크 비활성");
+                windowCheck = false;
+            }
+            for (int i = 0; i < Payloads.Length; i++)
+            {
+                Payloads[i] = new DeviceData.Payload();
+            }
+            render.initUI();
+            render.closeList();
+            render.listValueInit();
+            preset.getPresetFiles();
+            render.updateUI();
+            render.resetImage(AppName);
+            this.groupChage = false;
+            this.currentGroup = 0;
+            notice(this.AppName + " " + this.PresetName + " 프리셋으로 셋팅됨");
+        }
+        public void startThred()
+        {
+            System.Threading.Thread thread = new System.Threading.Thread(
+                new System.Threading.ThreadStart(CreateCtrl));
+            thread.Start();
+
+        }
+        void CreateCtrl()
+        {
+            Invoke(OnAddCtrl);
         }
 
 
@@ -49,6 +94,21 @@ namespace Invaiz_Console
         private string PRESET_NAME;
         private const string DATA_PATH = @".\data\";
         private const string PRESET_PATH = @".\preset\";
+        public bool windowCheck = false;
+        public Util.Render render = new Util.Render();
+        public Util.Preset preset = new Util.Preset();
+
+
+        private Image[] appImage = {
+            Invaiz_Console.Properties.Resources.iconwin,
+            Invaiz_Console.Properties.Resources.iconps,
+            Invaiz_Console.Properties.Resources.iconai,
+            Invaiz_Console.Properties.Resources.iconae,
+            Invaiz_Console.Properties.Resources.iconpr,
+            Invaiz_Console.Properties.Resources.iconlr,
+            Invaiz_Console.Properties.Resources.iconid
+        };
+
         #endregion
 
         #region Properties
@@ -119,7 +179,7 @@ namespace Invaiz_Console
                         usbstate.Text = "Device Connect";
                         usbstate.ForeColor = Color.FromArgb(3, 218, 197);
                         Console.WriteLine(sp.PortName + "이 열려 져있습니다.");
-                        notice("Connect !");
+                        notice("Connecting..");
                     }
                 }
             }
@@ -204,7 +264,7 @@ namespace Invaiz_Console
                     Console.WriteLine("USB to COM 장치가 연결 됨");
                     usbstate.Text = "Device Connect";
                     usbstate.ForeColor = Color.FromArgb(3, 218, 197);
-                    notice("Connect !");
+                    notice("Connecting...");
 
                     //단순하게 test하기 위해 젤 마지막 포트이름을 뿌려 봄
                     foreach (string str in SerialPort.GetPortNames())
@@ -229,7 +289,7 @@ namespace Invaiz_Console
                 Console.WriteLine("연결 헤제");
                 usbstate.Text = "Device Not Connect";
                 usbstate.ForeColor = Color.White;
-                notice("Not Connect !");
+                notice("Not connected...");
                 sp.Close();
             }
             base.WndProc(ref m);
@@ -258,7 +318,7 @@ namespace Invaiz_Console
                 Console.WriteLine("연결 안댐");
                 usbstate.Text = "Device Not Connect";
                 usbstate.ForeColor = Color.White;
-                notice("Not Connect !");
+                notice("Not connected...");
                 return false;
             }
             catch (Exception ex)
@@ -302,7 +362,7 @@ namespace Invaiz_Console
         private void notice(string msg)
         {
             //notifyIcon.BalloonTipText = msg;
-            //notifyIcon.BalloonTipTitle = "Invaiz notice";
+            //notifyIcon.BalloonTipTitle = "Invaiz Studio";
             //notifyIcon.ShowBalloonTip(1);
             //notifyIcon.Visible = true;
         }
@@ -317,9 +377,7 @@ namespace Invaiz_Console
 
         private int[] buttonPress = new int[5];
 
-
-
-        private int groupControl = 0;
+        private int currentGroup = 0;
         private bool groupChage = false;
 
 
@@ -358,7 +416,7 @@ namespace Invaiz_Console
                                 {
                                     if (!groupChage)
                                     {
-                                        pluginConnect.EncoderData(payloads[groupControl], groupControl, i, direction[i].ToString(), speed[i], this.AppName);
+                                        pluginConnect.EncoderData(payloads[currentGroup], currentGroup, i, direction[i].ToString(), speed[i], this.AppName);
                                     }
 
                                 }
@@ -369,7 +427,7 @@ namespace Invaiz_Console
                                 }
                             }
                         }
-//                       Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
+                     // Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
 
                         for (int i = 0; i < 5; i++)
                         {   
@@ -382,15 +440,15 @@ namespace Invaiz_Console
                             {
                                 if (groupChage)
                                 {
-                                    this.groupControl = i;
+                                    this.currentGroup = i;
                                     pluginConnect.overlay.GroupOverlay(i);
                                     System.Threading.Thread.Sleep(200);
-                                    pluginConnect.overlay.PayloadOverlay(true, this.groupControl, -1);
+                                    pluginConnect.overlay.PayloadOverlay(true, this.currentGroup, -1);
                                     groupChage = false;
                                 }
                                 else
                                 {
-                                    pluginConnect.ButtonData(payloads[groupControl], this.groupControl, i, this.AppName);
+                                    pluginConnect.ButtonData(payloads[currentGroup], this.currentGroup, i, this.AppName);
 
                                 }
                             }

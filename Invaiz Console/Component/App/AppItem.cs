@@ -61,6 +61,11 @@ namespace Invaiz_Console.Component
         private void app_icon_MouseClick(object sender, MouseEventArgs e)
         {
             mn = MainForm.getInstance;
+            if (!this.AppName.Equals("Window"))
+            {
+                Console.WriteLine("윈도우 아님");
+                mn.windowCheck = false;
+            }
             if (mn.AppName.Equals(this.AppName))
             {
                 mn.appList.Height = 0;

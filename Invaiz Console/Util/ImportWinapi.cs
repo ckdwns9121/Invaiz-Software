@@ -10,6 +10,7 @@ namespace Invaiz_Console.Util
     using System.Windows.Forms;
     using System.Runtime.InteropServices;
     using System.Diagnostics;
+    using System.DirectoryServices.ActiveDirectory;
 
     class ImportWinapi
     {
@@ -46,6 +47,44 @@ namespace Invaiz_Console.Util
             ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
             Console.WriteLine("현재 실행중인 프로세스" + ps.ProcessName);
             return processName.Equals(ps.ProcessName) ? true : false;
+        }
+        public void IsProcessActive(string processName)
+        {
+
+            Util.ProcessId processId = new ProcessId();
+            processName = processId.AppNameToPID(processName);
+
+            IntPtr handle = IntPtr.Zero;
+            uint pid = 0;
+            Process ps = null;
+            handle = GetForegroundWindow();        // 활성화 윈도우
+            GetWindowThreadProcessId(handle, out pid); // 핸들로 프로세스아이디 얻어옴
+            ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
+            bool check = processName.Equals(ps.ProcessName) ? true : false;
+
+            if (check) return;
+            else
+            {
+                processName = processId.PIDToAppName(ps.ProcessName);
+                Console.WriteLine("활성화 된  PID : " + processName);
+                Render render = new Render();
+                render.ProcessChangeReRender(processName);
+
+            }
+        }
+
+
+        public string CurrentProcess()
+
+        {
+            IntPtr handle = IntPtr.Zero;
+            uint pid = 0;
+            Process ps = null;
+            handle = GetForegroundWindow();        // 활성화 윈도우
+            GetWindowThreadProcessId(handle, out pid); // 핸들로 프로세스아이디 얻어옴
+            ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
+            Console.WriteLine("현재 실행중인 프로세스" + ps.ProcessName);
+            return ps.ProcessName;
 
         }
 
@@ -53,8 +92,8 @@ namespace Invaiz_Console.Util
         {
 
             Util.ProcessId processId = new ProcessId();
-            processName = processId.ProcessID(processName);
-            
+            processName = processId.AppNameToPID(processName);
+
             foreach (Process process in Process.GetProcesses())
             {
                 //Console.WriteLine("프로세스 이름" + process.ProcessName);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace Invaiz_Console.Util
 {
     public class Render
     {
+
+     
         private MainForm mn;
+
         public void initUI()
         {
             mn = MainForm.getInstance;
@@ -147,14 +151,74 @@ namespace Invaiz_Console.Util
         }
         public string newLineText(string temp)
         {
-            string str= temp;
+            string str = temp;
             int t = temp.IndexOf(" ");
-            int l =temp.Length;
+            int l = temp.Length;
 
             str = (t != -1 && l > 6) ? str.Replace(" ", "") : temp;
             return str = (t != -1 && l > 6) ? str.Insert(t, Environment.NewLine) : temp;
         }
 
+        private Image[] appImage = {
+            Invaiz_Console.Properties.Resources.iconwin,
+            Invaiz_Console.Properties.Resources.iconps,
+            Invaiz_Console.Properties.Resources.iconai,
+            Invaiz_Console.Properties.Resources.iconae,
+            Invaiz_Console.Properties.Resources.iconpr,
+            Invaiz_Console.Properties.Resources.iconlr,
+            Invaiz_Console.Properties.Resources.iconid
+        };
 
+        public void resetImage(string processName)
+        {
+            mn = MainForm.getInstance;
+            switch (processName)
+            {
+                case "Window":
+                    mn.appBox.AppIconImage = appImage[0];
+                    break;
+                case "Photoshop":
+                    mn.appBox.AppIconImage = appImage[1];
+                    break;
+                case "Illustrator":
+                    mn.appBox.AppIconImage = appImage[2];
+                    break;
+                case "AfterEffect":
+                    mn.appBox.AppIconImage = appImage[3];
+                    break;
+                case "PremierePro":
+                    mn.appBox.AppIconImage = appImage[4];
+                    break;
+                case "Lightroom":
+                    mn.appBox.AppIconImage = appImage[5];
+                    break;
+                case "InDesign":
+                    mn.appBox.AppIconImage = appImage[6];
+                    break;
+                default:
+                    mn.appBox.AppIconImage = appImage[0];
+
+                    break;
+            }
+
+        }
+
+
+
+
+        public void ProcessChangeReRender(string processName)
+        {
+            mn = MainForm.getInstance;
+            if (processName.Equals("Window") && mn.windowCheck)
+            {
+                Console.WriteLine("윈도우고 체크 활성이니 리턴");
+                return;
+            }
+            mn = MainForm.getInstance;
+            mn.preset.savePreset(mn.PresetPath, mn.AppName, mn.PresetName);
+            mn.AppName = processName;
+            mn.startThred();
+  
+        }
     }
 }

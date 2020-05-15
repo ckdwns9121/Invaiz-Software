@@ -9,8 +9,10 @@ namespace Invaiz_Console.Util
         private MainForm mn;
         public void getPresetFiles()
         {
+
             try
             {
+
                 mn = MainForm.getInstance;
                 string presetPath = mn.PresetPath + mn.AppName + @"\";
 
@@ -45,6 +47,7 @@ namespace Invaiz_Console.Util
                 }
                 else
                 {
+                    Console.WriteLine("세팅 시작");
                     this.settingPreset();
                 }
             }
@@ -52,6 +55,7 @@ namespace Invaiz_Console.Util
             {
                 Console.WriteLine(ex.Message);
             }
+          
         }
 
         //가져온 프리셋 값을 데이터에 바인딩

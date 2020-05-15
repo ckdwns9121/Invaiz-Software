@@ -238,11 +238,12 @@ namespace Invaiz_Console.Util
                     userData.Add(new JsonStringValue("messageType", messageType));
                     userData.Add(new JsonStringValue("actionType", actionType));
                     userData.Add(new JsonStringValue("typeKey", typeKey));
-                    userData.Add(new JsonStringValue("request", payload));
+                    userData.Add(new JsonStringValue("payload", payload));
+
                     Console.WriteLine("messageType " + messageType);
                     Console.WriteLine("actionType " + actionType);
                     Console.WriteLine("typeKey " + typeKey);
-                    Console.WriteLine("request " + payload);
+                    Console.WriteLine("payload " + payload);
 
                     string script = userData.ToString();
                     var buffer = Encoding.UTF8.GetBytes(script);

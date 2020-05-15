@@ -16,7 +16,7 @@ namespace Invaiz_Console.Util
         private const string LIGHTROOM = "Lightroom";
         private const string PREMIREPRO = "Adobe Premiere Pro";
 
-        public string ProcessID(string processName)
+        public string AppNameToPID(string processName)
         {
             string str="";
             switch (processName)
@@ -43,14 +43,46 @@ namespace Invaiz_Console.Util
                     str = PREMIREPRO;
                     break;
                 default:
-                    str = "";
+                    str = WINDOW;
                     break;
 
             }
             return str;
-
         }
 
 
+        public string PIDToAppName(string processName)
+        {
+            string str = "";
+            switch (processName)
+            {
+                case "Window":
+                    str = "Window";
+                    break;
+                case "Photoshop":
+                    str = "Photoshop";
+                    break;
+                case "Illustrator":
+                    str = "Illustrator";
+                    break;
+                case "InDesign":
+                    str = "InDesign";
+                    break;
+                case "AfterFX":
+                    str = "AfterEffect";
+                    break;
+                case "Lightroom":
+                    str = "Lightroom";
+                    break;
+                case "Adobe Premiere Pro":
+                    str = "PremierePro";
+                    break;
+                default:
+                    str = WINDOW;
+                    break;
+
+            }
+            return str;
+        }
     }
 }

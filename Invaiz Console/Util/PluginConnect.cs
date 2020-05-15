@@ -38,8 +38,8 @@ namespace Invaiz_Console.Util
         * @ exception 예외사항
         */
         public void EncoderData(DeviceData.Payload payload, int group, int number, string direction, int s, string appName)
-        {   
-            
+        {
+           // importWinapi.IsProcessActive(appName);
             this.excuteType = payload.E_excuteType[number];
 
             if (this.excuteType.Equals("") || String.IsNullOrEmpty(this.excuteType))
@@ -79,7 +79,7 @@ namespace Invaiz_Console.Util
         public void ButtonData(DeviceData.Payload payload, int group, int number, string appName)
         {
 
-       
+           // importWinapi.IsProcessActive(appName);
             this.excuteType = payload.B_excuteType[number]; //sendKey, sendScript -> 함수이름.
             if (this.excuteType.Equals("") || String.IsNullOrEmpty(this.excuteType) ==true)
             {
@@ -123,11 +123,11 @@ namespace Invaiz_Console.Util
                 userData.Add(new JsonStringValue("messageType", messageType));
                 userData.Add(new JsonStringValue("actionType", actionType));
                 userData.Add(new JsonStringValue("typeKey", typeKey));
-                userData.Add(new JsonStringValue("request", payload));
+                userData.Add(new JsonStringValue("payload", payload));
 
                 Console.WriteLine("messageType " + messageType);
                 Console.WriteLine("actionType " + actionType);
-                Console.WriteLine("request " + payload);
+                Console.WriteLine("payload " + payload);
 
                 string script = userData.ToString();
 
@@ -202,15 +202,21 @@ namespace Invaiz_Console.Util
         }
         protected void sendKey(string messageType, string actionType, string typeKey, string payload, int KeyCode, int Multi, string appName, int group, int number, bool device)
         {
-            if (appName.Equals("Window"))
-            {
-                int a = 0;   
-            }
-            else if (!importWinapi.CurrentProcess(appName))
-            {
-                Console.WriteLine("프로세스가 안잡혀있다");
-                importWinapi.ProcessCall(appName);
-            }
+           // if (appName.Equals("Window"))
+           // {
+           //     int a = 0;   
+           // }
+           // else if (!importWinapi.CurrentProcess(appName))
+           // {
+           //     Console.WriteLine("프로세스 실행 NO");
+
+           ////     importWinapi.ProcessCall(appName);
+           // }
+           // else if (importWinapi.CurrentProcess(appName))
+           // {
+           //     Console.WriteLine("프로세스 실행 Yes");
+
+           // }
             sendKeycode(Multi, KeyCode, group, number, device);
         }
         protected void nullOverlay(int group, int number, bool deviceCheck)
