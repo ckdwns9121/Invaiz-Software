@@ -78,6 +78,7 @@ namespace Invaiz_Console.Component
                 this.initPayload(); //앱 초기화시 데이터 초기화
                 this.initUI(); // 앱 초기화시 화면 초기화
                 this.getPresets(); //프리셋 가져오기
+                this.initGroup();
                 this.updateUI(); //가져온 프리셋으로 재 렌더
             }
         }
@@ -115,6 +116,11 @@ namespace Invaiz_Console.Component
         {
             Util.Render render = new Util.Render();
             render.updateUI();
+        }
+        private void initGroup()
+        {
+            mn = MainForm.getInstance;
+            mn.CurrentGroup = 0;
         }
     }
 }

@@ -55,17 +55,24 @@ namespace Invaiz_Console
             render.closeList();
             render.listValueInit();
             preset.getPresetFiles();
+            this.CurrentGroup = 0;
             render.updateUI();
             render.resetImage(AppName);
+            Console.WriteLine("변경된 그룹: " + this.CurrentGroup);
             this.groupChage = false;
-            this.currentGroup = 0;
             notice(this.AppName + " " + this.PresetName + " 프리셋으로 셋팅됨");
+            Console.WriteLine("-----스레드 끝-----");
+        
         }
-        public void startThred()
+        public void startThread()
         {
+            Console.WriteLine("----스레드 시작---");
             System.Threading.Thread thread = new System.Threading.Thread(
                 new System.Threading.ThreadStart(CreateCtrl));
             thread.Start();
+            Console.WriteLine("----스레드 기다림---");
+
+            thread.Join();
 
         }
         void CreateCtrl()
@@ -150,15 +157,24 @@ namespace Invaiz_Console
         {
             get { return DATA_PATH; }
         }
+        public int CurrentGroup
+        {
+            get { return this.currentGroup;}
+            set
+            {
+                this.currentGroup = value;
+                defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+            }
+        }
 
         #endregion
 
         #region 폼 로딩, 최소화 및 종료
 
+        public View.DefaultOverlay defaultOverlay = new View.DefaultOverlay();
         private void MainForm_Load(object sender, EventArgs e)
         {
 
- 
             instance = this;
 
             AppName = this.appBox.AppName;
@@ -168,6 +184,8 @@ namespace Invaiz_Console
             preset.settingPreset();
             Util.Render render = new Util.Render();
             render.updateUI();
+            defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+            defaultOverlay.Show();
 
             try
             {
@@ -383,7 +401,7 @@ namespace Invaiz_Console
 
         private int prevDir1 = -1;
         Util.PluginConnect pluginConnect = new Util.PluginConnect();
-
+        Util.ImportWinapi importWinapi = new Util.ImportWinapi();
         private void sp_DataReceived(object sender, EventArgs e)
         {
             try
@@ -416,6 +434,7 @@ namespace Invaiz_Console
                                 {
                                     if (!groupChage)
                                     {
+                                        importWinapi.IsProcessActive(AppName);
                                         pluginConnect.EncoderData(payloads[currentGroup], currentGroup, i, direction[i].ToString(), speed[i], this.AppName);
                                     }
 
@@ -440,7 +459,7 @@ namespace Invaiz_Console
                             {
                                 if (groupChage)
                                 {
-                                    this.currentGroup = i;
+                                    this.CurrentGroup = i;
                                     pluginConnect.overlay.GroupOverlay(i);
                                     System.Threading.Thread.Sleep(200);
                                     pluginConnect.overlay.PayloadOverlay(true, this.currentGroup, -1);
@@ -448,6 +467,7 @@ namespace Invaiz_Console
                                 }
                                 else
                                 {
+                                    importWinapi.IsProcessActive(AppName);
                                     pluginConnect.ButtonData(payloads[currentGroup], this.currentGroup, i, this.AppName);
 
                                 }

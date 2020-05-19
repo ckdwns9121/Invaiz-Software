@@ -123,8 +123,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.group_rename);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rename_icon);
             this.Controls.Add(this.group_name);
             this.Controls.Add(this.group_number);

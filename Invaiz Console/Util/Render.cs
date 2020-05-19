@@ -197,13 +197,10 @@ namespace Invaiz_Console.Util
                     break;
                 default:
                     mn.appBox.AppIconImage = appImage[0];
-
                     break;
             }
 
         }
-
-
 
 
         public void ProcessChangeReRender(string processName)
@@ -214,10 +211,11 @@ namespace Invaiz_Console.Util
                 Console.WriteLine("윈도우고 체크 활성이니 리턴");
                 return;
             }
+
             mn = MainForm.getInstance;
             mn.preset.savePreset(mn.PresetPath, mn.AppName, mn.PresetName);
             mn.AppName = processName;
-            mn.startThred();
+            mn.startThread();
   
         }
     }

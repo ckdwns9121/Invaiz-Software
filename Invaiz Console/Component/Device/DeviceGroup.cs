@@ -99,6 +99,22 @@ namespace Invaiz_Console.Component
             mn.presetList.Height = 0;
             mn.appListShow = false;
             mn.presetIsShow = false;
+
+            if (!rename)
+            {
+                rename_icon.Image = Invaiz_Console.Properties.Resources.group_off;
+                this.group_rename.Visible = true;
+                this.ActiveControl = group_renameInput;
+
+            }
+            else if (rename)
+            {
+                rename_icon.Image = Invaiz_Console.Properties.Resources.group_on;
+                this.GroupName = group_renameInput.Text;
+                mn.Payloads[Number].groupName = this.GroupName;
+                this.group_rename.Visible = false;
+            }
+            rename = !rename;
         }
 
         private bool rename = false;
@@ -122,6 +138,7 @@ namespace Invaiz_Console.Component
                 rename_icon.Image = Invaiz_Console.Properties.Resources.group_on;
                 this.GroupName = group_renameInput.Text;
                 mn.Payloads[Number].groupName = this.GroupName;
+                mn.CurrentGroup = mn.CurrentGroup;
                 this.group_rename.Visible = false;
             }
             rename = !rename;
@@ -134,6 +151,7 @@ namespace Invaiz_Console.Component
                 rename_icon.Image = Invaiz_Console.Properties.Resources.group_on;
                 this.GroupName = group_renameInput.Text;
                 mn.Payloads[Number].groupName = this.GroupName;
+                mn.CurrentGroup = mn.CurrentGroup;
                 this.group_rename.Visible = false;
                 rename = !rename;
             }

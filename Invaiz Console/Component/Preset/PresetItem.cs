@@ -49,8 +49,8 @@ namespace Invaiz_Console.Component
             prevSavePreset();
             initUI();
             settingPreset();
+            initGroup();
             updateUI();
-    
         }
         //이전 프리셋 저장
         private void prevSavePreset()
@@ -82,6 +82,12 @@ namespace Invaiz_Console.Component
         {
             Util.Render render = new Util.Render();
             render.updateUI();
+        }
+
+        private void initGroup()
+        {
+            mn = MainForm.getInstance;
+            mn.CurrentGroup = 0;
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {

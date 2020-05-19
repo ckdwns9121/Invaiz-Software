@@ -36,8 +36,7 @@ namespace Invaiz_Console.Util
                         mn.PresetName = FileNameOnly;
                         mn.presetList.list.Controls.Add(presetItems);
                         fileExists = true;
-                        Console.WriteLine("프리셋 이름 : " + FileNameOnly);
-
+                     //   Console.WriteLine("프리셋 이름 : " + FileNameOnly);
                     }
                 }
 

@@ -23,7 +23,7 @@ namespace Invaiz_Console.Util
         private string messageType;
         private string actionType;
         private string typeKey;
-
+        private MainForm mn;
         private int keycode1;
         private int multi1;
 
@@ -39,7 +39,7 @@ namespace Invaiz_Console.Util
         */
         public void EncoderData(DeviceData.Payload payload, int group, int number, string direction, int s, string appName)
         {
-           // importWinapi.IsProcessActive(appName);
+
             this.excuteType = payload.E_excuteType[number];
 
             if (this.excuteType.Equals("") || String.IsNullOrEmpty(this.excuteType))
@@ -78,8 +78,6 @@ namespace Invaiz_Console.Util
 
         public void ButtonData(DeviceData.Payload payload, int group, int number, string appName)
         {
-
-           // importWinapi.IsProcessActive(appName);
             this.excuteType = payload.B_excuteType[number]; //sendKey, sendScript -> 함수이름.
             if (this.excuteType.Equals("") || String.IsNullOrEmpty(this.excuteType) ==true)
             {
@@ -100,6 +98,7 @@ namespace Invaiz_Console.Util
                     messageType, actionType, typeKey,null,
                     keycode1,multi1,appName,group,number,false
                 });
+
             }
         }
 
@@ -202,21 +201,7 @@ namespace Invaiz_Console.Util
         }
         protected void sendKey(string messageType, string actionType, string typeKey, string payload, int KeyCode, int Multi, string appName, int group, int number, bool device)
         {
-           // if (appName.Equals("Window"))
-           // {
-           //     int a = 0;   
-           // }
-           // else if (!importWinapi.CurrentProcess(appName))
-           // {
-           //     Console.WriteLine("프로세스 실행 NO");
-
-           ////     importWinapi.ProcessCall(appName);
-           // }
-           // else if (importWinapi.CurrentProcess(appName))
-           // {
-           //     Console.WriteLine("프로세스 실행 Yes");
-
-           // }
+            Console.WriteLine("<<<<<<<<<<키입력>>>>>>>>>>");
             sendKeycode(Multi, KeyCode, group, number, device);
         }
         protected void nullOverlay(int group, int number, bool deviceCheck)
@@ -232,3 +217,4 @@ namespace Invaiz_Console.Util
         }
     }
 }
+ 

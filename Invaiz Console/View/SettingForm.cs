@@ -772,6 +772,7 @@ namespace Invaiz_Console.View
                 this.changeKeycode1 = k.setKeycode(ctrl, subText, subName1_input, e);
                 this.changeMulti1 = 1;
             }
+            Console.WriteLine((int)e.KeyCode);
         }
 
         private void subName2_input_KeyDown(object sender, KeyEventArgs e)

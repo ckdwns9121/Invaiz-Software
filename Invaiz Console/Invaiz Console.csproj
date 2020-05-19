@@ -196,6 +196,12 @@
     <Compile Include="View\CreatePresetForm.Designer.cs">
       <DependentUpon>CreatePresetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DefaultOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DefaultOverlay.Designer.cs">
+      <DependentUpon>DefaultOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GroupChangeOverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreatePresetForm.resx">
       <DependentUpon>CreatePresetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DefaultOverlay.resx">
+      <DependentUpon>DefaultOverlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GroupChangeOverlayForm.resx">
       <DependentUpon>GroupChangeOverlayForm.cs</DependentUpon>
