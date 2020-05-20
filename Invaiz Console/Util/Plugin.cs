@@ -44,37 +44,38 @@ namespace Invaiz_Console.Util
         private const int CONTROLKEY= 162;
         private const int SHIFTKEY=160;
         private const int ALTKEY=164;
+        private const int LWIN = 91;
 
 
-        private string keystring = "";
+
         protected void sendKeycode(int multi, int keycode, int group, int number, bool device)
         {
-
+            bool extendCheck = isExtendKey(keycode);
             switch (multi)
             {
                 case 1: //단일키
-                    PressKey(keycode);
+                    PressKey(keycode, extendCheck);
                     break;
                 case 2: //컨트롤
-                    PressCtrlKey(keycode);
+                    PressCtrlKey(keycode, extendCheck);
                     break;
                 case 3: //컨트롤 쉬프트
-                    PressCtrlShiftKey(keycode);
+                    PressCtrlShiftKey(keycode, extendCheck);
                     break;
                 case 4: //알트
-                    PressAltKey(keycode);
+                    PressAltKey(keycode, extendCheck);
                     break;
                 case 5: // 쉬프트
-                    PressShiftKey(keycode);
+                    PressShiftKey(keycode, extendCheck);
                     break;
                 case 6://컨트롤 알트
-                    PressCtrlAltKey(keycode);
+                    PressCtrlAltKey(keycode, extendCheck);
                     break;
                 case 7://컨트롤 쉬프트 알트
-                    PressCtrlShiftKAltKey(keycode);
+                    PressCtrlShiftKAltKey(keycode, extendCheck);
                     break;
                 case 8://쉬프트 알트
-                    PressShiftAltKey(keycode);
+                    PressShiftAltKey(keycode, extendCheck);
                     break;
                 default:
                     break;
@@ -84,74 +85,115 @@ namespace Invaiz_Console.Util
 
         }
 
+        private bool isExtendKey(int keycode)
+        {
+            bool check = false;
+            switch (keycode)
+            {
+                case 33: //PU
+                    check = true;
+                    break;
+                case 34: //PD
+                    check = true;
+                    break; 
+                case 35: // END
+                    check = true;
+                    break;
+                case 36: // HOME
+                    check = true;
+                    break;
+                case 37: // LEFT
+                    check = true;
+                    break;
+                case 38: // UP
+                    check = true;
+                    break;
+                case 39: // RIGHT
+                    check = true;
+                    break;
+                case 40: // DOWN
+                    check = true;
+                    break;
+                case 45: //INSERT
+                    check = true;
+                    break;
+                case 46: // DELETE
+                    check = true;
+                    break;
+                default:
+                    check = false;
+                    break;
+            }
+
+            return check;
+        }
+
         Util.ImportWinapi s = new Util.ImportWinapi();
-
-
+         
         #region 키보드 데이터 전송
-        private void PressCtrlKey(int keycode)
+        private void PressCtrlKey(int keycode ,bool isExtend)
         {
             s.SendKeyDown(CONTROLKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(CONTROLKEY, false);
 
         }
-
-        private void PressShiftAltKey(int keycode)
+        private void PressShiftAltKey(int keycode, bool isExtend)
         {
             s.SendKeyDown(SHIFTKEY, false);
             s.SendKeyDown(ALTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(ALTKEY, false);
             s.SendKeyUp(SHIFTKEY, false);
         }
 
-        private void PressCtrlShiftKey(int keycode)
+        private void PressCtrlShiftKey(int keycode, bool isExtend)
         {
 
             s.SendKeyDown(CONTROLKEY, false);
             s.SendKeyDown(SHIFTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(SHIFTKEY, false);
             s.SendKeyUp(CONTROLKEY, false);
 
         }
 
-        private void PressCtrlAltKey(int keycode)
+        private void PressCtrlAltKey(int keycode, bool isExtend)
         {
 
             s.SendKeyDown(CONTROLKEY, false);
             s.SendKeyDown(ALTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(ALTKEY, false);
             s.SendKeyUp(CONTROLKEY, false);
         }
 
-        private void PressCtrlShiftKAltKey(int keycode)
+        private void PressCtrlShiftKAltKey(int keycode, bool isExtend)
         {
             s.SendKeyDown(CONTROLKEY, false);
             s.SendKeyDown(SHIFTKEY, false);
             s.SendKeyDown(ALTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(ALTKEY, false);
             s.SendKeyUp(SHIFTKEY, false);
             s.SendKeyUp(CONTROLKEY, false);
         }
-        private void PressAltKey(int keycode)
+        private void PressAltKey(int keycode, bool isExtend)
         {
             s.SendKeyDown(ALTKEY, false);
             s.Send(keycode, true);
             s.SendKeyUp(ALTKEY, false);
         }
-        private void PressShiftKey(int keycode)
+        private void PressShiftKey(int keycode, bool isExtend)
         { 
             s.SendKeyDown(SHIFTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(SHIFTKEY, false);
         }
 
-        private void PressKey(int keycode)
+        private void PressKey(int keycode, bool isExtend)
         {
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
         }
         #endregion
         #region CEP 파일 생성

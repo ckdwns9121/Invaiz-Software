@@ -32,7 +32,6 @@ namespace Invaiz_Console
             this.customScrollbar1.Value = Math.Abs(this.deviceList.AutoScrollPosition.Y);
             this.OnAddCtrl += new EventHandlerAddCtrl(rePresetFile);
         }
-
         public void rePresetFile()
         {
 
@@ -71,7 +70,6 @@ namespace Invaiz_Console
                 new System.Threading.ThreadStart(CreateCtrl));
             thread.Start();
             Console.WriteLine("----스레드 기다림---");
-
             thread.Join();
 
         }
@@ -184,8 +182,8 @@ namespace Invaiz_Console
             preset.settingPreset();
             Util.Render render = new Util.Render();
             render.updateUI();
-            defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
-            defaultOverlay.Show();
+          // defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+          //  defaultOverlay.Show();
 
             try
             {

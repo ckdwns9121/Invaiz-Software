@@ -50,7 +50,6 @@ namespace Invaiz_Console.Util
             return str;
         }
 
-
         public string PIDToAppName(string processName)
         {
             string str = "";

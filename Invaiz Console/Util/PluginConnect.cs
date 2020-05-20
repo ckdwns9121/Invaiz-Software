@@ -201,19 +201,11 @@ namespace Invaiz_Console.Util
         }
         protected void sendKey(string messageType, string actionType, string typeKey, string payload, int KeyCode, int Multi, string appName, int group, int number, bool device)
         {
-            Console.WriteLine("<<<<<<<<<<키입력>>>>>>>>>>");
             sendKeycode(Multi, KeyCode, group, number, device);
         }
         protected void nullOverlay(int group, int number, bool deviceCheck)
         {
-            if (deviceCheck)
-            {
-                oc.PayloadOverlay(true,group, number);
-            }
-            else
-            {
-                oc.PayloadOverlay(false,group, number);
-            }
+            (deviceCheck ? new Action(() => oc.PayloadOverlay(true, group, number)) : () => oc.PayloadOverlay(false, group, number))();
         }
     }
 }

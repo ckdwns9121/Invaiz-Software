@@ -174,7 +174,6 @@ namespace Invaiz_Console.Util
         {
 
             INPUT inp = new INPUT();
-
             inp.type = INPUT_KEYBOARD;
             inp.ki.wVk = (short)key;
             inp.ki.wScan = (short)MapVirtualKey(inp.ki.wVk, 0);
@@ -193,7 +192,6 @@ namespace Invaiz_Console.Util
         {
 
             INPUT inp = new INPUT();
-
             inp.type = INPUT_KEYBOARD;
             inp.ki.wVk = (short)keycode;
             inp.ki.wScan = (short)MapVirtualKey(inp.ki.wVk, 0);
@@ -205,7 +203,6 @@ namespace Invaiz_Console.Util
 
         public void SendKeyUp(int keycode, bool isEXTEND)
         {
-
             INPUT inp = new INPUT();
             inp.type = INPUT_KEYBOARD;
             inp.ki.wVk = (short)keycode;
@@ -215,7 +212,5 @@ namespace Invaiz_Console.Util
             inp.ki.dwExtraInfo = 0;
             SendInput(1, ref inp, Marshal.SizeOf(inp));
         }
-
-
     }
 }
