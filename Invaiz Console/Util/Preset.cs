@@ -7,15 +7,56 @@ namespace Invaiz_Console.Util
     public class Preset
     {
         private MainForm mn;
+
+        private string lastPreset(string appName)
+        {
+            string t = null;
+
+            switch (appName)
+            {
+                case "Window":
+                    t = Properties.Settings.Default.WIN_PRESET;
+                    break;
+                case "Photoshop":
+                    t = Properties.Settings.Default.PS_PRESET;
+                    break;
+                case "Illustrator":
+                    t = Properties.Settings.Default.AI_PRESET;
+                    break;
+                case "AfterEffect":
+                    t = Properties.Settings.Default.AE_PRESET;
+                    break;
+                case "PremierePro":
+                    t = Properties.Settings.Default.PR_PRESET;
+                    break;
+                case "Lightroom":
+                    t = Properties.Settings.Default.LR_PRESET;
+                    break;
+                case "InDesign":
+                    t = Properties.Settings.Default.ID_PRESET;
+                    break;
+                default:
+                    t = "기본값";
+                    break;
+            }
+            return t;
+        }
+
+         private bool fileInfo(string filePath)
+          {
+            System.IO.FileInfo f = new System.IO.FileInfo(filePath);
+            return (f.Exists) ? true : false;
+          }
+
         public void getPresetFiles()
         {
-
+            mn = MainForm.getInstance;
+            string currentPreset = lastPreset(mn.AppName);
+            String FileNameOnly="";
+            String FullFileName="";
             try
             {
-
-                mn = MainForm.getInstance;
-                string presetPath = mn.PresetPath + mn.AppName + @"\";
-
+                string presetPath = mn.PresetPath+@"\" + mn.AppName + @"\";
                 //폴더 존재 유무 확인후 없을시 생성.
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(presetPath);
                 if (!di.Exists)
@@ -29,14 +70,12 @@ namespace Invaiz_Console.Util
                 {
                     if (File.Extension.ToLower().CompareTo(".xml") == 0)
                     {
-                        String FileNameOnly = File.Name.Substring(0, File.Name.Length - 4);
-                        String FullFileName = File.FullName;
+                         FileNameOnly = File.Name.Substring(0, File.Name.Length - 4);
+                         FullFileName = File.FullName;
                         Component.PresetItem presetItems = new Component.PresetItem();
                         presetItems.PresetName = FileNameOnly;
-                        mn.PresetName = FileNameOnly;
                         mn.presetList.list.Controls.Add(presetItems);
                         fileExists = true;
-                     //   Console.WriteLine("프리셋 이름 : " + FileNameOnly);
                     }
                 }
 
@@ -46,6 +85,7 @@ namespace Invaiz_Console.Util
                 }
                 else
                 {
+                    mn.PresetName = (string.IsNullOrEmpty(currentPreset) || !fileInfo(presetPath + @"\" + currentPreset + ".xml")) ? FileNameOnly : currentPreset;
                     Console.WriteLine("세팅 시작");
                     this.settingPreset();
                 }
@@ -69,7 +109,7 @@ namespace Invaiz_Console.Util
                 {
                     payloads[i] = new DeviceData.Payload();
                 }
-                string presetPath = mn.PresetPath + mn.AppName + @"\" + mn.PresetName + ".xml";
+                string presetPath = mn.PresetPath+@"\" + mn.AppName + @"\" + mn.PresetName + ".xml";
 
                 int groupIndex = 0;
                 int encoderIndex = 0;
@@ -180,7 +220,7 @@ namespace Invaiz_Console.Util
         public void savePreset(string path, string appName, string presetName )
         {
             mn = MainForm.getInstance;
-            path += appName + @"\" + presetName +".xml";
+            path +=@"\"+ appName + @"\" + presetName +".xml";
             try
             {
                 using (XmlWriter wr = XmlWriter.Create(path))

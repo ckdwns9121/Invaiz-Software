@@ -189,6 +189,6 @@
         private AppItem appItem5;
         private AppItem appItem6;
         private AppItem appItem7;
-        private CustomControls.CustomScrollbar customScrollbar1;
+        public CustomControls.CustomScrollbar customScrollbar1;
     }
 }

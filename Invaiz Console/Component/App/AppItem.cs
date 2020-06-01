@@ -58,6 +58,43 @@ namespace Invaiz_Console.Component
             this.BackColor = Color.FromArgb(64, 64, 64);
         }
 
+
+        private void lastPreset()
+        {
+            mn = MainForm.getInstance;
+            string appName = mn.AppName;
+            string presetName = mn.PresetName;
+
+            switch (appName)
+            {
+                case "Window":
+                    Properties.Settings.Default.WIN_PRESET = presetName;
+                    break;
+                case "Photoshop":
+                    Properties.Settings.Default.PS_PRESET = presetName;
+                    break;
+                case "Illustrator":
+                    Properties.Settings.Default.AI_PRESET = presetName;
+                    break;
+                case "AfterEffect":
+                    Properties.Settings.Default.AE_PRESET = presetName;
+                    break;
+                case "PremierePro":
+                    Properties.Settings.Default.PR_PRESET = presetName;
+                    break;
+                case "Lightroom":
+                    Properties.Settings.Default.LR_PRESET = presetName;
+                    break;
+                case "InDesign":
+                    Properties.Settings.Default.ID_PRESET = presetName;
+                    break;
+                default:
+                    Properties.Settings.Default.Save();
+                    break;
+            }
+            Properties.Settings.Default.Save();
+        }
+
         private void app_icon_MouseClick(object sender, MouseEventArgs e)
         {
             mn = MainForm.getInstance;
@@ -75,6 +112,7 @@ namespace Invaiz_Console.Component
             else
             {
                 this.savePrevPreset();
+                this.lastPreset();
                 this.initPayload(); //앱 초기화시 데이터 초기화
                 this.initUI(); // 앱 초기화시 화면 초기화
                 this.getPresets(); //프리셋 가져오기
@@ -100,7 +138,7 @@ namespace Invaiz_Console.Component
             
             mn.appBox.AppIconImage = this.AppIcon;
             mn.AppName = this.AppName;
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.initUI();
             render.closeList();
             render.listValueInit();
@@ -114,7 +152,7 @@ namespace Invaiz_Console.Component
 
         private void updateUI()
         {
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.updateUI();
         }
         private void initGroup()

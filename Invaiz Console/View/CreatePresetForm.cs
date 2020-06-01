@@ -81,7 +81,7 @@ namespace Invaiz_Console.View
             {
                 mn.Payloads[i] = new DeviceData.Payload();
             }
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.initUI();
             render.closeList();
         }

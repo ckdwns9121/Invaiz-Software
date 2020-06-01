@@ -42,7 +42,9 @@ namespace Invaiz_Console.Component
             mn = MainForm.getInstance;
             mn.presetList.Height = 0;
             mn.presetIsShow = false;
+
             mn.appTimer.Start();
+
 
         }
     }

@@ -309,13 +309,13 @@ namespace Invaiz_Console.View
             try
             {
                 string folderName = mn.AppName;
-                string path = mn.DataPath + folderName;
+                string path = mn.DataPath+ @"\" + folderName;
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(path);
                 if (!di.Exists)
                 {
                     di.Create();
                 }
-                path = mn.DataPath + folderName + "/rotate.xml";
+                path = mn.DataPath + @"\" + folderName + "/rotate.xml";
 
                 using (XmlReader reader = XmlReader.Create(path))
                 {
@@ -411,7 +411,7 @@ namespace Invaiz_Console.View
             string temp = "test";
 
             string folderName = mn.AppName;
-            string path = mn.DataPath + folderName + "/press.xml";
+            string path = mn.DataPath + @"\" + folderName + "/press.xml";
             try
             {
                 using (XmlReader reader = XmlReader.Create(path))
@@ -654,7 +654,7 @@ namespace Invaiz_Console.View
         #region 저장, 취소
         private void save_Click(object sender, EventArgs e)
         {
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             if (functionCheck)
             {
                 if (!this.change)

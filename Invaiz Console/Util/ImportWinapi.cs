@@ -76,7 +76,7 @@ namespace Invaiz_Console.Util
             {
                 processName = processId.PIDToAppName(ps.ProcessName);
                 Console.WriteLine("3.....활성화 된  PID : " + processName);
-                Render render = new Render();
+                MainRender render = new MainRender();
                 render.ProcessChangeReRender(processName);
                 return false;
             }
@@ -160,6 +160,23 @@ namespace Invaiz_Console.Util
             public HARDWAREINPUT hi;
         };
 
+        [Flags]
+        private enum MouseEventType
+        {
+            MOUSEEVENTF_MOVE = 0x0001,
+            MOUSEEVENTF_LEFTDOWN = 0x0002,
+            MOUSEEVENTF_LEFTUP = 0x0004,
+            MOUSEEVENTF_RIGHTDOWN = 0x0008,
+            MOUSEEVENTF_RIGHTUP = 0x0010,
+            MOUSEEVENTF_MIDDLEDOWN = 0x0020,
+            MOUSEEVENTF_MIDDLEUP = 0x0040,
+            MOUSEEVENTF_XDOWN = 0x0080,
+            MOUSEEVENTF_XUP = 0x0100,
+            MOUSEEVENTF_WHEEL = 0x0800,
+            MOUSEEVENTF_HWHEEL = 0x1000,
+            MOUSEEVENTF_ABSOLUTE = 0x8000
+        }
+
         [DllImport("user32.dll")]
         private extern static void SendInput(int nInputs, ref INPUT pInputs, int cbsize);
         [DllImport("user32.dll", EntryPoint = "MapVirtualKeyA")]
@@ -170,6 +187,24 @@ namespace Invaiz_Console.Util
         private const int KEYEVENTF_KEYUP = 0x2;
         private const int KEYEVENTF_EXTENDEDKEY = 0x1;
 
+        private const int INPUT_MOUSE = 0X0;
+        private const int MOUSEEVENTF_WHEEL = 0x0800;
+        private const int MOUSEEVENTF_HWHEEL = 0x1000;
+
+        public void mouseWheel(int direction , bool check)
+        {
+            INPUT inp = new INPUT();
+            inp.type = INPUT_MOUSE;
+            inp.no.dx = 0;
+            inp.no.dy = 0;
+            inp.no.mouseData = direction;
+            inp.no.time = 0;
+            inp.no.dwFlags = (check) ? MOUSEEVENTF_WHEEL : MOUSEEVENTF_HWHEEL;
+            inp.no.dwExtraInfo = 0;
+            SendInput(1, ref inp, Marshal.SizeOf(inp));
+
+
+        }
         public void Send(int key, bool isEXTEND)
         {
 

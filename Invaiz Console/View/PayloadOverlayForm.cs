@@ -56,7 +56,7 @@ namespace Invaiz_Console.View
             firstInit(group,index,str,deviceCheck);
         }
 
-        private Util.Render render = new Util.Render();
+        private Util.MainRender render = new Util.MainRender();
         // 그룹 변경시 그룹핑된 값 보여주는 오버레이
         public void firstInit(int group)
         {

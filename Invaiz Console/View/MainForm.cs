@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -34,7 +35,6 @@ namespace Invaiz_Console
         }
         public void rePresetFile()
         {
-
             if (AppName.Equals("Window") && !windowCheck)
             {
                 Console.WriteLine("윈도우고 체크 활성아니니 실행");
@@ -61,7 +61,7 @@ namespace Invaiz_Console
             this.groupChage = false;
             notice(this.AppName + " " + this.PresetName + " 프리셋으로 셋팅됨");
             Console.WriteLine("-----스레드 끝-----");
-        
+
         }
         public void startThread()
         {
@@ -97,10 +97,15 @@ namespace Invaiz_Console
         private DeviceData.Payload[] payloads = new DeviceData.Payload[4];
         private string APP_NAME;
         private string PRESET_NAME;
-        private const string DATA_PATH = @".\data\";
-        private const string PRESET_PATH = @".\preset\";
+
+        private static string s = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+        private static string DATA_PATH = Path.Combine(s, "Invaiz Studio", "data");
+        private string PRESET_PATH = Path.Combine(s, "Invaiz Studio", "preset");
+
+        //  private string DATA_PATH = @".\data\";
+        //  private string PRESET_PATH = @".\preset\";
         public bool windowCheck = false;
-        public Util.Render render = new Util.Render();
+        public Util.MainRender render = new Util.MainRender();
         public Util.Preset preset = new Util.Preset();
 
 
@@ -172,15 +177,14 @@ namespace Invaiz_Console
         public View.DefaultOverlay defaultOverlay = new View.DefaultOverlay();
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            Console.WriteLine(Properties.Settings.Default.WIN_PRESET);
             instance = this;
-
             AppName = this.appBox.AppName;
             PresetName = this.presetBox.PresetName;
             Util.Preset preset = new Util.Preset();
             preset.getPresetFiles();
-            preset.settingPreset();
-            Util.Render render = new Util.Render();
+            //preset.settingPreset();
+            Util.MainRender render = new Util.MainRender();
             render.updateUI();
           // defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
           //  defaultOverlay.Show();
@@ -238,7 +242,7 @@ namespace Invaiz_Console
 
         private void app_MouseDown(object sender, MouseEventArgs e)
         {
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.closeList();
             mousePoint = new Point(e.X, e.Y);
         }
@@ -396,11 +400,11 @@ namespace Invaiz_Console
         private int currentGroup = 0;
         private bool groupChage = false;
 
-
         private int prevDir1 = -1;
         Util.PluginConnect pluginConnect = new Util.PluginConnect();
         Util.ImportWinapi importWinapi = new Util.ImportWinapi();
-        private void sp_DataReceived(object sender, EventArgs e)
+
+        private void sp_DataReceived(object sender ,EventArgs e)
         {
             try
             {
@@ -444,16 +448,16 @@ namespace Invaiz_Console
                                 }
                             }
                         }
-                     // Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
+                        // Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
 
                         for (int i = 0; i < 5; i++)
-                        {   
-                            if(buttonPress[4] == 1)
+                        {
+                            if (buttonPress[4] == 1)
                             {
                                 groupChage = true;
                                 pluginConnect.overlay.GroupOverlay(4);
                             }
-                            else if(buttonPress[i] == 1)
+                            else if (buttonPress[i] == 1)
                             {
                                 if (groupChage)
                                 {
@@ -479,6 +483,11 @@ namespace Invaiz_Console
             {
 
             }
+
+        }
+        private void sp_DataReceived2(object sender, EventArgs e)
+        {
+            //this.Invoke(new EventHandler(mySerialReceived));
         }
 
         #endregion
@@ -495,6 +504,8 @@ namespace Invaiz_Console
                 {
                     appTimer.Stop();
                     appListShow = true;
+                    appList.customScrollbar1.Value = 0;
+                    appList.app_list.AutoScrollPosition = new System.Drawing.Point(0, 0);
                 }
             }
             else
@@ -504,7 +515,10 @@ namespace Invaiz_Console
                 {
                     appTimer.Stop();
                     appListShow = false;
+
                 }
+                appList.customScrollbar1.Value = 0;
+                appList.app_list.AutoScrollPosition = new System.Drawing.Point(0, 0);
             }
         }
 

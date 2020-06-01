@@ -44,13 +44,51 @@ namespace Invaiz_Console.Component
 
         }
 
+
+
         private void preset_name_MouseClick(object sender, MouseEventArgs e)
         {
             prevSavePreset();
+            lastPreset();
             initUI();
             settingPreset();
             initGroup();
             updateUI();
+        }
+
+        private void lastPreset()
+        {
+            mn = MainForm.getInstance;
+            string appName = mn.AppName;
+
+            switch (appName)
+            {
+                case "Window":
+                    Properties.Settings.Default.WIN_PRESET = this.PresetName;
+                    break;
+                case "Photoshop":
+                    Properties.Settings.Default.PS_PRESET = this.PresetName;
+                    break;
+                case "Illustrator":
+                    Properties.Settings.Default.AI_PRESET = this.PresetName;
+                    break;
+                case "AfterEffect":
+                    Properties.Settings.Default.AE_PRESET = this.PresetName;
+                    break;
+                case "PremierePro":
+                    Properties.Settings.Default.PR_PRESET = this.PresetName; 
+                    break;
+                case "Lightroom":
+                    Properties.Settings.Default.LR_PRESET = this.PresetName; 
+                    break;
+                case "InDesign":
+                    Properties.Settings.Default.ID_PRESET = this.PresetName; 
+                    break;
+                default:
+                    Properties.Settings.Default.Save();
+                    break;
+            }
+            Properties.Settings.Default.Save();
         }
         //이전 프리셋 저장
         private void prevSavePreset()
@@ -64,9 +102,10 @@ namespace Invaiz_Console.Component
         private void initUI()
         {
             mn = MainForm.getInstance;
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.initUI();
             render.closeList();
+            render.listValueInit();
         }
         
         //교체할 프리셋과 바인딩
@@ -80,7 +119,7 @@ namespace Invaiz_Console.Component
         //교체할 프리셋 값으로 화면 업데이트
         private void updateUI()
         {
-            Util.Render render = new Util.Render();
+            Util.MainRender render = new Util.MainRender();
             render.updateUI();
         }
 

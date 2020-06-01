@@ -27,10 +27,10 @@ namespace Invaiz_Console.Util
         }
         public Plugin()
         {
-            // Console.WriteLine("플러그인 생성");
-          //  Extract("InvaizApp", cepFolderPath(), "Resources", "com.invaiz.extension.zip");
+             Console.WriteLine("데이터 폴더생성" + cepFolderPath2());
+            //  Extract("InvaizApp", cepFolderPath(), "Resources", "com.invaiz.extension.zip");
             //ExtractZipByIO(cepFolderPath() + "\\com.invaiz.extension.zip", cepFolderPath());
-              //  Console.WriteLine("플러그인 파일 생성완료");             
+            //  Console.WriteLine("플러그인 파일 생성완료");             
             oc = new OverlayControl();
 
         }
@@ -76,6 +76,12 @@ namespace Invaiz_Console.Util
                     break;
                 case 8://쉬프트 알트
                     PressShiftAltKey(keycode, extendCheck);
+                    break;
+                case 9:
+                    MouseWheel(keycode ,true);
+                    break;
+                case 10:
+                    MouseWheel(keycode, false);
                     break;
                 default:
                     break;
@@ -190,10 +196,14 @@ namespace Invaiz_Console.Util
             s.Send(keycode, isExtend);
             s.SendKeyUp(SHIFTKEY, false);
         }
-
         private void PressKey(int keycode, bool isExtend)
         {
             s.Send(keycode, isExtend);
+        }
+
+        private void MouseWheel(int direction, bool check)
+        {
+            s.mouseWheel( direction *60 , check);
         }
         #endregion
         #region CEP 파일 생성
@@ -203,6 +213,15 @@ namespace Invaiz_Console.Util
             string path = Path.Combine(s, "Common Files", "Adobe", "CEP", "extensions");
             return path;
         }
+
+        protected string cepFolderPath2()
+        {
+            string strFolder = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+            //string s = Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%");
+            string path = Path.Combine(strFolder,"Invaiz Studio", "preset");
+            return path;
+        }
+
 
         private static void Extract(string nameSpace, string outDir, string internalFilePath, string resourceName)
         {

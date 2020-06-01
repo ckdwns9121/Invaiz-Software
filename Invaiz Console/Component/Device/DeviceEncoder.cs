@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Invaiz_Console.Component
 {
@@ -17,6 +18,7 @@ namespace Invaiz_Console.Component
         public DeviceEncoder()
         {
             InitializeComponent();
+            this.tip = new Component.Function.FunctionToolTip();
         }
 
         [Category("Custom"), Description("Index")]
@@ -127,8 +129,15 @@ namespace Invaiz_Console.Component
 
         private void panel1_MouseHover(object sender, EventArgs e)
         {
+            mn = MainForm.getInstance;
+
             this.form_name.ForeColor = this.HoverColor;
             this.BackgroundImage = this.HoverImage;
+            //if (mn.Payloads[group].E_leftSubName[index].Length != 0 )
+            //{
+            //    this.tip.SetToolTip(this.form_name, "Counterclockwise: " + mn.Payloads[group].E_leftSubName[index] +"\n"+ "clockwise:       " + mn.Payloads[group].E_rightSubName[index]);
+            //}
+            //this.tip.teset();
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)
@@ -160,7 +169,6 @@ namespace Invaiz_Console.Component
             mn.presetList.Height = 0;
             mn.appListShow = false;
             mn.presetIsShow = false;
-
             View.SettingForm settingForm = new View.SettingForm(true, this.group, this.index, this.encoderNumber, this.formName, this.leftSubName, this.rightSubName);
             settingForm.ShowDialog();
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.form_name = new System.Windows.Forms.Label();
+            this.tip = new Invaiz_Console.Component.Function.FunctionToolTip();
             this.SuspendLayout();
             // 
             // form_name
@@ -49,6 +50,12 @@
             this.form_name.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             this.form_name.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
+            // tip
+            // 
+            this.tip.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tip.ForeColor = System.Drawing.Color.White;
+            this.tip.OwnerDraw = true;
+            // 
             // DeviceEncoder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -65,5 +72,6 @@
         #endregion
 
         public System.Windows.Forms.Label form_name;
+        private Function.FunctionToolTip tip;
     }
 }
