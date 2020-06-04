@@ -281,6 +281,7 @@ namespace Invaiz_Console.View
             this.function_panel.Visible = true;
             this.device_number.Text = this.deviceNumber;
             this.form_name.Text = this.formName;
+            this.subName1_label.Text = "단축키 설정";
             this.sub_name1.Text = subName1;
             this.sub_name2.Text = null;
             getButtonItems();
@@ -293,6 +294,7 @@ namespace Invaiz_Console.View
             this.function_panel.Visible = true;
             this.device_number.Text = this.deviceNumber;
             this.form_name.Text = this.formName;
+            this.subName1_label.Text = "반시계 방향";
             this.sub_name1.Text = subName1;
             this.sub_name2.Text = subName2;
             getEncoderItems();

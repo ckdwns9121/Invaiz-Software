@@ -52,17 +52,17 @@
             this.subName2_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.subName2_input = new Invaiz_Console.Component.Test.CustomTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.subName1_label = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.subName1_input = new Invaiz_Console.Component.Test.CustomTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.formName_input = new System.Windows.Forms.TextBox();
             this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.setform = new System.Windows.Forms.Panel();
-            this.subName2_input = new Invaiz_Console.Component.Test.CustomTextBox();
-            this.subName1_input = new Invaiz_Console.Component.Test.CustomTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.function_on)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key_on)).BeginInit();
@@ -347,7 +347,7 @@
             this.subName2_label.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.subName2_label.Size = new System.Drawing.Size(104, 20);
             this.subName2_label.TabIndex = 17;
-            this.subName2_label.Text = "단축키 설정";
+            this.subName2_label.Text = "시계 방향";
             this.subName2_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -371,6 +371,20 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(580, 44);
             this.panel5.TabIndex = 16;
+            // 
+            // subName2_input
+            // 
+            this.subName2_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.subName2_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subName2_input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.subName2_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName2_input.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.subName2_input.Location = new System.Drawing.Point(21, 12);
+            this.subName2_input.Name = "subName2_input";
+            this.subName2_input.ReadOnly = true;
+            this.subName2_input.Size = new System.Drawing.Size(529, 20);
+            this.subName2_input.TabIndex = 98;
+            this.subName2_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName2_input_KeyDown);
             // 
             // label1
             // 
@@ -406,6 +420,20 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(580, 44);
             this.panel6.TabIndex = 13;
+            // 
+            // subName1_input
+            // 
+            this.subName1_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.subName1_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subName1_input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.subName1_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName1_input.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.subName1_input.Location = new System.Drawing.Point(21, 12);
+            this.subName1_input.Name = "subName1_input";
+            this.subName1_input.ReadOnly = true;
+            this.subName1_input.Size = new System.Drawing.Size(529, 20);
+            this.subName1_input.TabIndex = 99;
+            this.subName1_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName1_input_KeyDown);
             // 
             // label7
             // 
@@ -490,41 +518,13 @@
             this.setform.Controls.Add(this.key_on);
             this.setform.Controls.Add(this.cancle);
             this.setform.Controls.Add(this.save);
-            this.setform.Controls.Add(this.function_panel);
             this.setform.Controls.Add(this.function_on);
             this.setform.Controls.Add(this.keypress_panel);
+            this.setform.Controls.Add(this.function_panel);
             this.setform.Location = new System.Drawing.Point(0, 0);
             this.setform.Name = "setform";
             this.setform.Size = new System.Drawing.Size(680, 727);
             this.setform.TabIndex = 102;
-            // 
-            // subName2_input
-            // 
-            this.subName2_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.subName2_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subName2_input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.subName2_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subName2_input.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.subName2_input.Location = new System.Drawing.Point(21, 12);
-            this.subName2_input.Name = "subName2_input";
-            this.subName2_input.ReadOnly = true;
-            this.subName2_input.Size = new System.Drawing.Size(529, 20);
-            this.subName2_input.TabIndex = 98;
-            this.subName2_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName2_input_KeyDown);
-            // 
-            // subName1_input
-            // 
-            this.subName1_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.subName1_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subName1_input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.subName1_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subName1_input.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.subName1_input.Location = new System.Drawing.Point(21, 12);
-            this.subName1_input.Name = "subName1_input";
-            this.subName1_input.ReadOnly = true;
-            this.subName1_input.Size = new System.Drawing.Size(529, 20);
-            this.subName1_input.TabIndex = 99;
-            this.subName1_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName1_input_KeyDown);
             // 
             // SettingForm
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.IO.Ports;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -162,7 +164,7 @@ namespace Invaiz_Console
         }
         public int CurrentGroup
         {
-            get { return this.currentGroup;}
+            get { return this.currentGroup; }
             set
             {
                 this.currentGroup = value;
@@ -186,14 +188,13 @@ namespace Invaiz_Console
             //preset.settingPreset();
             Util.MainRender render = new Util.MainRender();
             render.updateUI();
-          // defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
-          //  defaultOverlay.Show();
+            // defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+            //  defaultOverlay.Show();
 
             try
             {
-                if (GetSerialPort())
+                if (InitSerialPort())
                 {
-                    sp.Open();
                     if (sp.IsOpen)
                     {
                         usbstate.Text = "Device Connect";
@@ -226,7 +227,7 @@ namespace Invaiz_Console
 
         private void appClosed_click(object sender, EventArgs e)
         {
-             this.Visible = false;
+            this.Visible = false;
 
             //Application.Exit();
             //Util.Preset preset = new Util.Preset();
@@ -260,16 +261,13 @@ namespace Invaiz_Console
 
         #region USB CONNECT
         protected override void WndProc(ref Message m)
-
         {
-
             UInt32 WM_DEVICECHANGE = 0x0219;
             UInt32 DBT_DEVTUP_VOLUME = 0x02;
             UInt32 DBT_DEVICEARRIVAL = 0x8000;
             UInt32 DBT_DEVICEREMOVECOMPLETE = 0x8004;
 
             if ((m.Msg == WM_DEVICECHANGE) && (m.WParam.ToInt32() == DBT_DEVICEARRIVAL))
-
             {
                 Console.WriteLine("디바이스가 연결되었습니다.");
                 int devType = Marshal.ReadInt32(m.LParam, 4);
@@ -282,24 +280,11 @@ namespace Invaiz_Console
                 else
                 {
                     Console.WriteLine("USB to COM 장치가 연결 됨");
-                    usbstate.Text = "Device Connect";
-                    usbstate.ForeColor = Color.FromArgb(3, 218, 197);
-                    notice("Connecting...");
-
-                    //단순하게 test하기 위해 젤 마지막 포트이름을 뿌려 봄
-                    foreach (string str in SerialPort.GetPortNames())
+                    if (InitSerialPort())
                     {
-                        this.portName = str;
-                        Console.WriteLine("현재 연결된 디바이스 포트는 : " + str);
+                        usbstate.Text = "Device Connect";
+                        usbstate.ForeColor = Color.FromArgb(3, 218, 197);
                     }
-                    sp.PortName = this.portName;
-                    sp.BaudRate = 115200;
-                    sp.DataBits = 8;
-                    sp.Parity = Parity.None;
-                    sp.StopBits = StopBits.One;
-                    sp.Handshake = Handshake.None;
-                    sp.Open();
-
                 }//.....etc....
             }
 
@@ -347,6 +332,87 @@ namespace Invaiz_Console
                 return false;
             }
         }
+
+        private bool InitSerialPort()
+        {
+            string[] port = SerialPort.GetPortNames();
+            string name = null;
+
+            try
+            {
+                // List<string> list = getPortByVPid("2EC2", "0002");
+                List<string> list = getPortByVPid("0483", "5740");
+
+                foreach (string p in port)
+                {
+                    Console.WriteLine("이건 머지" + p);
+                    for (int i = 0; i < list.Count; i++)
+                    {
+                        Console.WriteLine("이름 찾음" + list[i]);
+                        if (p == list[i])
+                        {
+                            name = p;
+                            break;
+                        }
+                    }
+                }
+
+                if (name != null)
+                {
+                    if (!sp.IsOpen)
+                    {
+                        Console.WriteLine("Detect " + name + " Port!!!");
+                        sp.PortName = name;
+                        sp.BaudRate = 115200;
+                        sp.DataBits = 8;
+                        sp.Parity = Parity.None;
+                        sp.StopBits = StopBits.One;
+                        sp.Handshake = Handshake.None;
+                        sp.Open();
+                    }
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Not Detect COM Port!!!");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        private static List<string> getPortByVPid(String VID, String PID)
+        {
+            String pattern = String.Format("^VID_{0}.PID_{1}", VID, PID);
+            Console.WriteLine(pattern);
+            Regex _rx = new Regex(pattern, RegexOptions.IgnoreCase);
+            List<string> comports = new List<string>();
+            RegistryKey rk1 = Registry.LocalMachine;
+            RegistryKey rk2 = rk1.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum");
+            foreach (String s3 in rk2.GetSubKeyNames())
+            { 
+                RegistryKey rk3 = rk2.OpenSubKey(s3);
+                foreach (String s in rk3.GetSubKeyNames())
+                {
+                    if (_rx.Match(s).Success)
+                    {
+                        RegistryKey rk4 = rk3.OpenSubKey(s);
+                        foreach (String s2 in rk4.GetSubKeyNames())
+                        {
+                            RegistryKey rk5 = rk4.OpenSubKey(s2);
+                            RegistryKey rk6 = rk5.OpenSubKey("Device Parameters");
+                            comports.Add((string)rk6.GetValue("PortName"));
+                        }
+                    }
+                }
+            }
+            return comports;
+        }
+
         #endregion
 
         #region 노티스 아이콘
@@ -373,10 +439,10 @@ namespace Invaiz_Console
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
- 
-                this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2
-                 , Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
-                this.Visible = true;
+
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - this.Size.Width / 2
+             , Screen.PrimaryScreen.Bounds.Height / 2 - this.Size.Height / 2);
+            this.Visible = true;
 
         }
         private void notice(string msg)
@@ -404,7 +470,9 @@ namespace Invaiz_Console
         Util.PluginConnect pluginConnect = new Util.PluginConnect();
         Util.ImportWinapi importWinapi = new Util.ImportWinapi();
 
-        private void sp_DataReceived(object sender ,EventArgs e)
+        int tempIndex = -1;
+        int checkdata = 0;
+        private void sp_DataReceived(object sender, EventArgs e)
         {
             try
             {
@@ -448,8 +516,9 @@ namespace Invaiz_Console
                                 }
                             }
                         }
-                        // Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
+                        
 
+                        // Console.WriteLine(buttonPress[0] + " " + buttonPress[1] + " " + buttonPress[2] + " " + buttonPress[3] + " " + buttonPress[4]);
                         for (int i = 0; i < 5; i++)
                         {
                             if (buttonPress[4] == 1)
@@ -457,11 +526,12 @@ namespace Invaiz_Console
                                 groupChage = true;
                                 pluginConnect.overlay.GroupOverlay(4);
                             }
-                            else if (buttonPress[i] == 1)
+                            if (buttonPress[i] == 1)
                             {
                                 if (groupChage)
                                 {
                                     this.CurrentGroup = i;
+                                    tempIndex = i;
                                     pluginConnect.overlay.GroupOverlay(i);
                                     System.Threading.Thread.Sleep(200);
                                     pluginConnect.overlay.PayloadOverlay(true, this.currentGroup, -1);
@@ -494,7 +564,7 @@ namespace Invaiz_Console
 
         #region 애니메이션
 
-        public bool appListShow=false;
+        public bool appListShow = false;
         private void appList_tick(object sender, EventArgs e)
         {
             if (!appListShow)

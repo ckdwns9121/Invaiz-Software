@@ -18,7 +18,7 @@ namespace Invaiz_Console.Component
         public DeviceEncoder()
         {
             InitializeComponent();
-            this.tip = new Component.Function.FunctionToolTip();
+           // this.tip = new Component.Function.FunctionToolTip();
         }
 
         [Category("Custom"), Description("Index")]
@@ -133,11 +133,12 @@ namespace Invaiz_Console.Component
 
             this.form_name.ForeColor = this.HoverColor;
             this.BackgroundImage = this.HoverImage;
-            //if (mn.Payloads[group].E_leftSubName[index].Length != 0 )
+         //   this.tip = new Component.Function.FunctionToolTip(mn.Payloads[group].E_leftSubName[index].Length , 60);
+           // if (mn.Payloads[group].E_leftSubName[index].Length != 0)
             //{
-            //    this.tip.SetToolTip(this.form_name, "Counterclockwise: " + mn.Payloads[group].E_leftSubName[index] +"\n"+ "clockwise:       " + mn.Payloads[group].E_rightSubName[index]);
+              //  this.tip.SetToolTip(this.form_name, "CCW: " + mn.Payloads[group].E_leftSubName[index] + "\n" + "CW: " + mn.Payloads[group].E_rightSubName[index]);
             //}
-            //this.tip.teset();
+          //  this.tip.teset();
         }
 
         private void panel1_MouseLeave(object sender, EventArgs e)

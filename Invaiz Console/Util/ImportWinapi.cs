@@ -45,7 +45,7 @@ namespace Invaiz_Console.Util
             handle = GetForegroundWindow();        // 활성화 윈도우
             GetWindowThreadProcessId(handle, out pid); // 핸들로 프로세스아이디 얻어옴
             ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
-            Console.WriteLine("현재 실행중인 프로세스" + ps.ProcessName);
+          //  Console.WriteLine("현재 실행중인 프로세스" + ps.ProcessName);
             return processName.Equals(ps.ProcessName) ? true : false;
         }
         public bool IsProcessActive(string processName)
@@ -60,13 +60,13 @@ namespace Invaiz_Console.Util
             handle = GetForegroundWindow();        // 활성화 윈도우
             GetWindowThreadProcessId(handle, out pid); // 핸들로 프로세스아이디 얻어옴
             ps = Process.GetProcessById((int)pid); // 프로세스아이디로 프로세스 검색
-            Console.WriteLine("2......현재 실행중인 프로세스" + ps.ProcessName);
+           // Console.WriteLine("2......현재 실행중인 프로세스" + ps.ProcessName);
             bool check = processName.Equals(ps.ProcessName) ? true : false;
 
 
             if (ps.ProcessName.Equals("Invaiz Console"))
             {
-                Console.WriteLine("3........여기 드러옴");
+               // Console.WriteLine("3........여기 드러옴");
                 MainForm mn = MainForm.getInstance;
                 ProcessCall(mn.AppName);
                 return true;
@@ -75,7 +75,7 @@ namespace Invaiz_Console.Util
             else
             {
                 processName = processId.PIDToAppName(ps.ProcessName);
-                Console.WriteLine("3.....활성화 된  PID : " + processName);
+              //  Console.WriteLine("3.....활성화 된  PID : " + processName);
                 MainRender render = new MainRender();
                 render.ProcessChangeReRender(processName);
                 return false;
@@ -99,7 +99,6 @@ namespace Invaiz_Console.Util
 
         public void ProcessCall(string processName)
         {
-
             Util.ProcessId processId = new ProcessId();
             processName = processId.AppNameToPID(processName);
 
@@ -110,7 +109,7 @@ namespace Invaiz_Console.Util
                 // 그 프로세스 활성화.
                 if (process.ProcessName == processName)
                 {
-                    Console.WriteLine("4.......찾은 프로세스" + process.ProcessName);
+                    //Console.WriteLine("4.......찾은 프로세스" + process.ProcessName);
                     Console.WriteLine(SetForegroundWindow(process.MainWindowHandle).ToString());
                     SetForegroundWindow(process.MainWindowHandle);
                 }

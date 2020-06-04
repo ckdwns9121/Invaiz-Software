@@ -285,8 +285,9 @@ namespace Invaiz_Console.Util
         public void deletePreset( string presetName)
         {
             mn = MainForm.getInstance;
-            string path = mn.PresetPath + mn.AppName + @"\";
+            string path = mn.PresetPath +@"\"+ mn.AppName + @"\";
             presetName += ".xml";
+            Console.WriteLine("삭제 경로" + path);
             System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(path);
             foreach (System.IO.FileInfo File in di.GetFiles(presetName))
             {

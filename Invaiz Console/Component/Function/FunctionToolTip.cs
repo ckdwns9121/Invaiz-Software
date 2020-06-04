@@ -33,6 +33,16 @@ namespace Invaiz_Console.Component.Function
             var location = c.Parent.PointToScreen(new Point(c.Right - e.Bounds.Width, c.Bottom));
             MoveWindow(handle, location.X, location.Y, e.Bounds.Width, e.Bounds.Height, false);
         }
+        private int w, h;
+        public FunctionToolTip(int w, int h)
+        {
+            InitializeComponent();
+            this.w = w;
+            this.h = h;
+            this.OwnerDraw = true;
+            this.Popup += new PopupEventHandler(this.OnPopup);
+            this.Draw += new DrawToolTipEventHandler(this.OnDraw);
+        }
 
         public FunctionToolTip()
         {
@@ -43,13 +53,14 @@ namespace Invaiz_Console.Component.Function
         }
         private void OnPopup(object sender, PopupEventArgs e) // use this event to set the size of the tool tip
         {
-            e.ToolTipSize = new Size(120, 60);
+            Console.WriteLine("넓이" + w);
+            e.ToolTipSize = new Size(w*20, h);
         }
 
         private void OnDraw(object sender, DrawToolTipEventArgs e) // use this event to customise the tool tip
         {
 
-            System.Drawing.Font f = new System.Drawing.Font("Calibri", 12.0f);
+            System.Drawing.Font f = new System.Drawing.Font("Calibri", 10.0f);
 
             Graphics g = e.Graphics;
             Color myRgbColor = new Color();
@@ -62,25 +73,25 @@ namespace Invaiz_Console.Component.Function
             //Pen myPen = new Pen(Brushes.Red, 1);
             //myPen.LineJoin = System.Drawing.Drawing2D.LineJoin.Round;
 
-            // g.DrawRectangle(myPen, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1));
+           // g.DrawRectangle(myPen, new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1));
 
             //g.DrawString(e.ToolTipText, new Font(e.Font, FontStyle.Bold), Brushes.Black,
             //    new PointF(e.Bounds.X + 6, e.Bounds.Y + 6)); // shadow layer
 
-                g.DrawString(e.ToolTipText, f, Brushes.White,
+            g.DrawString(e.ToolTipText, f, Brushes.White,
                    new PointF(e.Bounds.X + 10, e.Bounds.Y + 10)); // top layer
 
 
            
-            var t = (ToolTip)sender;
-            var h = t.GetType().GetProperty("Handle",
-              System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            var handle = (IntPtr)h.GetValue(t);
-            var c = e.AssociatedControl;
-            var location = c.Parent.PointToScreen(new Point(c.Right - e.Bounds.Width, c.Bottom));
-            MoveWindow(handle, location.X, location.Y, e.Bounds.Width, e.Bounds.Height, false);
+            //var t = (ToolTip)sender;
+            //var h = t.GetType().GetProperty("Handle",
+            //  System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            //var handle = (IntPtr)h.GetValue(t);
+            //var c = e.AssociatedControl;
+            //var location = c.Parent.PointToScreen(new Point(c.Right - e.Bounds.Width, c.Bottom));
+            //MoveWindow(handle, location.X, location.Y, e.Bounds.Width, e.Bounds.Height, false);
 
-            b.Dispose();
+            //b.Dispose();
         }
 
         public void teset()

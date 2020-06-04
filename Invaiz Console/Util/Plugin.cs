@@ -27,7 +27,7 @@ namespace Invaiz_Console.Util
         }
         public Plugin()
         {
-             Console.WriteLine("데이터 폴더생성" + cepFolderPath2());
+             Console.WriteLine("데이터 폴더경로 확인" + cepFolderPath2());
             //  Extract("InvaizApp", cepFolderPath(), "Resources", "com.invaiz.extension.zip");
             //ExtractZipByIO(cepFolderPath() + "\\com.invaiz.extension.zip", cepFolderPath());
             //  Console.WriteLine("플러그인 파일 생성완료");             
@@ -186,8 +186,9 @@ namespace Invaiz_Console.Util
         }
         private void PressAltKey(int keycode, bool isExtend)
         {
+            Console.WriteLine("테스트");
             s.SendKeyDown(ALTKEY, false);
-            s.Send(keycode, true);
+            s.Send(keycode, isExtend);
             s.SendKeyUp(ALTKEY, false);
         }
         private void PressShiftKey(int keycode, bool isExtend)

@@ -84,6 +84,37 @@ namespace Invaiz_Console.View
             Util.MainRender render = new Util.MainRender();
             render.initUI();
             render.closeList();
+
+            string appName = mn.AppName;
+
+            switch (appName)
+            {
+                case "Window":
+                    Properties.Settings.Default.WIN_PRESET = this.preset_name.Text;
+                    break;
+                case "Photoshop":
+                    Properties.Settings.Default.PS_PRESET = this.preset_name.Text;
+                    break;
+                case "Illustrator":
+                    Properties.Settings.Default.AI_PRESET = this.preset_name.Text;
+                    break;
+                case "AfterEffect":
+                    Properties.Settings.Default.AE_PRESET = this.preset_name.Text;
+                    break;
+                case "PremierePro":
+                    Properties.Settings.Default.PR_PRESET = this.preset_name.Text;
+                    break;
+                case "Lightroom":
+                    Properties.Settings.Default.LR_PRESET = this.preset_name.Text;
+                    break;
+                case "InDesign":
+                    Properties.Settings.Default.ID_PRESET = this.preset_name.Text;
+                    break;
+                default:
+                    Properties.Settings.Default.Save();
+                    break;
+            }
+            Properties.Settings.Default.Save();
         }
 
         private void preset_name_KeyDown(object sender, KeyEventArgs e)
