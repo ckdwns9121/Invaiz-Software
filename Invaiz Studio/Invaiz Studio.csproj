@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7F4643D-1846-4466-A267-F63AF12D637D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Invaiz_Studio</RootNamespace>
+    <AssemblyName>Invaiz Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>invaiz.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomControls">
+      <HintPath>..\..\소프트웨어 개발\커스텀 스크롤바\원본\TestApp\CustomControls\bin\Debug\CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Json, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\App\AppItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\App\AppItem.Designer.cs">
+      <DependentUpon>AppItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\App\AppList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\App\AppList.Designer.cs">
+      <DependentUpon>AppList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Device\DeviceButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Device\DeviceButton.Designer.cs">
+      <DependentUpon>DeviceButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Device\DeviceEncoder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Device\DeviceEncoder.Designer.cs">
+      <DependentUpon>DeviceEncoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Device\DeviceGroupButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Device\DeviceGroupButton.Designer.cs">
+      <DependentUpon>DeviceGroupButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Function\FunctionItemList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\Function\FunctionItemList.Designer.cs">
+      <DependentUpon>FunctionItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Function\FunctionCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Function\FunctionCategory.Designer.cs">
+      <DependentUpon>FunctionCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Function\FunctionCategoryList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\Function\FunctionCategoryList.Designer.cs">
+      <DependentUpon>FunctionCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Function\FunctionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Function\FunctionItem.Designer.cs">
+      <DependentUpon>FunctionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Device\DeviceGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Device\DeviceGroup.Designer.cs">
+      <DependentUpon>DeviceGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Function\FunctionToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\Function\FunctionToolTip.Designer.cs">
+      <DependentUpon>FunctionToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Test\GroupItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Test\GroupItem.Designer.cs">
+      <DependentUpon>GroupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Product\MainKeypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Product\MainKeypad.Designer.cs">
+      <DependentUpon>MainKeypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\App\AppBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\App\AppBox.Designer.cs">
+      <DependentUpon>AppBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Preset\PresetBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Preset\PresetBox.Designer.cs">
+      <DependentUpon>PresetBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Preset\PresetItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Preset\PresetItem.Designer.cs">
+      <DependentUpon>PresetItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Preset\PresetList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Preset\PresetList.Designer.cs">
+      <DependentUpon>PresetList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Test\Keypress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Test\Keypress.Designer.cs">
+      <DependentUpon>Keypress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Test\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component\Test\CustomTextBox.Designer.cs">
+      <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceData\Payload.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ProcessId.cs" />
+    <Compile Include="Util\ImportWinapi.cs" />
+    <Compile Include="Util\OverlayControl.cs" />
+    <Compile Include="Util\Plugin.cs" />
+    <Compile Include="Util\PluginConnect.cs" />
+    <Compile Include="Util\Preset.cs" />
+    <Compile Include="Util\MainRender.cs" />
+    <Compile Include="Util\SetKeycode.cs" />
+    <Compile Include="View\NewPresetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NewPresetForm.Designer.cs">
+      <DependentUpon>NewPresetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GeneralOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GeneralOverlayForm.Designer.cs">
+      <DependentUpon>GeneralOverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\General.Designer.cs">
+      <DependentUpon>General.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GroupOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GroupOverlayForm.Designer.cs">
+      <DependentUpon>GroupOverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\PayloadOverlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PayloadOverlayForm.Designer.cs">
+      <DependentUpon>PayloadOverlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Component\App\AppItem.resx">
+      <DependentUpon>AppItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\App\AppList.resx">
+      <DependentUpon>AppList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Device\DeviceButton.resx">
+      <DependentUpon>DeviceButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Device\DeviceEncoder.resx">
+      <DependentUpon>DeviceEncoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Device\DeviceGroupButton.resx">
+      <DependentUpon>DeviceGroupButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Function\FunctionItemList.resx">
+      <DependentUpon>FunctionItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Function\FunctionCategory.resx">
+      <DependentUpon>FunctionCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Function\FunctionCategoryList.resx">
+      <DependentUpon>FunctionCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Function\FunctionItem.resx">
+      <DependentUpon>FunctionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Device\DeviceGroup.resx">
+      <DependentUpon>DeviceGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Test\GroupItem.resx">
+      <DependentUpon>GroupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Product\MainKeypad.resx">
+      <DependentUpon>MainKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\App\AppBox.resx">
+      <DependentUpon>AppBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Preset\PresetBox.resx">
+      <DependentUpon>PresetBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Preset\PresetItem.resx">
+      <DependentUpon>PresetItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Preset\PresetList.resx">
+      <DependentUpon>PresetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Test\Keypress.resx">
+      <DependentUpon>Keypress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewPresetForm.resx">
+      <DependentUpon>NewPresetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GeneralOverlayForm.resx">
+      <DependentUpon>GeneralOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\General.resx">
+      <DependentUpon>General.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GroupOverlayForm.resx">
+      <DependentUpon>GroupOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PayloadOverlayForm.resx">
+      <DependentUpon>PayloadOverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\mini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Asset\presetadd.png" />
+    <None Include="Asset\menu.png" />
+    <None Include="Asset\folder2.png" />
+    <None Include="Asset\folder.png" />
+    <None Include="Asset\presetrename.png" />
+    <None Include="Asset\presetdelete.png" />
+    <None Include="Asset\selection_off.png" />
+    <None Include="Asset\serch.png" />
+    <None Include="Asset\select_on.png" />
+    <None Include="Asset\setting.png" />
+    <None Include="Asset\invaiz.ico" />
+    <None Include="Asset\iconae.png" />
+    <None Include="Asset\iconai.png" />
+    <None Include="Asset\iconglobal.png" />
+    <None Include="Asset\iconid.png" />
+    <None Include="Asset\iconlr.png" />
+    <None Include="Asset\iconpr.png" />
+    <None Include="Asset\iconps.png" />
+    <None Include="Asset\showlist.png" />
+    <None Include="Asset\mainkeypad.png" />
+    <None Include="Asset\selection.png" />
+    <None Include="Asset\group_on.png" />
+    <None Include="Asset\group_off.png" />
+    <None Include="Asset\group.png" />
+    <None Include="Asset\buttongroup.png" />
+    <None Include="Asset\overlay.png" />
+    <None Include="Asset\showlistoff.png" />
+    <None Include="Asset\thunbspan.png" />
+    <None Include="Asset\thumbmidle.png" />
+    <None Include="Asset\background.png" />
+    <None Include="Asset\buttonhover.png" />
+    <None Include="Asset\buttonnone.png" />
+    <None Include="Asset\encodernone.png" />
+    <None Include="Asset\encoderhover.png" />
+    <None Include="Asset\product.png" />
+    <None Include="Asset\overlay2.png" />
+    <None Include="Asset\iconwin.png" />
+    <None Include="Asset\renamecheck.png" />
+    <Content Include="invaiz.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
