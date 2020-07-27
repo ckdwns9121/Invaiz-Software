@@ -133,7 +133,7 @@ namespace Invaiz_Studio.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
         public int OL_LOCATION {
             get {
                 return ((int)(this["OL_LOCATION"]));

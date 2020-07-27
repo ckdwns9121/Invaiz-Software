@@ -30,8 +30,6 @@ namespace Invaiz_Studio.View
             this.setform.Left = (int)((this.Width - setform.Width) / 2);
         }
 
-   
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,18 +38,22 @@ namespace Invaiz_Studio.View
         private void save_Click(object sender, EventArgs e)
         {
             mn = MainForm.getInstance;
-       
+
+            Console.WriteLine("저장");
+
+            Console.WriteLine(overlay.Toggle);
             Properties.Settings.Default.OL_CHECK= overlay.Toggle ;
             Properties.Settings.Default.OL_LOCATION = overlay.OL_Location;
             Properties.Settings.Default.OL_SHOW = overlay.OnlyShow;
             Properties.Settings.Default.OL_SECOND = overlay.OL_Second;
+            Properties.Settings.Default.Save();
             if (!Properties.Settings.Default.OL_CHECK)
             {
                 mn.OverlayCheck();
             }
             mn.InitOverlayTimer();
-            Console.WriteLine(overlay.Toggle);
-            Properties.Settings.Default.Save();
+            Console.WriteLine("마지막 확인"+overlay.Toggle);
+     
             this.Close();
   
         }

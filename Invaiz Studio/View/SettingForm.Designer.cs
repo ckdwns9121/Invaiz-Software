@@ -89,6 +89,7 @@
             this.panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel1.Location = new System.Drawing.Point(49, 73);
             this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
             this.panel1.Size = new System.Drawing.Size(580, 44);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -123,26 +124,27 @@
             // 
             this.form_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.form_name.Cursor = System.Windows.Forms.Cursors.Default;
-            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.form_name.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.form_name.Location = new System.Drawing.Point(102, 2);
+            this.form_name.Location = new System.Drawing.Point(120, 2);
             this.form_name.Name = "form_name";
             this.form_name.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.form_name.Size = new System.Drawing.Size(178, 40);
+            this.form_name.Size = new System.Drawing.Size(160, 40);
             this.form_name.TabIndex = 5;
             this.form_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // device_number
             // 
-            this.device_number.AutoSize = true;
             this.device_number.Cursor = System.Windows.Forms.Cursors.Default;
-            this.device_number.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.device_number.Dock = System.Windows.Forms.DockStyle.Left;
+            this.device_number.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.device_number.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.device_number.Location = new System.Drawing.Point(38, 14);
+            this.device_number.Location = new System.Drawing.Point(5, 5);
             this.device_number.Margin = new System.Windows.Forms.Padding(0);
             this.device_number.Name = "device_number";
-            this.device_number.Size = new System.Drawing.Size(0, 17);
+            this.device_number.Size = new System.Drawing.Size(100, 34);
             this.device_number.TabIndex = 2;
+            this.device_number.Text = "d1";
             this.device_number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // set_title
@@ -544,7 +546,6 @@
             this.Text = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.function_on)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key_on)).EndInit();
             this.panel2.ResumeLayout(false);

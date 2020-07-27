@@ -20,10 +20,10 @@ namespace Invaiz_Studio.Component.Setting
             InitializeComponent();
 
         }
-        private bool toggle = Properties.Settings.Default.OL_CHECK;
-        private int location = Properties.Settings.Default.OL_LOCATION;
-        private bool onlyShow = Properties.Settings.Default.OL_SHOW;
-        private int ol_second = Properties.Settings.Default.OL_SECOND;
+        private bool toggle;
+        private int location;
+        private bool onlyShow;
+        private int ol_second;
 
         public bool Toggle 
         {
@@ -49,6 +49,10 @@ namespace Invaiz_Studio.Component.Setting
 
         private void Overlay_Load(object sender, EventArgs e)
         {
+            toggle = Properties.Settings.Default.OL_CHECK;
+            location = Properties.Settings.Default.OL_LOCATION;
+            onlyShow = Properties.Settings.Default.OL_SHOW;
+            ol_second = Properties.Settings.Default.OL_SECOND;
             this.toggleBox.Image = (toggle) ? Properties.Resources.toggleon : Properties.Resources.toggleoff;
             this.secondBox.Text = ol_second.ToString();
             location_init();

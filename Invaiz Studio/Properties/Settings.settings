@@ -30,7 +30,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="OL_LOCATION" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">7</Value>
+      <Value Profile="(Default)">8</Value>
     </Setting>
     <Setting Name="OL_SECOND" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">3</Value>

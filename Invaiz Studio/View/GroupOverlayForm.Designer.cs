@@ -40,7 +40,7 @@
             // groupTitle
             // 
             this.groupTitle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupTitle.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupTitle.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupTitle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.groupTitle.Location = new System.Drawing.Point(448, 0);
             this.groupTitle.Name = "groupTitle";
@@ -52,7 +52,7 @@
             // groupName4
             // 
             this.groupName4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupName4.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupName4.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupName4.Location = new System.Drawing.Point(336, 0);
             this.groupName4.Name = "groupName4";
             this.groupName4.Size = new System.Drawing.Size(112, 80);
@@ -63,7 +63,7 @@
             // groupName3
             // 
             this.groupName3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupName3.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupName3.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupName3.Location = new System.Drawing.Point(224, 0);
             this.groupName3.Name = "groupName3";
             this.groupName3.Size = new System.Drawing.Size(112, 80);
@@ -74,7 +74,7 @@
             // groupName2
             // 
             this.groupName2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupName2.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupName2.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupName2.Location = new System.Drawing.Point(112, 0);
             this.groupName2.Name = "groupName2";
             this.groupName2.Size = new System.Drawing.Size(112, 80);
@@ -85,7 +85,7 @@
             // groupName1
             // 
             this.groupName1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupName1.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupName1.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupName1.Location = new System.Drawing.Point(0, 0);
             this.groupName1.Name = "groupName1";
             this.groupName1.Size = new System.Drawing.Size(112, 80);
