@@ -193,6 +193,16 @@ namespace Invaiz_Studio.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        public static System.Drawing.Bitmap iconcs {
+            get {
+                object obj = ResourceManager.GetObject("iconcs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         public static System.Drawing.Bitmap iconglobal {
             get {
                 object obj = ResourceManager.GetObject("iconglobal", resourceCulture);
@@ -456,6 +466,26 @@ namespace Invaiz_Studio.Properties {
         public static System.Drawing.Bitmap thunbspan {
             get {
                 object obj = ResourceManager.GetObject("thunbspan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap toggleoff {
+            get {
+                object obj = ResourceManager.GetObject("toggleoff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        public static System.Drawing.Bitmap toggleon {
+            get {
+                object obj = ResourceManager.GetObject("toggleon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

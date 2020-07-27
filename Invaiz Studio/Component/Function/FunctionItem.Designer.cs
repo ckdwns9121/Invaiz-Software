@@ -34,8 +34,7 @@
             // form_name
             // 
             this.form_name.BackColor = System.Drawing.Color.Transparent;
-            this.form_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.form_name.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.form_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.form_name.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.form_name.Location = new System.Drawing.Point(0, 0);
@@ -54,7 +53,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(105)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.form_name);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "FunctionItem";

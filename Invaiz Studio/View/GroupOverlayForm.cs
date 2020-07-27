@@ -57,9 +57,9 @@ namespace Invaiz_Studio.View
                 int endY = startY + System.Windows.Forms.Screen.AllScreens[i].Bounds.Height;
                 if ((startX < cursorPointx && endX > cursorPointx) && (startY < cursorPointy && endY > cursorPointy))
                 {
-                    Console.WriteLine("디바이스 네임" + System.Windows.Forms.Screen.AllScreens[i].DeviceName);
-                    Console.WriteLine("인덱스" + i);
-                    Console.WriteLine(System.Windows.Forms.Screen.AllScreens[i].Bounds);
+                    //Console.WriteLine("디바이스 네임" + System.Windows.Forms.Screen.AllScreens[i].DeviceName);
+                    //Console.WriteLine("인덱스" + i);
+                    //Console.WriteLine(System.Windows.Forms.Screen.AllScreens[i].Bounds);
                     screenIndex = i;
                 }
             }

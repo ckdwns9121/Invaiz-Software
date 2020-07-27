@@ -43,9 +43,8 @@
             // preset_name
             // 
             this.preset_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.preset_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.preset_name.Font = new System.Drawing.Font("Calibri", 13.5F);
-            this.preset_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(153)))));
+            this.preset_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.preset_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.preset_name.Location = new System.Drawing.Point(0, 0);
             this.preset_name.Name = "preset_name";
             this.preset_name.Size = new System.Drawing.Size(160, 35);
@@ -59,12 +58,11 @@
             // 
             // modifyPreset
             // 
-            this.modifyPreset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.modifyPreset.BackColor = System.Drawing.Color.Transparent;
             this.modifyPreset.Controls.Add(this.checkImg);
             this.modifyPreset.Controls.Add(this.deleteImg);
             this.modifyPreset.Controls.Add(this.renameImg);
             this.modifyPreset.Controls.Add(this.rename);
-            this.modifyPreset.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modifyPreset.Location = new System.Drawing.Point(0, 0);
             this.modifyPreset.Margin = new System.Windows.Forms.Padding(0);
             this.modifyPreset.Name = "modifyPreset";
@@ -110,15 +108,15 @@
             // 
             // rename
             // 
-            this.rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.rename.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rename.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rename.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rename.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.rename.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rename.Location = new System.Drawing.Point(6, 6);
             this.rename.Name = "rename";
             this.rename.ReadOnly = true;
-            this.rename.Size = new System.Drawing.Size(91, 23);
+            this.rename.Size = new System.Drawing.Size(91, 24);
             this.rename.TabIndex = 0;
             this.rename.TabStop = false;
             this.rename.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rename_KeyDown);
@@ -127,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.Controls.Add(this.modifyPreset);
             this.Controls.Add(this.preset_name);
             this.Name = "PresetItem";

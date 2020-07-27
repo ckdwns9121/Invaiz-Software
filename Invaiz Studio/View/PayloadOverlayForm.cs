@@ -31,16 +31,76 @@ namespace Invaiz_Studio.View
             int initStyle = GetWindowLong(this.Handle, -20);
             SetWindowLong(this.Handle, -20, initStyle | 0x80000 | 0x20);
             this.TopMost = true;
+            this.Opacity = 0.8;
         }
         public void ResetLocation()
         {
             int screenIndex = getScreenIndex();
-            int screen_x = Screen.AllScreens[screenIndex].Bounds.X + (Screen.AllScreens[screenIndex].Bounds.Width / 2);
-            int screen_y = Screen.AllScreens[screenIndex].Bounds.Y + Screen.AllScreens[screenIndex].Bounds.Height;
-            Console.WriteLine(screen_x - this.Size.Width / 2);
-            this.Location = new Point(screen_x - this.Size.Width / 2
-            , screen_y - this.Size.Height - 70);
-            // this.Location = new Point(Screen.PrimaryScreen.Bounds.Width/2 - this.Size.Width/2, screen_y - this.Size.Height-70);
+            int temp_x = Screen.AllScreens[screenIndex].Bounds.X + (Screen.AllScreens[screenIndex].Bounds.Width / 2);
+            int temp_y = Screen.AllScreens[screenIndex].Bounds.Y + Screen.AllScreens[screenIndex].Bounds.Height;
+
+
+            int screen_x = Screen.AllScreens[screenIndex].Bounds.X;
+            int screen_y = Screen.AllScreens[screenIndex].Bounds.Y;
+            int screen_width = Screen.AllScreens[screenIndex].Bounds.Width;
+            int screen_height = Screen.AllScreens[screenIndex].Bounds.Height;
+
+
+            switch (Properties.Settings.Default.OL_LOCATION)
+            {
+                case 0:
+                    this.Location = new Point(screen_x, screen_y); //1
+                    break;
+                case 1:
+                    this.Location = new Point(screen_x + (screen_width / 2) - this.Size.Width / 2, screen_y); //2
+                    break;
+                case 2:
+                    this.Location = new Point(screen_x + screen_width - this.Width, screen_y); //3
+                    break;
+                case 3:
+                    this.Location = new Point(screen_x, (screen_y + screen_height) / 2 - this.Size.Height / 2); //4
+
+                    break;
+                case 4:
+                    this.Location = new Point((screen_x + (screen_width / 2)) - this.Size.Width / 2, (screen_y + screen_height) / 2 - this.Size.Height / 2); //5
+
+                    break;
+                case 5:
+                    this.Location = new Point(screen_x + screen_width - this.Width, screen_y + screen_height / 2 - this.Size.Height / 2); //6
+
+                    break;
+                case 6:
+                    this.Location = new Point(screen_x, screen_y + screen_height - this.Size.Height - 70); //7
+
+                    break;
+                case 7:
+                    this.Location = new Point(screen_x + (screen_width / 2) - this.Size.Width / 2, screen_y + screen_height - this.Size.Height - 70); //8
+
+                    break;
+                case 8:
+                    this.Location = new Point(screen_x + screen_width - this.Width, screen_y + screen_height - this.Size.Height - 70); //9
+                    break;
+                default:
+                    this.Location = new Point(screen_x + (screen_width / 2) - this.Size.Width / 2, screen_y + screen_height - this.Size.Height - 70); //8
+                    break;
+
+            }
+
+            //   this.Location = new Point(screen_x, screen_y) ; //1 
+            //  this.Location = new Point(screen_x+ (screen_width/2) - this.Size.Width / 2, screen_y); //2
+            // this.Location = new Point(screen_x+screen_width - this.Width , screen_y); //3
+            // this.Location = new Point(screen_x, (screen_y+screen_height) / 2 - this.Size.Height / 2); //4
+            //  this.Location = new Point((screen_x+(screen_width/2)) - this.Size.Width / 2, (screen_y+screen_height)/2 - this.Size.Height/2); //5
+            //this.Location = new Point(screen_x+screen_width - this.Width , screen_y+screen_height/2 - this.Size.Height/2); //6
+
+            // this.Location = new Point(screen_x, screen_y+screen_height - this.Size.Height - 70); //7
+            // this.Location = new Point(screen_x + (screen_width / 2) - this.Size.Width / 2 , screen_y+screen_height - this.Size.Height - 70); //8
+            //   this.Location = new Point(screen_x + screen_width - this.Width, screen_y+screen_height - this.Size.Height - 70); //9
+
+
+
+
+
         }
 
         //그룹 변경됬을 시 전체 키맵핑 보여주기 위한 오버레이
@@ -51,16 +111,16 @@ namespace Invaiz_Studio.View
         }
 
         // 이벤트 발생 시 CEP 리턴값이 없는 경우 설정한 이름 보여주는 오버레이
-        public void init(bool deviceCheck, int index,int group)
+        public void init(bool deviceCheck, int index, int group)
         {
             ResetLocation();
 
-            firstInit(group,index,deviceCheck);
+            firstInit(group, index, deviceCheck);
         }
-        public void init(bool deviceCheck ,int index,int group ,string str)
+        public void init(bool deviceCheck, int index, int group, string str)
         {
             ResetLocation();
-            firstInit(group,index,str,deviceCheck);
+            firstInit(group, index, str, deviceCheck);
         }
 
         private Util.MainRender render = new Util.MainRender();
@@ -77,7 +137,7 @@ namespace Invaiz_Studio.View
             {
                 deviceButtons[i].BackgroundImage = deviceButtons[i].NomalImage;
                 deviceButtons[i].form_name.ForeColor = deviceButtons[i].NomalColor;
-                deviceButtons[i].form_name.Text = String.IsNullOrEmpty(mn.Payloads[group].B_formName[i]) ? "" :render.newLineText(mn.Payloads[group].B_formName[i]);
+                deviceButtons[i].form_name.Text = String.IsNullOrEmpty(mn.Payloads[group].B_formName[i]) ? "" : render.newLineText(mn.Payloads[group].B_formName[i]);
 
                 deviceEncoders[i].BackgroundImage = deviceEncoders[i].NomalImage;
 
@@ -92,7 +152,7 @@ namespace Invaiz_Studio.View
 
         // 리턴값 없을 시
 
-        public void firstInit(int group, int index,bool deviceCheck)
+        public void firstInit(int group, int index, bool deviceCheck)
         {
             mn = MainForm.getInstance;
             Component.DeviceButton[] deviceButtons = { deviceButton1, deviceButton2, deviceButton3, deviceButton4 };
@@ -168,7 +228,7 @@ namespace Invaiz_Studio.View
 
                 if (!str.Equals(mn.Payloads[group].E_formName[index]))
                 {
-                    Console.WriteLine("오버레이"+str);
+                    Console.WriteLine("오버레이" + str);
                     float currentSize;
                     currentSize = 20.0F;
                     deviceEncoders[index].form_name.Font = new Font(deviceEncoders[index].form_name.Font.Name, currentSize,
@@ -194,7 +254,7 @@ namespace Invaiz_Studio.View
 
         private void panel2_MouseEnter(object sender, EventArgs e)
         {
-            Console.WriteLine("마우스다운");
+            // Console.WriteLine("마우스다운");
         }
         private int getScreenIndex()
         {
@@ -211,9 +271,9 @@ namespace Invaiz_Studio.View
                 int endY = startY + System.Windows.Forms.Screen.AllScreens[i].Bounds.Height;
                 if ((startX < cursorPointx && endX > cursorPointx) && (startY < cursorPointy && endY > cursorPointy))
                 {
-                    Console.WriteLine("디바이스 네임" + System.Windows.Forms.Screen.AllScreens[i].DeviceName);
-                    Console.WriteLine("인덱스" + i);
-                    Console.WriteLine(System.Windows.Forms.Screen.AllScreens[i].Bounds);
+                    //Console.WriteLine("디바이스 네임" + System.Windows.Forms.Screen.AllScreens[i].DeviceName);
+                    //Console.WriteLine("인덱스" + i);
+                    //Console.WriteLine(System.Windows.Forms.Screen.AllScreens[i].Bounds);
                     screenIndex = i;
                 }
             }

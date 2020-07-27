@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Invaiz_Studio.View
 {
-    public partial class GeneralOverlayForm : Form
+    public partial class SubOverlayForm : Form
     {
-        public GeneralOverlayForm()
+        public SubOverlayForm()
         {
             InitializeComponent();
         }

@@ -35,6 +35,9 @@ namespace Invaiz_Studio.Util
                 case "InDesign":
                     t = Properties.Settings.Default.ID_PRESET;
                     break;
+                case "ClipStudio":
+                    t = Properties.Settings.Default.CS_PRESET;
+                    break;
                 default:
                     t = "기본값";
                     break;
@@ -277,7 +280,6 @@ namespace Invaiz_Studio.Util
                         }
                         wr.WriteEndElement(); //</group>
                     }
-
                     wr.WriteEndElement(); //</preset>
                     wr.WriteEndDocument(); // </Photoshop>
                 }
@@ -304,6 +306,7 @@ namespace Invaiz_Studio.Util
         }
         public void savePropertyPreset(string presetName)
         {
+            mn = MainForm.getInstance;
             switch (mn.AppName)
             {
                 case "Window":
@@ -326,6 +329,9 @@ namespace Invaiz_Studio.Util
                     break;
                 case "InDesign":
                     Properties.Settings.Default.ID_PRESET = presetName;
+                    break;
+                case "ClipStudio":
+                    Properties.Settings.Default.CS_PRESET = presetName;
                     break;
                 default:
                     Properties.Settings.Default.Save();
@@ -366,6 +372,8 @@ namespace Invaiz_Studio.Util
             }
 
         }
+        
+
         
     }
 }

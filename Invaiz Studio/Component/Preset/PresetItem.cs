@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invaiz_Studio.Util;
 
 namespace Invaiz_Studio.Component
 {
@@ -29,12 +30,16 @@ namespace Invaiz_Studio.Component
             this.preset_name.ForeColor = Color.FromArgb(245, 245, 245);
             this.BackColor = Color.FromArgb(51, 153, 255);
 
+
         }
 
         private void preset_name_MouseLeave(object sender, EventArgs e)
         {
-            this.preset_name.ForeColor = Color.FromArgb(152, 152, 153);
-            this.BackColor = Color.FromArgb(64, 64, 64);
+            this.preset_name.ForeColor = Color.FromArgb(245, 245, 245);
+
+            //  this.BackColor = Color.FromArgb(64, 64, 64);
+            this.BackColor = Color.FromArgb(51, 63, 77);
+
         }
 
         private void preset_name_MouseMove(object sender, MouseEventArgs e)
@@ -61,37 +66,8 @@ namespace Invaiz_Studio.Component
 
         private void lastPreset()
         {
-            mn = MainForm.getInstance;
-            string appName = mn.AppName;
-
-            switch (appName)
-            {
-                case "Window":
-                    Properties.Settings.Default.WIN_PRESET = this.PresetName;
-                    break;
-                case "Photoshop":
-                    Properties.Settings.Default.PS_PRESET = this.PresetName;
-                    break;
-                case "Illustrator":
-                    Properties.Settings.Default.AI_PRESET = this.PresetName;
-                    break;
-                case "AfterEffect":
-                    Properties.Settings.Default.AE_PRESET = this.PresetName;
-                    break;
-                case "PremierePro":
-                    Properties.Settings.Default.PR_PRESET = this.PresetName;
-                    break;
-                case "Lightroom":
-                    Properties.Settings.Default.LR_PRESET = this.PresetName;
-                    break;
-                case "InDesign":
-                    Properties.Settings.Default.ID_PRESET = this.PresetName;
-                    break;
-                default:
-                    Properties.Settings.Default.Save();
-                    break;
-            }
-            Properties.Settings.Default.Save();
+            Preset preset = new Preset();
+            preset.savePropertyPreset(this.PresetName);
         }
         //이전 프리셋 저장
         private void prevSavePreset()

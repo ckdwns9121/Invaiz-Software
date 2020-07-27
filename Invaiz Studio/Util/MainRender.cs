@@ -181,8 +181,8 @@ namespace Invaiz_Studio.Util
             int t = temp.IndexOf(" ");
             int l = temp.Length;
 
-            str = (t != -1 && l > 6) ? str.Replace(" ", "") : temp;
-            return str = (t != -1 && l > 6) ? str.Insert(t, Environment.NewLine) : temp;
+            str = (t != -1 && l > 5) ? str.Replace(" ", "") : temp;
+            return str = (t != -1 && l > 5) ? str.Insert(t, Environment.NewLine) : temp;
         }
 
         private Image[] appImage = {
@@ -220,6 +220,9 @@ namespace Invaiz_Studio.Util
                     break;
                 case "InDesign":
                     mn.appBox.AppIconImage = appImage[6];
+                    break;
+                case "ClipStudio":
+                    mn.appBox.AppIconImage = null;
                     break;
                 default:
                     mn.appBox.AppIconImage = appImage[0];

@@ -45,7 +45,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.set_area = new System.Windows.Forms.Panel();
             this.customScrollbar1 = new CustomControls.CustomScrollbar();
-            this.label1 = new System.Windows.Forms.Label();
             this.outpanel = new System.Windows.Forms.Panel();
             this.deviceList = new System.Windows.Forms.FlowLayoutPanel();
             this.deviceGroup1 = new Invaiz_Studio.Component.DeviceGroup();
@@ -96,7 +95,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nav_area = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.usbstate = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -108,6 +106,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.appTimer = new System.Windows.Forms.Timer(this.components);
             this.presetTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel8 = new System.Windows.Forms.Panel();
             this.main_area.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.set_area.SuspendLayout();
@@ -121,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.nav_area.SuspendLayout();
             this.contextMenuStrip.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // sp
@@ -129,7 +129,7 @@
             // 
             // main_area
             // 
-            this.main_area.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.main_area.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(42)))));
             this.main_area.Controls.Add(this.presetList);
             this.main_area.Controls.Add(this.panel6);
             this.main_area.Controls.Add(this.panel5);
@@ -142,15 +142,15 @@
             this.main_area.Controls.Add(this.pictureBox1);
             this.main_area.Location = new System.Drawing.Point(0, 0);
             this.main_area.Name = "main_area";
-            this.main_area.Size = new System.Drawing.Size(553, 740);
+            this.main_area.Size = new System.Drawing.Size(547, 740);
             this.main_area.TabIndex = 0;
             this.main_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
             this.main_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
             // 
             // presetList
             // 
-            this.presetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.presetList.Location = new System.Drawing.Point(299, 194);
+            this.presetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
+            this.presetList.Location = new System.Drawing.Point(298, 189);
             this.presetList.MaximumSize = new System.Drawing.Size(182, 251);
             this.presetList.MinimumSize = new System.Drawing.Size(182, 0);
             this.presetList.Name = "presetList";
@@ -159,24 +159,24 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.panel6.Location = new System.Drawing.Point(300, 190);
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Location = new System.Drawing.Point(300, 186);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(180, 1);
             this.panel6.TabIndex = 25;
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.panel5.Location = new System.Drawing.Point(90, 190);
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Location = new System.Drawing.Point(90, 186);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(180, 1);
             this.panel5.TabIndex = 24;
             // 
             // appList
             // 
-            this.appList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.appList.Location = new System.Drawing.Point(89, 195);
+            this.appList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
+            this.appList.Location = new System.Drawing.Point(89, 191);
             this.appList.MaximumSize = new System.Drawing.Size(182, 251);
             this.appList.MinimumSize = new System.Drawing.Size(182, 0);
             this.appList.Name = "appList";
@@ -185,7 +185,7 @@
             // 
             // presetBox
             // 
-            this.presetBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.presetBox.BackColor = System.Drawing.Color.Transparent;
             this.presetBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.presetBox.Location = new System.Drawing.Point(300, 137);
             this.presetBox.Name = "presetBox";
@@ -196,24 +196,24 @@
             // Presets
             // 
             this.Presets.AutoSize = true;
-            this.Presets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.Presets.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Presets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.Presets.Location = new System.Drawing.Point(296, 119);
+            this.Presets.BackColor = System.Drawing.Color.Transparent;
+            this.Presets.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Presets.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Presets.Location = new System.Drawing.Point(296, 116);
             this.Presets.Name = "Presets";
-            this.Presets.Size = new System.Drawing.Size(98, 19);
+            this.Presets.Size = new System.Drawing.Size(100, 22);
             this.Presets.TabIndex = 21;
             this.Presets.Text = "Active Preset";
             // 
             // Appliction
             // 
             this.Appliction.AutoSize = true;
-            this.Appliction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.Appliction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Appliction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.Appliction.Location = new System.Drawing.Point(86, 119);
+            this.Appliction.BackColor = System.Drawing.Color.Transparent;
+            this.Appliction.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Appliction.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Appliction.Location = new System.Drawing.Point(86, 116);
             this.Appliction.Name = "Appliction";
-            this.Appliction.Size = new System.Drawing.Size(87, 19);
+            this.Appliction.Size = new System.Drawing.Size(89, 22);
             this.Appliction.TabIndex = 20;
             this.Appliction.Text = "Application";
             // 
@@ -247,31 +247,31 @@
             // 
             // set_area
             // 
-            this.set_area.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.set_area.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(28)))));
             this.set_area.Controls.Add(this.customScrollbar1);
-            this.set_area.Controls.Add(this.label1);
             this.set_area.Controls.Add(this.outpanel);
             this.set_area.Controls.Add(this.panel4);
             this.set_area.Controls.Add(this.pictureBox3);
             this.set_area.Controls.Add(this.pictureBox2);
-            this.set_area.Location = new System.Drawing.Point(553, 0);
+            this.set_area.Location = new System.Drawing.Point(546, 0);
             this.set_area.Name = "set_area";
-            this.set_area.Size = new System.Drawing.Size(727, 740);
+            this.set_area.Size = new System.Drawing.Size(741, 740);
             this.set_area.TabIndex = 1;
             this.set_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
             this.set_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
             // 
             // customScrollbar1
             // 
-            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.customScrollbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(42)))));
+            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
             this.customScrollbar1.DownArrowImage = null;
             this.customScrollbar1.LargeChange = 10;
-            this.customScrollbar1.Location = new System.Drawing.Point(721, 82);
+            this.customScrollbar1.Location = new System.Drawing.Point(728, 82);
             this.customScrollbar1.Maximum = 100;
             this.customScrollbar1.Minimum = 0;
             this.customScrollbar1.MinimumSize = new System.Drawing.Size(0, 56);
             this.customScrollbar1.Name = "customScrollbar1";
-            this.customScrollbar1.Size = new System.Drawing.Size(5, 631);
+            this.customScrollbar1.Size = new System.Drawing.Size(5, 612);
             this.customScrollbar1.SmallChange = 1;
             this.customScrollbar1.TabIndex = 27;
             this.customScrollbar1.ThumbBottomImage = global::Invaiz_Studio.Properties.Resources.thunbspan;
@@ -285,18 +285,6 @@
             this.customScrollbar1.Value = 0;
             this.customScrollbar1.Scroll += new System.EventHandler(this.customScrollbar1_Scroll);
             this.customScrollbar1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.customScrollbar_MouseWheel);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(106, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 23);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Device Setting";
             // 
             // outpanel
             // 
@@ -317,7 +305,7 @@
             this.deviceList.Controls.Add(this.panel3);
             this.deviceList.Controls.Add(this.deviceGroup4);
             this.deviceList.Controls.Add(this.panel7);
-            this.deviceList.Location = new System.Drawing.Point(0, 21);
+            this.deviceList.Location = new System.Drawing.Point(3, 21);
             this.deviceList.Name = "deviceList";
             this.deviceList.Size = new System.Drawing.Size(638, 651);
             this.deviceList.TabIndex = 0;
@@ -325,7 +313,7 @@
             // 
             // deviceGroup1
             // 
-            this.deviceGroup1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.deviceGroup1.BackColor = System.Drawing.Color.Transparent;
             this.deviceGroup1.GroupName = "";
             this.deviceGroup1.GroupNumber = "Group1";
             this.deviceGroup1.HoverColor = System.Drawing.Color.Empty;
@@ -524,7 +512,7 @@
             // 
             // deviceGroup2
             // 
-            this.deviceGroup2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.deviceGroup2.BackColor = System.Drawing.Color.Transparent;
             this.deviceGroup2.GroupName = "";
             this.deviceGroup2.GroupNumber = "Group2";
             this.deviceGroup2.HoverColor = System.Drawing.Color.Empty;
@@ -723,7 +711,7 @@
             // 
             // deviceGroup3
             // 
-            this.deviceGroup3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.deviceGroup3.BackColor = System.Drawing.Color.Transparent;
             this.deviceGroup3.GroupName = null;
             this.deviceGroup3.GroupNumber = "Group3";
             this.deviceGroup3.HoverColor = System.Drawing.Color.Empty;
@@ -922,7 +910,7 @@
             // 
             // deviceGroup4
             // 
-            this.deviceGroup4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.deviceGroup4.BackColor = System.Drawing.Color.Transparent;
             this.deviceGroup4.GroupName = null;
             this.deviceGroup4.GroupNumber = "Group4";
             this.deviceGroup4.HoverColor = System.Drawing.Color.Empty;
@@ -1131,7 +1119,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Invaiz_Studio.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(696, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(704, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1142,7 +1130,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Invaiz_Studio.Properties.Resources.mini;
-            this.pictureBox2.Location = new System.Drawing.Point(665, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(672, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1152,30 +1140,16 @@
             // 
             // nav_area
             // 
-            this.nav_area.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.nav_area.Controls.Add(this.button2);
+            this.nav_area.BackColor = System.Drawing.Color.Black;
             this.nav_area.Controls.Add(this.button1);
             this.nav_area.Controls.Add(this.usbstate);
+            this.nav_area.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.nav_area.Location = new System.Drawing.Point(0, 740);
             this.nav_area.Name = "nav_area";
             this.nav_area.Size = new System.Drawing.Size(1280, 60);
             this.nav_area.TabIndex = 0;
             this.nav_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
             this.nav_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(12, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 41);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Guide";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -1192,11 +1166,11 @@
             // usbstate
             // 
             this.usbstate.AutoSize = true;
-            this.usbstate.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usbstate.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.usbstate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.usbstate.Location = new System.Drawing.Point(542, 20);
             this.usbstate.Name = "usbstate";
-            this.usbstate.Size = new System.Drawing.Size(187, 23);
+            this.usbstate.Size = new System.Drawing.Size(182, 24);
             this.usbstate.TabIndex = 0;
             this.usbstate.Text = "Device Not Connected";
             // 
@@ -1261,17 +1235,25 @@
             this.presetTimer.Interval = 10;
             this.presetTimer.Tick += new System.EventHandler(this.presetTimer_Tick);
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.main_area);
+            this.panel8.Controls.Add(this.set_area);
+            this.panel8.Controls.Add(this.nav_area);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1280, 800);
+            this.panel8.TabIndex = 27;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 800);
-            this.Controls.Add(this.nav_area);
-            this.Controls.Add(this.set_area);
-            this.Controls.Add(this.main_area);
+            this.Controls.Add(this.panel8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1280, 800);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Invaiz Studio";
@@ -1294,6 +1276,7 @@
             this.nav_area.ResumeLayout(false);
             this.nav_area.PerformLayout();
             this.contextMenuStrip.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1312,12 +1295,10 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel outpanel;
-        public Component.AppList appList;
         public Component.AppBox appBox;
         public Component.PresetBox presetBox;
         public Component.PresetList presetList;
         public System.Windows.Forms.FlowLayoutPanel deviceList;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label usbstate;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
@@ -1374,8 +1355,9 @@
         public System.Windows.Forms.Timer presetTimer;
         public CustomControls.CustomScrollbar customScrollbar1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label Appliction;
+        public Component.AppList appList;
+        private System.Windows.Forms.Panel panel8;
     }
 }
 

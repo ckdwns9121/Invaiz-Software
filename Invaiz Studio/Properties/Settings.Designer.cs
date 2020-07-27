@@ -106,5 +106,65 @@ namespace Invaiz_Studio.Properties {
                 this["ID_PRESET"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CS_PRESET {
+            get {
+                return ((string)(this["CS_PRESET"]));
+            }
+            set {
+                this["CS_PRESET"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OL_CHECK {
+            get {
+                return ((bool)(this["OL_CHECK"]));
+            }
+            set {
+                this["OL_CHECK"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("7")]
+        public int OL_LOCATION {
+            get {
+                return ((int)(this["OL_LOCATION"]));
+            }
+            set {
+                this["OL_LOCATION"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int OL_SECOND {
+            get {
+                return ((int)(this["OL_SECOND"]));
+            }
+            set {
+                this["OL_SECOND"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OL_SHOW {
+            get {
+                return ((bool)(this["OL_SHOW"]));
+            }
+            set {
+                this["OL_SHOW"] = value;
+            }
+        }
     }
 }

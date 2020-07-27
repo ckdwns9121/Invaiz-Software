@@ -254,7 +254,7 @@ namespace Invaiz_Studio.View
         {
             base.OnPaint(e);
             int borderWidth = 2;
-            Color borderColor = Color.FromArgb(0, 100, 255);
+            Color borderColor = Color.FromArgb(0, 128, 255);
             ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
             borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
             ButtonBorderStyle.Solid, borderColor, borderWidth,
@@ -869,7 +869,6 @@ namespace Invaiz_Studio.View
                 this.changeKeycode2 = k.setKeycode(ctrl, shift,alt, subName2_input, e);
                 this.changeMulti2 = 1;
             }
-
         }
 
         #endregion

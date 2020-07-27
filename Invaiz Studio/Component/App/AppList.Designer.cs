@@ -30,15 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.app_list = new System.Windows.Forms.FlowLayoutPanel();
+            this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.appItem1 = new Invaiz_Studio.Component.AppItem();
             this.appItem2 = new Invaiz_Studio.Component.AppItem();
             this.appItem3 = new Invaiz_Studio.Component.AppItem();
             this.appItem4 = new Invaiz_Studio.Component.AppItem();
             this.appItem5 = new Invaiz_Studio.Component.AppItem();
             this.appItem6 = new Invaiz_Studio.Component.AppItem();
-            this.appItem7 = new Invaiz_Studio.Component.AppItem();
-            this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.appItem8 = new Invaiz_Studio.Component.AppItem();
+            this.appItem9 = new Invaiz_Studio.Component.AppItem();
             this.panel1.SuspendLayout();
             this.app_list.SuspendLayout();
             this.SuspendLayout();
@@ -54,14 +54,14 @@
             // app_list
             // 
             this.app_list.AutoScroll = true;
-            this.app_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.app_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.app_list.Controls.Add(this.appItem1);
             this.app_list.Controls.Add(this.appItem2);
             this.app_list.Controls.Add(this.appItem3);
+            this.app_list.Controls.Add(this.appItem9);
             this.app_list.Controls.Add(this.appItem4);
             this.app_list.Controls.Add(this.appItem5);
             this.app_list.Controls.Add(this.appItem6);
-            this.app_list.Controls.Add(this.appItem7);
             this.app_list.Controls.Add(this.appItem8);
             this.app_list.Location = new System.Drawing.Point(0, 0);
             this.app_list.Margin = new System.Windows.Forms.Padding(0);
@@ -71,79 +71,9 @@
             this.app_list.Size = new System.Drawing.Size(188, 218);
             this.app_list.TabIndex = 0;
             // 
-            // appItem1
-            // 
-            this.appItem1.AppIcon = global::Invaiz_Studio.Properties.Resources.iconwin;
-            this.appItem1.AppName = "Window";
-            this.appItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem1.Location = new System.Drawing.Point(3, 3);
-            this.appItem1.Name = "appItem1";
-            this.appItem1.Size = new System.Drawing.Size(160, 35);
-            this.appItem1.TabIndex = 0;
-            // 
-            // appItem2
-            // 
-            this.appItem2.AppIcon = global::Invaiz_Studio.Properties.Resources.iconps;
-            this.appItem2.AppName = "Photoshop";
-            this.appItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem2.Location = new System.Drawing.Point(3, 44);
-            this.appItem2.Name = "appItem2";
-            this.appItem2.Size = new System.Drawing.Size(160, 35);
-            this.appItem2.TabIndex = 1;
-            // 
-            // appItem3
-            // 
-            this.appItem3.AppIcon = global::Invaiz_Studio.Properties.Resources.iconai;
-            this.appItem3.AppName = "Illustrator";
-            this.appItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem3.Location = new System.Drawing.Point(3, 85);
-            this.appItem3.Name = "appItem3";
-            this.appItem3.Size = new System.Drawing.Size(160, 35);
-            this.appItem3.TabIndex = 2;
-            // 
-            // appItem4
-            // 
-            this.appItem4.AppIcon = global::Invaiz_Studio.Properties.Resources.iconae;
-            this.appItem4.AppName = "AfterEffect";
-            this.appItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem4.Location = new System.Drawing.Point(3, 126);
-            this.appItem4.Name = "appItem4";
-            this.appItem4.Size = new System.Drawing.Size(160, 35);
-            this.appItem4.TabIndex = 3;
-            // 
-            // appItem5
-            // 
-            this.appItem5.AppIcon = global::Invaiz_Studio.Properties.Resources.iconpr;
-            this.appItem5.AppName = "PremierePro";
-            this.appItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem5.Location = new System.Drawing.Point(3, 167);
-            this.appItem5.Name = "appItem5";
-            this.appItem5.Size = new System.Drawing.Size(160, 35);
-            this.appItem5.TabIndex = 4;
-            // 
-            // appItem6
-            // 
-            this.appItem6.AppIcon = global::Invaiz_Studio.Properties.Resources.iconlr;
-            this.appItem6.AppName = "Lightroom";
-            this.appItem6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem6.Location = new System.Drawing.Point(3, 208);
-            this.appItem6.Name = "appItem6";
-            this.appItem6.Size = new System.Drawing.Size(160, 35);
-            this.appItem6.TabIndex = 5;
-            // 
-            // appItem7
-            // 
-            this.appItem7.AppIcon = global::Invaiz_Studio.Properties.Resources.iconid;
-            this.appItem7.AppName = "InDesign";
-            this.appItem7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.appItem7.Location = new System.Drawing.Point(3, 249);
-            this.appItem7.Name = "appItem7";
-            this.appItem7.Size = new System.Drawing.Size(160, 35);
-            this.appItem7.TabIndex = 6;
-            // 
             // customScrollbar1
             // 
-            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
             this.customScrollbar1.DownArrowImage = null;
             this.customScrollbar1.LargeChange = 10;
             this.customScrollbar1.Location = new System.Drawing.Point(173, 0);
@@ -164,21 +94,91 @@
             this.customScrollbar1.UpArrowImage = null;
             this.customScrollbar1.Value = 0;
             // 
+            // appItem1
+            // 
+            this.appItem1.AppIcon = global::Invaiz_Studio.Properties.Resources.iconwin;
+            this.appItem1.AppName = "Window";
+            this.appItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem1.Location = new System.Drawing.Point(3, 3);
+            this.appItem1.Name = "appItem1";
+            this.appItem1.Size = new System.Drawing.Size(160, 35);
+            this.appItem1.TabIndex = 0;
+            // 
+            // appItem2
+            // 
+            this.appItem2.AppIcon = global::Invaiz_Studio.Properties.Resources.iconps;
+            this.appItem2.AppName = "Photoshop";
+            this.appItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem2.Location = new System.Drawing.Point(3, 44);
+            this.appItem2.Name = "appItem2";
+            this.appItem2.Size = new System.Drawing.Size(160, 35);
+            this.appItem2.TabIndex = 1;
+            // 
+            // appItem3
+            // 
+            this.appItem3.AppIcon = global::Invaiz_Studio.Properties.Resources.iconai;
+            this.appItem3.AppName = "Illustrator";
+            this.appItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem3.Location = new System.Drawing.Point(3, 85);
+            this.appItem3.Name = "appItem3";
+            this.appItem3.Size = new System.Drawing.Size(160, 35);
+            this.appItem3.TabIndex = 2;
+            // 
+            // appItem4
+            // 
+            this.appItem4.AppIcon = global::Invaiz_Studio.Properties.Resources.iconae;
+            this.appItem4.AppName = "AfterEffect";
+            this.appItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem4.Location = new System.Drawing.Point(3, 167);
+            this.appItem4.Name = "appItem4";
+            this.appItem4.Size = new System.Drawing.Size(160, 35);
+            this.appItem4.TabIndex = 3;
+            // 
+            // appItem5
+            // 
+            this.appItem5.AppIcon = global::Invaiz_Studio.Properties.Resources.iconpr;
+            this.appItem5.AppName = "PremierePro";
+            this.appItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem5.Location = new System.Drawing.Point(3, 208);
+            this.appItem5.Name = "appItem5";
+            this.appItem5.Size = new System.Drawing.Size(160, 35);
+            this.appItem5.TabIndex = 4;
+            // 
+            // appItem6
+            // 
+            this.appItem6.AppIcon = global::Invaiz_Studio.Properties.Resources.iconlr;
+            this.appItem6.AppName = "Lightroom";
+            this.appItem6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem6.Location = new System.Drawing.Point(3, 249);
+            this.appItem6.Name = "appItem6";
+            this.appItem6.Size = new System.Drawing.Size(160, 35);
+            this.appItem6.TabIndex = 5;
+            // 
             // appItem8
             // 
-            this.appItem8.AppIcon = null;
+            this.appItem8.AppIcon = global::Invaiz_Studio.Properties.Resources.iconcs;
             this.appItem8.AppName = "ClipStudio";
-            this.appItem8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.appItem8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.appItem8.Location = new System.Drawing.Point(3, 290);
             this.appItem8.Name = "appItem8";
             this.appItem8.Size = new System.Drawing.Size(160, 35);
             this.appItem8.TabIndex = 7;
             // 
+            // appItem9
+            // 
+            this.appItem9.AppIcon = global::Invaiz_Studio.Properties.Resources.iconid;
+            this.appItem9.AppName = "InDesign";
+            this.appItem9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.appItem9.Location = new System.Drawing.Point(3, 126);
+            this.appItem9.Name = "appItem9";
+            this.appItem9.Size = new System.Drawing.Size(160, 35);
+            this.appItem9.TabIndex = 8;
+            // 
             // AppList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.customScrollbar1);
             this.Controls.Add(this.panel1);
             this.Name = "AppList";
@@ -200,8 +200,8 @@
         public System.Windows.Forms.FlowLayoutPanel app_list;
         private AppItem appItem5;
         private AppItem appItem6;
-        private AppItem appItem7;
         public CustomControls.CustomScrollbar customScrollbar1;
         private AppItem appItem8;
+        private AppItem appItem9;
     }
 }

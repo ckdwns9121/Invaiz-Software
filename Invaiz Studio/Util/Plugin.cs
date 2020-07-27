@@ -292,6 +292,7 @@ namespace Invaiz_Studio.Util
                     httpClient.Timeout = new TimeSpan(0, 0, 0, 5);
                     string serverUrl = "http://localhost:";
                     string portNumber = getPortNumber(appName);
+                    Console.WriteLine("포트번호" + portNumber);
                     httpClient.Timeout = new TimeSpan(0, 0, 0, 5);
                     JsonObjectCollection userData = new JsonObjectCollection();
                     userData.Add(new JsonStringValue("messageType", messageType));

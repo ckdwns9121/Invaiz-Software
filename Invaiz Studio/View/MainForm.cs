@@ -18,6 +18,7 @@ namespace Invaiz_Studio
         delegate void EventHandlerAddCtrl();
         event EventHandlerAddCtrl OnAddCtrl;
 
+        //현재 언어
         public CultureInfo currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
         #region 생성자
         public MainForm()
@@ -29,7 +30,7 @@ namespace Invaiz_Studio
                 payloads[i] = new DeviceData.Payload();
             }
             this.customScrollbar1.Minimum = 0;
-            this.customScrollbar1.Maximum = this.deviceList.DisplayRectangle.Height * 2;
+            this.customScrollbar1.Maximum = this.deviceList.DisplayRectangle.Height;
             this.customScrollbar1.LargeChange = customScrollbar1.Maximum / customScrollbar1.Height + this.deviceList.Height;
             this.customScrollbar1.SmallChange = 15;
             this.customScrollbar1.Value = Math.Abs(this.deviceList.AutoScrollPosition.Y);
@@ -86,7 +87,7 @@ namespace Invaiz_Studio
 
         #region 폼 로딩, 최소화 및 종료
 
-        public View.GeneralOverlayForm defaultOverlay = new View.GeneralOverlayForm();
+        public View.SubOverlayForm subOverlay = new View.SubOverlayForm();
         private void MainForm_Load(object sender, EventArgs e)
         {
             Console.WriteLine(Properties.Settings.Default.WIN_PRESET);
@@ -95,11 +96,11 @@ namespace Invaiz_Studio
             PresetName = this.presetBox.PresetName;
             Util.Preset preset = new Util.Preset();
             preset.getPresetFiles();
-            //preset.settingPreset();
+
             Util.MainRender render = new Util.MainRender();
             render.updateUI();
-        //  defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
-        //  defaultOverlay.Show();
+            subOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+            subOverlay.Show();
 
             //폼 로드시 시리얼 포트 검색
             try
@@ -146,10 +147,6 @@ namespace Invaiz_Studio
         private void appClosed_click(object sender, EventArgs e)
         {
             this.Visible = false;
-
-            //Application.Exit();
-            //Util.Preset preset = new Util.Preset();
-            //preset.savePreset(this.PresetPath, this.AppName, this.PresetName);
         }
 
         private void minimized_click(object sender, EventArgs e)
@@ -428,7 +425,7 @@ namespace Invaiz_Studio
             set
             {
                 this.currentGroup = value;
-                defaultOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+                subOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
             }
         }
 
@@ -472,7 +469,7 @@ namespace Invaiz_Studio
         }
         #endregion
 
-        #region data control
+        #region 시리얼 데이터
         public readonly int[] BAUDRATE = { 9600, 19200, 38400, 57600, 115200 };
         private int[] position = new int[4];
         private int[] speed = new int[4];
@@ -489,8 +486,7 @@ namespace Invaiz_Studio
         Util.ImportWinapi importWinapi = new Util.ImportWinapi();
 
         int tempIndex = -1;
-        int checkdata = 0;
-        bool isGroupChange = false;
+
         private void sp_DataReceived(object sender, EventArgs e)
         {
             try
@@ -584,11 +580,18 @@ namespace Invaiz_Studio
             }
 
         }
-        private void sp_DataReceived2(object sender, EventArgs e)
+        public void OverlayCheck()
         {
-            //this.Invoke(new EventHandler(mySerialReceived));
+            pluginConnect.overlay.closeOverlay();
         }
 
+        public void InitOverlayTimer()
+        {
+            
+            pluginConnect.overlay.tm2.Stop();
+            pluginConnect.overlay.closeOverlay();
+            pluginConnect.overlay.initTimer();
+        }
         #endregion
 
         #region 애니메이션
@@ -653,9 +656,8 @@ namespace Invaiz_Studio
             {
 
                 deviceList.AutoScrollPosition = new Point(0, customScrollbar1.Value);
-                Console.WriteLine("custom: " + customScrollbar1.Value.ToString());
-                customScrollbar1.Invalidate();
-                Application.DoEvents();
+                //customScrollbar1.Invalidate();
+                //Application.DoEvents();
             }
             catch (Exception ex)
             {
@@ -678,7 +680,6 @@ namespace Invaiz_Studio
             if (e.Delta > 0)
             {
                 customScrollbar1.Value = (deviceList.AutoScrollPosition.Y + 120) * -1;
-                Console.WriteLine("커스텀 스크롤 밸류 업" + (deviceList.AutoScrollPosition.Y + 120) * -1);
                 deviceList.AutoScrollPosition = new Point(0, customScrollbar1.Value);
                 customScrollbar1.Invalidate();
                 Application.DoEvents();
@@ -686,7 +687,6 @@ namespace Invaiz_Studio
             else
             {
                 customScrollbar1.Value = (deviceList.AutoScrollPosition.Y - 120) * -1;
-                Console.WriteLine("커스텀 스크롤 밸류 다운" + (deviceList.AutoScrollPosition.Y - 120) * -1);
                 deviceList.AutoScrollPosition = new Point(0, customScrollbar1.Value);
                 customScrollbar1.Invalidate();
                 Application.DoEvents();
@@ -700,5 +700,6 @@ namespace Invaiz_Studio
             View.General gereral = new View.General();
             gereral.ShowDialog();
         }
+
     }
 }

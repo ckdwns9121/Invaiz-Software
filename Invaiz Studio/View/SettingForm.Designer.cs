@@ -52,17 +52,17 @@
             this.subName2_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.subName2_input = new Invaiz_Studio.Component.Test.CustomTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.subName1_label = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.subName1_input = new Invaiz_Studio.Component.Test.CustomTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.formName_input = new System.Windows.Forms.TextBox();
             this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.setform = new System.Windows.Forms.Panel();
+            this.subName2_input = new Invaiz_Studio.Component.Test.CustomTextBox();
+            this.subName1_input = new Invaiz_Studio.Component.Test.CustomTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.function_on)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key_on)).BeginInit();
@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.panel1.Controls.Add(this.sub_name2);
             this.panel1.Controls.Add(this.sub_name1);
             this.panel1.Controls.Add(this.form_name);
@@ -95,8 +95,9 @@
             // 
             // sub_name2
             // 
+            this.sub_name2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.sub_name2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sub_name2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sub_name2.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sub_name2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.sub_name2.Location = new System.Drawing.Point(434, 2);
             this.sub_name2.Name = "sub_name2";
@@ -107,8 +108,9 @@
             // 
             // sub_name1
             // 
+            this.sub_name1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.sub_name1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sub_name1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sub_name1.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sub_name1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.sub_name1.Location = new System.Drawing.Point(286, 2);
             this.sub_name1.Name = "sub_name1";
@@ -119,8 +121,9 @@
             // 
             // form_name
             // 
+            this.form_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.form_name.Cursor = System.Windows.Forms.Cursors.Default;
-            this.form_name.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.form_name.Location = new System.Drawing.Point(102, 2);
             this.form_name.Name = "form_name";
@@ -144,9 +147,9 @@
             // 
             // set_title
             // 
-            this.set_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.set_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.set_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.set_title.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.set_title.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.set_title.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.set_title.Location = new System.Drawing.Point(0, 0);
             this.set_title.Name = "set_title";
@@ -161,7 +164,7 @@
             this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
             this.save.FlatAppearance.BorderSize = 0;
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.save.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.save.Location = new System.Drawing.Point(488, 654);
             this.save.Name = "save";
@@ -176,7 +179,7 @@
             this.cancle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.cancle.FlatAppearance.BorderSize = 0;
             this.cancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancle.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancle.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.cancle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cancle.Location = new System.Drawing.Point(341, 654);
             this.cancle.Name = "cancle";
@@ -201,12 +204,12 @@
             // label2
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(77, 150);
+            this.label2.Location = new System.Drawing.Point(78, 142);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.Size = new System.Drawing.Size(88, 35);
             this.label2.TabIndex = 6;
             this.label2.Text = "기능 설정";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,12 +218,12 @@
             // label3
             // 
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(212, 150);
+            this.label3.Location = new System.Drawing.Point(213, 142);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(156, 20);
+            this.label3.Size = new System.Drawing.Size(177, 35);
             this.label3.TabIndex = 8;
             this.label3.Text = "사용자 지정 키 입력";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +243,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.serchText);
             this.panel2.Location = new System.Drawing.Point(30, 6);
@@ -260,7 +263,7 @@
             // 
             // serchText
             // 
-            this.serchText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.serchText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.serchText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.serchText.Cursor = System.Windows.Forms.Cursors.Hand;
             this.serchText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -303,7 +306,7 @@
             // item_list
             // 
             this.item_list.AutoSize = true;
-            this.item_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.item_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
             this.item_list.Location = new System.Drawing.Point(0, 0);
             this.item_list.MaximumSize = new System.Drawing.Size(580, 0);
             this.item_list.MinimumSize = new System.Drawing.Size(580, 360);
@@ -340,7 +343,7 @@
             // subName2_label
             // 
             this.subName2_label.Cursor = System.Windows.Forms.Cursors.Default;
-            this.subName2_label.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName2_label.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.subName2_label.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.subName2_label.Location = new System.Drawing.Point(19, 10);
             this.subName2_label.Name = "subName2_label";
@@ -353,7 +356,7 @@
             // label5
             // 
             this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Location = new System.Drawing.Point(153, 10);
             this.label5.Name = "label5";
@@ -365,31 +368,17 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.panel5.Controls.Add(this.subName2_input);
             this.panel5.Location = new System.Drawing.Point(22, 44);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(580, 44);
             this.panel5.TabIndex = 16;
             // 
-            // subName2_input
-            // 
-            this.subName2_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.subName2_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subName2_input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.subName2_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subName2_input.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.subName2_input.Location = new System.Drawing.Point(21, 12);
-            this.subName2_input.Name = "subName2_input";
-            this.subName2_input.ReadOnly = true;
-            this.subName2_input.Size = new System.Drawing.Size(529, 20);
-            this.subName2_input.TabIndex = 98;
-            this.subName2_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName2_input_KeyDown);
-            // 
             // label1
             // 
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(160, 121);
             this.label1.Name = "label1";
@@ -402,7 +391,7 @@
             // subName1_label
             // 
             this.subName1_label.Cursor = System.Windows.Forms.Cursors.Default;
-            this.subName1_label.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName1_label.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.subName1_label.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.subName1_label.Location = new System.Drawing.Point(25, 121);
             this.subName1_label.Name = "subName1_label";
@@ -414,31 +403,17 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.panel6.Controls.Add(this.subName1_input);
             this.panel6.Location = new System.Drawing.Point(29, 155);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(580, 44);
             this.panel6.TabIndex = 13;
             // 
-            // subName1_input
-            // 
-            this.subName1_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.subName1_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subName1_input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.subName1_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subName1_input.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.subName1_input.Location = new System.Drawing.Point(21, 12);
-            this.subName1_input.Name = "subName1_input";
-            this.subName1_input.ReadOnly = true;
-            this.subName1_input.Size = new System.Drawing.Size(529, 20);
-            this.subName1_input.TabIndex = 99;
-            this.subName1_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName1_input_KeyDown);
-            // 
             // label7
             // 
             this.label7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label7.Location = new System.Drawing.Point(160, 23);
             this.label7.Name = "label7";
@@ -451,7 +426,7 @@
             // label8
             // 
             this.label8.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label8.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Location = new System.Drawing.Point(25, 23);
             this.label8.Name = "label8";
@@ -463,7 +438,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.panel7.Controls.Add(this.formName_input);
             this.panel7.Location = new System.Drawing.Point(29, 57);
             this.panel7.Name = "panel7";
@@ -472,19 +447,19 @@
             // 
             // formName_input
             // 
-            this.formName_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.formName_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.formName_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.formName_input.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.formName_input.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formName_input.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.formName_input.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.formName_input.Location = new System.Drawing.Point(21, 12);
             this.formName_input.Name = "formName_input";
-            this.formName_input.Size = new System.Drawing.Size(529, 20);
+            this.formName_input.Size = new System.Drawing.Size(529, 23);
             this.formName_input.TabIndex = 98;
             // 
             // customScrollbar1
             // 
-            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.customScrollbar1.ChannelColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
             this.customScrollbar1.DownArrowImage = null;
             this.customScrollbar1.LargeChange = 10;
             this.customScrollbar1.Location = new System.Drawing.Point(633, 245);
@@ -509,7 +484,7 @@
             // 
             // setform
             // 
-            this.setform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.setform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.setform.Controls.Add(this.panel1);
             this.setform.Controls.Add(this.customScrollbar1);
             this.setform.Controls.Add(this.set_title);
@@ -525,6 +500,34 @@
             this.setform.Name = "setform";
             this.setform.Size = new System.Drawing.Size(680, 727);
             this.setform.TabIndex = 102;
+            // 
+            // subName2_input
+            // 
+            this.subName2_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
+            this.subName2_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subName2_input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.subName2_input.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName2_input.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.subName2_input.Location = new System.Drawing.Point(21, 12);
+            this.subName2_input.Name = "subName2_input";
+            this.subName2_input.ReadOnly = true;
+            this.subName2_input.Size = new System.Drawing.Size(529, 23);
+            this.subName2_input.TabIndex = 98;
+            this.subName2_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName2_input_KeyDown);
+            // 
+            // subName1_input
+            // 
+            this.subName1_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
+            this.subName1_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subName1_input.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.subName1_input.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subName1_input.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.subName1_input.Location = new System.Drawing.Point(21, 12);
+            this.subName1_input.Name = "subName1_input";
+            this.subName1_input.ReadOnly = true;
+            this.subName1_input.Size = new System.Drawing.Size(529, 23);
+            this.subName1_input.TabIndex = 99;
+            this.subName1_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.subName1_input_KeyDown);
             // 
             // SettingForm
             // 

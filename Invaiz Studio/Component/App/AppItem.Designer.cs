@@ -38,8 +38,8 @@
             this.app_name.BackColor = System.Drawing.Color.Transparent;
             this.app_name.Cursor = System.Windows.Forms.Cursors.Hand;
             this.app_name.Dock = System.Windows.Forms.DockStyle.Top;
-            this.app_name.Font = new System.Drawing.Font("Calibri", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.app_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(153)))));
+            this.app_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.app_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.app_name.Location = new System.Drawing.Point(38, 0);
             this.app_name.Margin = new System.Windows.Forms.Padding(3, 1, 4, 0);
             this.app_name.Name = "app_name";
@@ -73,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.Controls.Add(this.app_name);
             this.Controls.Add(this.app_icon);
             this.Name = "AppItem";

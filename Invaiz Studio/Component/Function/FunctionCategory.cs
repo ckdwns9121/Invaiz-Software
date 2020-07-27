@@ -106,14 +106,14 @@ namespace Invaiz_Studio.Component
             {
                 if (!toggle)
                 {
-                    this.BackColor = Color.FromArgb(51, 153, 255);
+                    this.BackColor = Color.FromArgb(42, 48, 57);
                     this.category_name.Image = openImage;
                     toggle = true;
                     showItemList();
                 }
                 else
                 {
-                    this.BackColor = Color.FromArgb(153, 180, 209);
+                    this.BackColor = Color.FromArgb(54, 63, 77); 
                     this.category_name.Image = closeImage;
                     toggle = false;
                     showItemList();

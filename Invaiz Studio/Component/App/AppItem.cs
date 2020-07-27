@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invaiz_Studio.Util;
 
 namespace Invaiz_Studio.Component
 {
@@ -54,45 +55,17 @@ namespace Invaiz_Studio.Component
 
         private void app_icon_MouseLeave(object sender, EventArgs e)
         {
-            this.app_name.ForeColor = Color.FromArgb(152, 152, 153);
-            this.BackColor = Color.FromArgb(64, 64, 64);
+            this.app_name.ForeColor = Color.FromArgb(245, 245, 245);
+            this.BackColor = Color.FromArgb(51, 63, 77);
         }
 
 
         private void lastPreset()
         {
             mn = MainForm.getInstance;
-            string appName = mn.AppName;
+            Preset preset = new Preset();
             string presetName = mn.PresetName;
-
-            switch (appName)
-            {
-                case "Window":
-                    Properties.Settings.Default.WIN_PRESET = presetName;
-                    break;
-                case "Photoshop":
-                    Properties.Settings.Default.PS_PRESET = presetName;
-                    break;
-                case "Illustrator":
-                    Properties.Settings.Default.AI_PRESET = presetName;
-                    break;
-                case "AfterEffect":
-                    Properties.Settings.Default.AE_PRESET = presetName;
-                    break;
-                case "PremierePro":
-                    Properties.Settings.Default.PR_PRESET = presetName;
-                    break;
-                case "Lightroom":
-                    Properties.Settings.Default.LR_PRESET = presetName;
-                    break;
-                case "InDesign":
-                    Properties.Settings.Default.ID_PRESET = presetName;
-                    break;
-                default:
-                    Properties.Settings.Default.Save();
-                    break;
-            }
-            Properties.Settings.Default.Save();
+            preset.savePropertyPreset(presetName);
         }
 
         private void app_icon_MouseClick(object sender, MouseEventArgs e)

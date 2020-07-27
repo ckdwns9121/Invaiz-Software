@@ -36,7 +36,7 @@
             this.form_name.BackColor = System.Drawing.Color.Transparent;
             this.form_name.Cursor = System.Windows.Forms.Cursors.Hand;
             this.form_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.form_name.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.form_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.form_name.Location = new System.Drawing.Point(0, 0);
             this.form_name.Name = "form_name";

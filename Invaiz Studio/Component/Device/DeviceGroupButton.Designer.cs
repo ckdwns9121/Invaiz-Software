@@ -34,7 +34,7 @@
             // form_name
             // 
             this.form_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.form_name.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.form_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.form_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.form_name.Location = new System.Drawing.Point(0, 0);
             this.form_name.Margin = new System.Windows.Forms.Padding(0);

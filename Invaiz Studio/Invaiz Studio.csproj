@@ -134,6 +134,12 @@
     <Compile Include="Component\Function\FunctionToolTip.Designer.cs">
       <DependentUpon>FunctionToolTip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\Setting\Overlay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Setting\Overlay.Designer.cs">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\Test\GroupItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +194,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Util\ProcessId.cs" />
     <Compile Include="Util\ImportWinapi.cs" />
     <Compile Include="Util\OverlayControl.cs" />
@@ -202,11 +209,11 @@
     <Compile Include="View\NewPresetForm.Designer.cs">
       <DependentUpon>NewPresetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\GeneralOverlayForm.cs">
+    <Compile Include="View\SubOverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GeneralOverlayForm.Designer.cs">
-      <DependentUpon>GeneralOverlayForm.cs</DependentUpon>
+    <Compile Include="View\SubOverlayForm.Designer.cs">
+      <DependentUpon>SubOverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\General.cs">
       <SubType>Form</SubType>
@@ -270,6 +277,9 @@
     <EmbeddedResource Include="Component\Device\DeviceGroup.resx">
       <DependentUpon>DeviceGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\Setting\Overlay.resx">
+      <DependentUpon>Overlay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\Test\GroupItem.resx">
       <DependentUpon>GroupItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,8 +304,8 @@
     <EmbeddedResource Include="View\NewPresetForm.resx">
       <DependentUpon>NewPresetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GeneralOverlayForm.resx">
-      <DependentUpon>GeneralOverlayForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\SubOverlayForm.resx">
+      <DependentUpon>SubOverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\General.resx">
       <DependentUpon>General.cs</DependentUpon>
@@ -382,6 +392,9 @@
     <None Include="Asset\overlay2.png" />
     <None Include="Asset\iconwin.png" />
     <None Include="Asset\renamecheck.png" />
+    <None Include="Asset\iconcs.png" />
+    <None Include="Asset\toggleon.png" />
+    <None Include="Asset\toggleoff.png" />
     <Content Include="invaiz.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

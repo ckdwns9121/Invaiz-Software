@@ -15,6 +15,7 @@ namespace Invaiz_Studio.Util
         private const string AFTEREFFECT = "AfterFX";
         private const string LIGHTROOM = "Lightroom";
         private const string PREMIREPRO = "Adobe Premiere Pro";
+        private const string CLIPSTUDIO = "CLIPStudioPaint";
 
         public string AppNameToPID(string processName)
         {
@@ -41,6 +42,10 @@ namespace Invaiz_Studio.Util
                     break;
                 case "PremierePro":
                     str = PREMIREPRO;
+                    break;
+                case "ClipStudio":
+                    Console.WriteLine("클립");
+                    str = CLIPSTUDIO;
                     break;
                 default:
                     str = WINDOW;
@@ -75,6 +80,9 @@ namespace Invaiz_Studio.Util
                     break;
                 case "Adobe Premiere Pro":
                     str = "PremierePro";
+                    break;
+                case "CLIPStudioPaint":
+                    str = "ClipStudio";
                     break;
                 default:
                     str = WINDOW;

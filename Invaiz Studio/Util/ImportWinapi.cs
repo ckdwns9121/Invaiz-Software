@@ -11,6 +11,7 @@ namespace Invaiz_Studio.Util
     using System.Runtime.InteropServices;
     using System.Diagnostics;
     using System.DirectoryServices.ActiveDirectory;
+    using System.ComponentModel;
 
     class ImportWinapi
     {
@@ -53,6 +54,7 @@ namespace Invaiz_Studio.Util
 
             Util.ProcessId processId = new ProcessId();
             processName = processId.AppNameToPID(processName);
+            Console.WriteLine("프로세스 이름" + processName); 
             IntPtr handle = IntPtr.Zero;
             uint pid = 0;
             Process ps = null;
@@ -64,7 +66,7 @@ namespace Invaiz_Studio.Util
 
             if (ps.ProcessName.Equals("Invaiz Studio"))
             {
-               // Console.WriteLine("3........여기 드러옴");
+                Console.WriteLine("3........여기 드러옴");
                 MainForm mn = MainForm.getInstance;
                 ProcessCall(mn.AppName);
                 return true;
@@ -172,8 +174,11 @@ namespace Invaiz_Studio.Util
             MOUSEEVENTF_ABSOLUTE = 0x8000
         }
 
+        //[DllImport("user32.dll")]
+        //private extern static uint SendInput(int nInputs, INPUT[] pInputs, int cbsize);
+
         [DllImport("user32.dll")]
-        private extern static void SendInput(int nInputs, ref INPUT pInputs, int cbsize);
+        private extern static uint SendInput(int nInputs, ref INPUT pInputs, int cbsize);
         [DllImport("user32.dll", EntryPoint = "MapVirtualKeyA")]
         private extern static int MapVirtualKey(int wCode, int wMapType);
 
@@ -188,6 +193,7 @@ namespace Invaiz_Studio.Util
 
         public void mouseWheel(int direction , bool check)
         {
+            Console.WriteLine("마우스 휠");
             INPUT inp = new INPUT();
             inp.type = INPUT_MOUSE;
             inp.no.dx = 0;
@@ -199,9 +205,13 @@ namespace Invaiz_Studio.Util
             SendInput(1, ref inp, Marshal.SizeOf(inp));
 
         }
+        List<INPUT> inputs = new List<INPUT>();
+        INPUT[] i = new INPUT[2];
         public void Send(int key, bool isEXTEND)
         {
+            Console.WriteLine("Gd");
 
+            //원래코드
             INPUT inp = new INPUT();
             inp.type = INPUT_KEYBOARD;
             inp.ki.wVk = (short)key;
@@ -213,6 +223,66 @@ namespace Invaiz_Studio.Util
             System.Threading.Thread.Sleep(100);
             inp.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYUP;
             SendInput(1, ref inp, Marshal.SizeOf(inp));
+            //원래코드
+
+            //i[0] = new INPUT();
+            //i[0].type = INPUT_KEYBOARD;
+            //i[0].ki.wVk = (short)key;
+            //i[0].ki.wScan = (short)MapVirtualKey(i[0].ki.wVk, 0);
+            //i[0].ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
+            //i[0].ki.time = 0;
+            //i[0].ki.dwExtraInfo = 0;
+
+            ////i[1] = new INPUT();
+
+            ////i[1].type = INPUT_KEYBOARD;
+            ////i[1].ki.wVk = (short)key;
+            ////i[1].ki.wScan = (short)MapVirtualKey(i[1].ki.wVk, 0);
+            ////i[1].ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
+            ////i[1].ki.time = 0;
+            ////i[1].ki.dwExtraInfo = 0;
+
+            //INPUT input = new INPUT();
+
+            //input.type = INPUT_KEYBOARD;
+            //input.ki.wVk = (short)key;
+            //input.ki.wScan = (short)MapVirtualKey(input.ki.wVk, 0);
+            //input.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
+            //input.ki.time = 0;
+            //input.ki.dwExtraInfo = 0;
+
+            //inputs.Add(input);
+
+
+            //input = new INPUT();
+
+            //input.type = INPUT_KEYBOARD;
+            //input.ki.wVk = (short)65;
+            //input.ki.wScan = (short)MapVirtualKey(input.ki.wVk, 0);
+            //input.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
+            //input.ki.time = 0;
+            //input.ki.dwExtraInfo = 0;
+            //inputs.Add(input);
+
+            //input = new INPUT();
+
+            //input.type = INPUT_KEYBOARD;
+            //input.ki.wVk = (short)66;
+            //input.ki.wScan = (short)MapVirtualKey(input.ki.wVk, 0);
+            //input.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYDOWN;
+            //input.ki.time = 0;
+            //input.ki.dwExtraInfo = 0;
+            //inputs.Add(input);
+            //uint result = SendInput(inputs.Count, inputs.ToArray(), Marshal.SizeOf(inputs[0]));
+            //if (result == 0)
+            //    throw new Win32Exception(Marshal.GetLastWin32Error());
+
+            //inputs.Clear();
+            //Console.WriteLine("결과값");
+            //System.Threading.Thread.Sleep(100);
+            //inp.ki.dwFlags = ((isEXTEND) ? (KEYEVENTF_EXTENDEDKEY) : 0x0) | KEYEVENTF_KEYUP;
+            //SendInput(1, ref inp, Marshal.SizeOf(inp));
+
 
         }
 

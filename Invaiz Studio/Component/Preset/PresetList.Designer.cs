@@ -100,7 +100,7 @@
             // list
             // 
             this.list.AutoSize = true;
-            this.list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.list.Location = new System.Drawing.Point(0, 0);
             this.list.Margin = new System.Windows.Forms.Padding(0);
             this.list.MaximumSize = new System.Drawing.Size(188, 0);
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.customScrollbar1);
             this.Controls.Add(this.scrollPanel);
             this.Controls.Add(this.pictureBox23);

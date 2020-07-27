@@ -23,15 +23,24 @@ namespace Invaiz_Studio.Util
         {
             Console.WriteLine("test");
         }
-        private void initTimer()
+        public void closeOverlay()
+        {
+            Console.WriteLine("끄기");
+            this.groupOv.Visible = false;
+            this.payloadOv.Visible = false;
+        }
+        public void initTimer()
         {
             tm2 = new System.Timers.Timer();
-            tm2.Interval = 4000;
+            tm2.Interval = Properties.Settings.Default.OL_SECOND * 1000;
             tm2.Enabled = false;
             tm2.Elapsed += new ElapsedEventHandler(popupControl);
+            Console.WriteLine(Properties.Settings.Default.OL_SECOND + "초 로 초기화");
         }
         public void GroupOverlay(int number)
         {
+            if (!Properties.Settings.Default.OL_CHECK) return;
+
             mn = MainForm.getInstance;
 
             this.payloadOv.Visible = (this.payloadOv.Visible == true) ? false : false;
@@ -53,6 +62,7 @@ namespace Invaiz_Studio.Util
 
         public void PayloadOverlay(bool deviceCheck, int group , int number)
         {
+            if (!Properties.Settings.Default.OL_CHECK) return;
             mn = MainForm.getInstance;
 
             this.groupOv.Visible = (this.groupOv.Visible == true) ? false : false;
@@ -81,6 +91,8 @@ namespace Invaiz_Studio.Util
 
         public void PayloadOverlay(bool deviceCheck, int group, int number,string str)
         {
+            if (!Properties.Settings.Default.OL_CHECK) return;
+
             mn = MainForm.getInstance;
 
             if (str.Equals("succeeded") || str.Equals("failed") || str.Equals("CEP Responce") || str.Contains("Error") || str.Contains("NaN") || str.Contains("error") || str.Contains("undefined")) 
@@ -109,15 +121,18 @@ namespace Invaiz_Studio.Util
 
         private void popupControl(object sender, EventArgs e)
         {
-            try
+            if (!Properties.Settings.Default.OL_SHOW)
             {
-                this.groupOv.Visible = false;
-                this.payloadOv.Visible=false;
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    this.groupOv.Visible = false;
+                    this.payloadOv.Visible = false;
+                }
+                catch (Exception ex)
+                {
 
-                Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
     }

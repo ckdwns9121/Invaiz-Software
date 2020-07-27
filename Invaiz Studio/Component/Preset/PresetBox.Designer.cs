@@ -36,8 +36,8 @@
             // preset_name
             // 
             this.preset_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.preset_name.Font = new System.Drawing.Font("Calibri", 15F);
-            this.preset_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(153)))));
+            this.preset_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.preset_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.preset_name.Location = new System.Drawing.Point(0, 0);
             this.preset_name.Name = "preset_name";
             this.preset_name.Size = new System.Drawing.Size(131, 50);
@@ -50,9 +50,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Invaiz_Studio.Properties.Resources.showlist;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 8);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;

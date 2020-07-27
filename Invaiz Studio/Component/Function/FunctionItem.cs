@@ -128,7 +128,7 @@ namespace Invaiz_Studio.Component
         public void init()
         {
             this.selection = false;
-            this.BackColor = Color.FromArgb(64, 64, 64);
+            this.BackColor = Color.FromArgb(89, 105, 128);
             this.form_name.Image = null;
 
         }
@@ -146,19 +146,20 @@ namespace Invaiz_Studio.Component
         private void FunctionItem_MouseMove(object sender, MouseEventArgs e)
         {
             if (!selection)
-                this.BackColor = Color.FromArgb(69, 142, 255);
+                this.BackColor = Color.FromArgb(0, 100, 255);
+
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
         {
             if (!selection)
-                this.BackColor = Color.FromArgb(69, 142, 255);
+                this.BackColor = Color.FromArgb(0, 100, 255);
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             if(!selection)
-                this.BackColor = Color.FromArgb(64, 64, 64);
+                this.BackColor = Color.FromArgb(89, 105, 128);
         }
 
         private void form_name_MouseClick(object sender, MouseEventArgs e)

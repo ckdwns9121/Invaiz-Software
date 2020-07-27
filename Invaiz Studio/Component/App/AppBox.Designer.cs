@@ -38,8 +38,8 @@
             // app_name
             // 
             this.app_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.app_name.Font = new System.Drawing.Font("Calibri", 15F);
-            this.app_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(153)))));
+            this.app_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.app_name.ForeColor = System.Drawing.SystemColors.Window;
             this.app_name.Location = new System.Drawing.Point(49, 5);
             this.app_name.Name = "app_name";
             this.app_name.Size = new System.Drawing.Size(113, 40);
@@ -50,12 +50,13 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Invaiz_Studio.Properties.Resources.showlist;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(161, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 8);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.app_icon_MouseClick);
@@ -86,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.app_icon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

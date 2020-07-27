@@ -41,7 +41,7 @@
             // group_number
             // 
             this.group_number.Cursor = System.Windows.Forms.Cursors.Default;
-            this.group_number.Font = new System.Drawing.Font("Calibri", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_number.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.group_number.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.group_number.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.group_number.Location = new System.Drawing.Point(0, 0);
@@ -59,7 +59,7 @@
             // group_name
             // 
             this.group_name.Cursor = System.Windows.Forms.Cursors.Default;
-            this.group_name.Font = new System.Drawing.Font("Calibri", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.group_name.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.group_name.Location = new System.Drawing.Point(105, 0);
@@ -75,10 +75,10 @@
             // 
             // group_renameInput
             // 
-            this.group_renameInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.group_renameInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.group_renameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.group_renameInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.group_renameInput.Font = new System.Drawing.Font("Calibri", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_renameInput.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group_renameInput.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.group_renameInput.Location = new System.Drawing.Point(2, 5);
             this.group_renameInput.Name = "group_renameInput";
@@ -88,7 +88,7 @@
             // 
             // group_rename
             // 
-            this.group_rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.group_rename.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.group_rename.Controls.Add(this.group_renameInput);
             this.group_rename.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.group_rename.Location = new System.Drawing.Point(109, 5);
@@ -122,12 +122,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.group_rename);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.rename_icon);
-            this.Controls.Add(this.group_name);
             this.Controls.Add(this.group_number);
+            this.Controls.Add(this.group_rename);
+            this.Controls.Add(this.group_name);
             this.Name = "DeviceGroup";
             this.Size = new System.Drawing.Size(557, 41);
             this.group_rename.ResumeLayout(false);

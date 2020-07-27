@@ -33,14 +33,16 @@
             // 
             // category_name
             // 
+            this.category_name.BackColor = System.Drawing.Color.Transparent;
             this.category_name.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.category_name.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.category_name.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.category_name.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.category_name.Image = global::Invaiz_Studio.Properties.Resources.folder;
             this.category_name.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.category_name.Location = new System.Drawing.Point(0, 0);
             this.category_name.Name = "category_name";
             this.category_name.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.category_name.Size = new System.Drawing.Size(570, 30);
+            this.category_name.Size = new System.Drawing.Size(567, 30);
             this.category_name.TabIndex = 1;
             this.category_name.Text = "Tools";
             this.category_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -50,7 +52,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.Controls.Add(this.category_name);
             this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.Name = "FunctionCategory";

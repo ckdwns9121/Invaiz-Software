@@ -12,6 +12,7 @@ namespace Invaiz_Studio.View
 {
     public partial class General : Form
     {
+        private MainForm mn;
         public General()
         {
             InitializeComponent();
@@ -29,9 +30,30 @@ namespace Invaiz_Studio.View
             this.setform.Left = (int)((this.Width - setform.Width) / 2);
         }
 
-        private void cancle_Click(object sender, EventArgs e)
+   
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            mn = MainForm.getInstance;
+       
+            Properties.Settings.Default.OL_CHECK= overlay.Toggle ;
+            Properties.Settings.Default.OL_LOCATION = overlay.OL_Location;
+            Properties.Settings.Default.OL_SHOW = overlay.OnlyShow;
+            Properties.Settings.Default.OL_SECOND = overlay.OL_Second;
+            if (!Properties.Settings.Default.OL_CHECK)
+            {
+                mn.OverlayCheck();
+            }
+            mn.InitOverlayTimer();
+            Console.WriteLine(overlay.Toggle);
+            Properties.Settings.Default.Save();
+            this.Close();
+  
         }
     }
 }
