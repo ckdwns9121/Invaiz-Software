@@ -99,8 +99,8 @@ namespace Invaiz_Studio
 
             Util.MainRender render = new Util.MainRender();
             render.updateUI();
-            subOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
-            subOverlay.Show();
+            //subOverlay.showGroup(currentGroup, payloads[currentGroup].groupName);
+            //subOverlay.Show();
 
             //폼 로드시 시리얼 포트 검색
             try

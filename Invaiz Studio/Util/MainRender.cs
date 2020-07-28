@@ -186,13 +186,14 @@ namespace Invaiz_Studio.Util
         }
 
         private Image[] appImage = {
-            Invaiz_Studio.Properties.Resources.iconwin,
-            Invaiz_Studio.Properties.Resources.iconps,
-            Invaiz_Studio.Properties.Resources.iconai,
-            Invaiz_Studio.Properties.Resources.iconae,
-            Invaiz_Studio.Properties.Resources.iconpr,
-            Invaiz_Studio.Properties.Resources.iconlr,
-            Invaiz_Studio.Properties.Resources.iconid
+            Properties.Resources.iconwin,
+            Properties.Resources.iconps,
+            Properties.Resources.iconai,
+            Properties.Resources.iconae,
+            Properties.Resources.iconpr,
+            Properties.Resources.iconlr,
+            Properties.Resources.iconid,
+            Properties.Resources.iconcs,
         };
 
         public void resetImage(string processName)
@@ -222,7 +223,7 @@ namespace Invaiz_Studio.Util
                     mn.appBox.AppIconImage = appImage[6];
                     break;
                 case "ClipStudio":
-                    mn.appBox.AppIconImage = null;
+                    mn.appBox.AppIconImage = appImage[7];
                     break;
                 default:
                     mn.appBox.AppIconImage = appImage[0];
