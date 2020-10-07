@@ -33,19 +33,64 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.sp = new System.IO.Ports.SerialPort(this.components);
             this.main_area = new System.Windows.Forms.Panel();
+            this.presetList = new Invaiz_Studio.Component.PresetList();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.appList = new Invaiz_Studio.Component.AppList();
+            this.presetBox = new Invaiz_Studio.Component.PresetBox();
             this.Presets = new System.Windows.Forms.Label();
             this.Appliction = new System.Windows.Forms.Label();
+            this.appBox = new Invaiz_Studio.Component.AppBox();
+            this.mainKeypad = new Invaiz_Studio.Component.MainKeypad();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.set_area = new System.Windows.Forms.Panel();
             this.customScrollbar1 = new CustomControls.CustomScrollbar();
             this.outpanel = new System.Windows.Forms.Panel();
             this.deviceList = new System.Windows.Forms.FlowLayoutPanel();
+            this.deviceGroup1 = new Invaiz_Studio.Component.DeviceGroup();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.deviceGroupButton1 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
+            this.deviceButton4 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton3 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton2 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton1 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceEncoder4 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder3 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder2 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder1 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceGroup2 = new Invaiz_Studio.Component.DeviceGroup();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.deviceGroupButton2 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
+            this.deviceButton8 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton7 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton6 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton5 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceEncoder8 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder7 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder6 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder5 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceGroup3 = new Invaiz_Studio.Component.DeviceGroup();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.deviceGroupButton3 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
+            this.deviceButton12 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton11 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton10 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton9 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceEncoder12 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder11 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder10 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder9 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceGroup4 = new Invaiz_Studio.Component.DeviceGroup();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.deviceGroupButton4 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
+            this.deviceButton16 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton15 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton14 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceButton13 = new Invaiz_Studio.Component.DeviceButton();
+            this.deviceEncoder16 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder15 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder14 = new Invaiz_Studio.Component.DeviceEncoder();
+            this.deviceEncoder13 = new Invaiz_Studio.Component.DeviceEncoder();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -62,51 +107,6 @@
             this.appTimer = new System.Windows.Forms.Timer(this.components);
             this.presetTimer = new System.Windows.Forms.Timer(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
-            this.presetList = new Invaiz_Studio.Component.PresetList();
-            this.appList = new Invaiz_Studio.Component.AppList();
-            this.presetBox = new Invaiz_Studio.Component.PresetBox();
-            this.appBox = new Invaiz_Studio.Component.AppBox();
-            this.mainKeypad = new Invaiz_Studio.Component.MainKeypad();
-            this.deviceGroup1 = new Invaiz_Studio.Component.DeviceGroup();
-            this.deviceGroupButton1 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
-            this.deviceButton4 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton3 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton2 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton1 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceEncoder4 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder3 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder2 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder1 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceGroup2 = new Invaiz_Studio.Component.DeviceGroup();
-            this.deviceGroupButton2 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
-            this.deviceButton8 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton7 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton6 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton5 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceEncoder8 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder7 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder6 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder5 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceGroup3 = new Invaiz_Studio.Component.DeviceGroup();
-            this.deviceGroupButton3 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
-            this.deviceButton12 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton11 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton10 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton9 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceEncoder12 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder11 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder10 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder9 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceGroup4 = new Invaiz_Studio.Component.DeviceGroup();
-            this.deviceGroupButton4 = new Invaiz_Studio.Component.Device.DeviceGroupButton();
-            this.deviceButton16 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton15 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton14 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceButton13 = new Invaiz_Studio.Component.DeviceButton();
-            this.deviceEncoder16 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder15 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder14 = new Invaiz_Studio.Component.DeviceEncoder();
-            this.deviceEncoder13 = new Invaiz_Studio.Component.DeviceEncoder();
             this.main_area.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.set_area.SuspendLayout();
@@ -147,6 +147,16 @@
             this.main_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
             this.main_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
             // 
+            // presetList
+            // 
+            this.presetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
+            this.presetList.Location = new System.Drawing.Point(298, 189);
+            this.presetList.MaximumSize = new System.Drawing.Size(182, 251);
+            this.presetList.MinimumSize = new System.Drawing.Size(182, 0);
+            this.presetList.Name = "presetList";
+            this.presetList.Size = new System.Drawing.Size(182, 0);
+            this.presetList.TabIndex = 26;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -162,6 +172,26 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(180, 1);
             this.panel5.TabIndex = 24;
+            // 
+            // appList
+            // 
+            this.appList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
+            this.appList.Location = new System.Drawing.Point(89, 191);
+            this.appList.MaximumSize = new System.Drawing.Size(182, 251);
+            this.appList.MinimumSize = new System.Drawing.Size(182, 0);
+            this.appList.Name = "appList";
+            this.appList.Size = new System.Drawing.Size(182, 0);
+            this.appList.TabIndex = 23;
+            // 
+            // presetBox
+            // 
+            this.presetBox.BackColor = System.Drawing.Color.Transparent;
+            this.presetBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.presetBox.Location = new System.Drawing.Point(300, 137);
+            this.presetBox.Name = "presetBox";
+            this.presetBox.PresetName = "기본값";
+            this.presetBox.Size = new System.Drawing.Size(183, 50);
+            this.presetBox.TabIndex = 22;
             // 
             // Presets
             // 
@@ -186,6 +216,24 @@
             this.Appliction.Size = new System.Drawing.Size(89, 22);
             this.Appliction.TabIndex = 20;
             this.Appliction.Text = "Application";
+            // 
+            // appBox
+            // 
+            this.appBox.AppIconImage = global::Invaiz_Studio.Properties.Resources.iconwin;
+            this.appBox.AppName = "Window";
+            this.appBox.BackColor = System.Drawing.Color.Transparent;
+            this.appBox.Location = new System.Drawing.Point(86, 137);
+            this.appBox.Name = "appBox";
+            this.appBox.Size = new System.Drawing.Size(183, 50);
+            this.appBox.TabIndex = 2;
+            // 
+            // mainKeypad
+            // 
+            this.mainKeypad.BackColor = System.Drawing.Color.Transparent;
+            this.mainKeypad.Location = new System.Drawing.Point(58, 293);
+            this.mainKeypad.Name = "mainKeypad";
+            this.mainKeypad.Size = new System.Drawing.Size(476, 199);
+            this.mainKeypad.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -263,6 +311,20 @@
             this.deviceList.TabIndex = 0;
             this.deviceList.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.Device_MouseWheel);
             // 
+            // deviceGroup1
+            // 
+            this.deviceGroup1.BackColor = System.Drawing.Color.Transparent;
+            this.deviceGroup1.GroupName = "";
+            this.deviceGroup1.GroupNumber = "Group1";
+            this.deviceGroup1.HoverColor = System.Drawing.Color.Empty;
+            this.deviceGroup1.Location = new System.Drawing.Point(3, 3);
+            this.deviceGroup1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.deviceGroup1.Name = "deviceGroup1";
+            this.deviceGroup1.NomalColor = System.Drawing.Color.Empty;
+            this.deviceGroup1.Number = 0;
+            this.deviceGroup1.Size = new System.Drawing.Size(557, 41);
+            this.deviceGroup1.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
@@ -281,264 +343,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(535, 210);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Controls.Add(this.deviceGroupButton2);
-            this.panel2.Controls.Add(this.deviceButton8);
-            this.panel2.Controls.Add(this.deviceButton7);
-            this.panel2.Controls.Add(this.deviceButton6);
-            this.panel2.Controls.Add(this.deviceButton5);
-            this.panel2.Controls.Add(this.deviceEncoder8);
-            this.panel2.Controls.Add(this.deviceEncoder7);
-            this.panel2.Controls.Add(this.deviceEncoder6);
-            this.panel2.Controls.Add(this.deviceEncoder5);
-            this.panel2.Location = new System.Drawing.Point(3, 394);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(535, 210);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Controls.Add(this.deviceGroupButton3);
-            this.panel3.Controls.Add(this.deviceButton12);
-            this.panel3.Controls.Add(this.deviceButton11);
-            this.panel3.Controls.Add(this.deviceButton10);
-            this.panel3.Controls.Add(this.deviceButton9);
-            this.panel3.Controls.Add(this.deviceEncoder12);
-            this.panel3.Controls.Add(this.deviceEncoder11);
-            this.panel3.Controls.Add(this.deviceEncoder10);
-            this.panel3.Controls.Add(this.deviceEncoder9);
-            this.panel3.Location = new System.Drawing.Point(3, 711);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(535, 210);
-            this.panel3.TabIndex = 5;
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel7.Controls.Add(this.deviceGroupButton4);
-            this.panel7.Controls.Add(this.deviceButton16);
-            this.panel7.Controls.Add(this.deviceButton15);
-            this.panel7.Controls.Add(this.deviceButton14);
-            this.panel7.Controls.Add(this.deviceButton13);
-            this.panel7.Controls.Add(this.deviceEncoder16);
-            this.panel7.Controls.Add(this.deviceEncoder15);
-            this.panel7.Controls.Add(this.deviceEncoder14);
-            this.panel7.Controls.Add(this.deviceEncoder13);
-            this.panel7.Location = new System.Drawing.Point(3, 1028);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(535, 210);
-            this.panel7.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 740);
-            this.panel4.TabIndex = 2;
-            this.panel4.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Invaiz_Studio.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(704, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.appClosed_click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Invaiz_Studio.Properties.Resources.mini;
-            this.pictureBox2.Location = new System.Drawing.Point(672, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.minimized_click);
-            // 
-            // nav_area
-            // 
-            this.nav_area.BackColor = System.Drawing.Color.Black;
-            this.nav_area.Controls.Add(this.button1);
-            this.nav_area.Controls.Add(this.usbstate);
-            this.nav_area.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nav_area.Location = new System.Drawing.Point(0, 740);
-            this.nav_area.Name = "nav_area";
-            this.nav_area.Size = new System.Drawing.Size(1280, 60);
-            this.nav_area.TabIndex = 0;
-            this.nav_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
-            this.nav_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Invaiz_Studio.Properties.Resources.setting;
-            this.button1.Location = new System.Drawing.Point(1226, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.setting_click);
-            // 
-            // usbstate
-            // 
-            this.usbstate.AutoSize = true;
-            this.usbstate.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.usbstate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.usbstate.Location = new System.Drawing.Point(542, 20);
-            this.usbstate.Name = "usbstate";
-            this.usbstate.Size = new System.Drawing.Size(177, 24);
-            this.usbstate.TabIndex = 0;
-            this.usbstate.Text = "Device Not Connected";
-            // 
-            // notifyIcon
-            // 
-            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Invaiz";
-            this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
-            // 
-            // contextMenuStrip
-            // 
-            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.presetItem,
-            this.toolStripSeparator2,
-            this.aboutToolStripMenuItem,
-            this.showToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(112, 98);
-            // 
-            // presetItem
-            // 
-            this.presetItem.Name = "presetItem";
-            this.presetItem.Size = new System.Drawing.Size(111, 22);
-            this.presetItem.Text = "Presets";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(108, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // showToolStripMenuItem
-            // 
-            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.showToolStripMenuItem.Text = "Show";
-            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // appTimer
-            // 
-            this.appTimer.Interval = 10;
-            this.appTimer.Tick += new System.EventHandler(this.appList_tick);
-            // 
-            // presetTimer
-            // 
-            this.presetTimer.Interval = 10;
-            this.presetTimer.Tick += new System.EventHandler(this.presetTimer_Tick);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.main_area);
-            this.panel8.Controls.Add(this.set_area);
-            this.panel8.Controls.Add(this.nav_area);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1280, 800);
-            this.panel8.TabIndex = 27;
-            // 
-            // presetList
-            // 
-            this.presetList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
-            this.presetList.Location = new System.Drawing.Point(298, 189);
-            this.presetList.MaximumSize = new System.Drawing.Size(182, 251);
-            this.presetList.MinimumSize = new System.Drawing.Size(182, 0);
-            this.presetList.Name = "presetList";
-            this.presetList.Size = new System.Drawing.Size(182, 0);
-            this.presetList.TabIndex = 26;
-            // 
-            // appList
-            // 
-            this.appList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(42)))), ((int)(((byte)(51)))));
-            this.appList.Location = new System.Drawing.Point(89, 191);
-            this.appList.MaximumSize = new System.Drawing.Size(182, 251);
-            this.appList.MinimumSize = new System.Drawing.Size(182, 0);
-            this.appList.Name = "appList";
-            this.appList.Size = new System.Drawing.Size(182, 0);
-            this.appList.TabIndex = 23;
-            // 
-            // presetBox
-            // 
-            this.presetBox.BackColor = System.Drawing.Color.Transparent;
-            this.presetBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.presetBox.Location = new System.Drawing.Point(300, 137);
-            this.presetBox.Name = "presetBox";
-            this.presetBox.PresetName = "기본값";
-            this.presetBox.Size = new System.Drawing.Size(183, 50);
-            this.presetBox.TabIndex = 22;
-            // 
-            // appBox
-            // 
-            this.appBox.AppIconImage = global::Invaiz_Studio.Properties.Resources.iconwin;
-            this.appBox.AppName = "Window";
-            this.appBox.BackColor = System.Drawing.Color.Transparent;
-            this.appBox.Location = new System.Drawing.Point(86, 137);
-            this.appBox.Name = "appBox";
-            this.appBox.Size = new System.Drawing.Size(183, 50);
-            this.appBox.TabIndex = 2;
-            // 
-            // mainKeypad
-            // 
-            this.mainKeypad.BackColor = System.Drawing.Color.Transparent;
-            this.mainKeypad.Location = new System.Drawing.Point(58, 293);
-            this.mainKeypad.Name = "mainKeypad";
-            this.mainKeypad.Size = new System.Drawing.Size(476, 199);
-            this.mainKeypad.TabIndex = 1;
-            // 
-            // deviceGroup1
-            // 
-            this.deviceGroup1.BackColor = System.Drawing.Color.Transparent;
-            this.deviceGroup1.GroupName = "";
-            this.deviceGroup1.GroupNumber = "Group1";
-            this.deviceGroup1.HoverColor = System.Drawing.Color.Empty;
-            this.deviceGroup1.Location = new System.Drawing.Point(3, 3);
-            this.deviceGroup1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.deviceGroup1.Name = "deviceGroup1";
-            this.deviceGroup1.NomalColor = System.Drawing.Color.Empty;
-            this.deviceGroup1.Number = 0;
-            this.deviceGroup1.Size = new System.Drawing.Size(557, 41);
-            this.deviceGroup1.TabIndex = 0;
             // 
             // deviceGroupButton1
             // 
@@ -720,6 +524,25 @@
             this.deviceGroup2.Size = new System.Drawing.Size(557, 41);
             this.deviceGroup2.TabIndex = 2;
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Controls.Add(this.deviceGroupButton2);
+            this.panel2.Controls.Add(this.deviceButton8);
+            this.panel2.Controls.Add(this.deviceButton7);
+            this.panel2.Controls.Add(this.deviceButton6);
+            this.panel2.Controls.Add(this.deviceButton5);
+            this.panel2.Controls.Add(this.deviceEncoder8);
+            this.panel2.Controls.Add(this.deviceEncoder7);
+            this.panel2.Controls.Add(this.deviceEncoder6);
+            this.panel2.Controls.Add(this.deviceEncoder5);
+            this.panel2.Location = new System.Drawing.Point(3, 394);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(535, 210);
+            this.panel2.TabIndex = 3;
+            // 
             // deviceGroupButton2
             // 
             this.deviceGroupButton2.BackColor = System.Drawing.Color.Transparent;
@@ -899,6 +722,25 @@
             this.deviceGroup3.Number = 2;
             this.deviceGroup3.Size = new System.Drawing.Size(557, 41);
             this.deviceGroup3.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Controls.Add(this.deviceGroupButton3);
+            this.panel3.Controls.Add(this.deviceButton12);
+            this.panel3.Controls.Add(this.deviceButton11);
+            this.panel3.Controls.Add(this.deviceButton10);
+            this.panel3.Controls.Add(this.deviceButton9);
+            this.panel3.Controls.Add(this.deviceEncoder12);
+            this.panel3.Controls.Add(this.deviceEncoder11);
+            this.panel3.Controls.Add(this.deviceEncoder10);
+            this.panel3.Controls.Add(this.deviceEncoder9);
+            this.panel3.Location = new System.Drawing.Point(3, 711);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(535, 210);
+            this.panel3.TabIndex = 5;
             // 
             // deviceGroupButton3
             // 
@@ -1080,6 +922,25 @@
             this.deviceGroup4.Size = new System.Drawing.Size(557, 41);
             this.deviceGroup4.TabIndex = 6;
             // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = global::Invaiz_Studio.Properties.Resources.background;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel7.Controls.Add(this.deviceGroupButton4);
+            this.panel7.Controls.Add(this.deviceButton16);
+            this.panel7.Controls.Add(this.deviceButton15);
+            this.panel7.Controls.Add(this.deviceButton14);
+            this.panel7.Controls.Add(this.deviceButton13);
+            this.panel7.Controls.Add(this.deviceEncoder16);
+            this.panel7.Controls.Add(this.deviceEncoder15);
+            this.panel7.Controls.Add(this.deviceEncoder14);
+            this.panel7.Controls.Add(this.deviceEncoder13);
+            this.panel7.Location = new System.Drawing.Point(3, 1028);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(535, 210);
+            this.panel7.TabIndex = 7;
+            // 
             // deviceGroupButton4
             // 
             this.deviceGroupButton4.BackColor = System.Drawing.Color.Transparent;
@@ -1245,6 +1106,145 @@
             this.deviceEncoder13.RightSubName = null;
             this.deviceEncoder13.Size = new System.Drawing.Size(99, 99);
             this.deviceEncoder13.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(83)))), ((int)(((byte)(83)))));
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1, 740);
+            this.panel4.TabIndex = 2;
+            this.panel4.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Invaiz_Studio.Properties.Resources.close;
+            this.pictureBox3.Location = new System.Drawing.Point(704, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.appClosed_click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Invaiz_Studio.Properties.Resources.mini;
+            this.pictureBox2.Location = new System.Drawing.Point(672, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.minimized_click);
+            // 
+            // nav_area
+            // 
+            this.nav_area.BackColor = System.Drawing.Color.Black;
+            this.nav_area.Controls.Add(this.button1);
+            this.nav_area.Controls.Add(this.usbstate);
+            this.nav_area.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nav_area.Location = new System.Drawing.Point(0, 740);
+            this.nav_area.Name = "nav_area";
+            this.nav_area.Size = new System.Drawing.Size(1280, 60);
+            this.nav_area.TabIndex = 0;
+            this.nav_area.MouseDown += new System.Windows.Forms.MouseEventHandler(this.app_MouseDown);
+            this.nav_area.MouseMove += new System.Windows.Forms.MouseEventHandler(this.app_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Invaiz_Studio.Properties.Resources.setting;
+            this.button1.Location = new System.Drawing.Point(1226, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.setting_click);
+            // 
+            // usbstate
+            // 
+            this.usbstate.AutoSize = true;
+            this.usbstate.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.usbstate.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.usbstate.Location = new System.Drawing.Point(542, 20);
+            this.usbstate.Name = "usbstate";
+            this.usbstate.Size = new System.Drawing.Size(177, 24);
+            this.usbstate.TabIndex = 0;
+            this.usbstate.Text = "Device Not Connected";
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Invaiz";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.presetItem,
+            this.toolStripSeparator2,
+            this.aboutToolStripMenuItem,
+            this.showToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip1";
+            this.contextMenuStrip.Size = new System.Drawing.Size(112, 98);
+            // 
+            // presetItem
+            // 
+            this.presetItem.Name = "presetItem";
+            this.presetItem.Size = new System.Drawing.Size(111, 22);
+            this.presetItem.Text = "Presets";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(108, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // appTimer
+            // 
+            this.appTimer.Interval = 10;
+            this.appTimer.Tick += new System.EventHandler(this.appList_tick);
+            // 
+            // presetTimer
+            // 
+            this.presetTimer.Interval = 10;
+            this.presetTimer.Tick += new System.EventHandler(this.presetTimer_Tick);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.main_area);
+            this.panel8.Controls.Add(this.set_area);
+            this.panel8.Controls.Add(this.nav_area);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1280, 800);
+            this.panel8.TabIndex = 27;
             // 
             // MainForm
             // 

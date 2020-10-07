@@ -78,11 +78,11 @@
             this.group_renameInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(63)))), ((int)(((byte)(77)))));
             this.group_renameInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.group_renameInput.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.group_renameInput.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_renameInput.Font = new System.Drawing.Font("Noto Sans CJK KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.group_renameInput.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.group_renameInput.Location = new System.Drawing.Point(2, 5);
             this.group_renameInput.Name = "group_renameInput";
-            this.group_renameInput.Size = new System.Drawing.Size(351, 20);
+            this.group_renameInput.Size = new System.Drawing.Size(351, 23);
             this.group_renameInput.TabIndex = 4;
             this.group_renameInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.group_renameInput_KeyUp_1);
             // 
